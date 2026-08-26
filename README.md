@@ -20,9 +20,12 @@ covered by a proprietary licence.
 The policy makes factual claims about the extension's behaviour. Each one is checkable,
 and each was checked before publication:
 
-- **"makes no network requests"** — the built bundle contains no `fetch(`,
-  `XMLHttpRequest`, `WebSocket`, `sendBeacon` or `EventSource`. Rule 8 of the extension
-  repository's `scripts/check.js` fails the build if any appears in the source.
+- **"makes no network requests"** — neither `src/` nor a freshly built `dist/` contains
+  `fetch(`, `XMLHttpRequest`, `WebSocket`, `sendBeacon` or `EventSource`. Rule 8 of the
+  extension repository's `scripts/check.js` enforces this over `src/`, but **`pnpm check`
+  is a separate command from `pnpm build` and there is no CI running it** — so re-verify
+  by hand before each release rather than assuming the build caught it. The policy
+  deliberately claims only the checkable fact, not the process.
 - **"never uses sync storage"** — every storage call in the extension is
   `chrome.storage.local`.
 - **"no third-party code ships"** — the extension has no runtime dependencies.
