@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grispy — Privacy Policy</title>
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c30; --accent:#7aa2ff; --code:#1e1e22; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); margin:0;
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  .sub { color:var(--muted); margin:0 0 2rem; }
+  .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
+  table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.94rem; }
+  th, td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  ul { padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Grispy — Privacy Policy</h1>
+<p class="sub">Effective 26 August 2026. Applies to the Grispy browser extension for Chrome and Firefox.</p>
+
+<p class="lede"><strong>Grispy sends nothing anywhere.</strong> It has no server, no account,
+no analytics and no third-party code. Everything you save stays in your own browser, on your
+own computer. We never receive it, so there is nothing for us to sell, lose or hand over.</p>
+
+<h2>1. What Grispy stores</h2>
+<p>When you save a form, Grispy records it on your device so it can fill the same form again later:</p>
+<ul>
+  <li>The form's structure — its field labels, names, types and the options in its dropdowns.</li>
+  <li>The address of each page the form spans (its origin and path; the query string and fragment are discarded).</li>
+  <li>The values you saved against that form, under whatever profile name you gave them.</li>
+</ul>
+<p>Those values are whatever you chose to put in the form. That may include personal
+information — your name, address, telephone number, or anything else you typed. Grispy does
+not inspect it, categorise it, or treat one kind differently from another.</p>
+
+<h2>2. Where it is stored, and who can reach it</h2>
+<p>All of it is written to your browser's local extension storage
+(<code>chrome.storage.local</code>), which is a file inside your browser profile directory on
+your own computer. Grispy never uses your browser's sync storage, so nothing is copied to your
+other devices or to your browser vendor's servers.</p>
+
+<p><strong>Two limits you should know about, stated plainly:</strong></p>
+<ul>
+  <li><strong>The data is not encrypted at rest.</strong> It is stored as ordinary readable
+  text. Anything that can read files on your computer — other software running under your
+  user account, another person using the same unlocked machine, or someone who takes an
+  unencrypted laptop — can read what Grispy has saved. Use your operating system's full-disk
+  encryption and a locked screen; those are what protect it. Encrypting Grispy's own storage
+  is planned but is not in the current version.</li>
+  <li><strong>Uninstalling deletes it.</strong> Removing the extension removes its storage.
+  Export your data first if you want to keep it.</li>
+</ul>
+
+<h2>3. What Grispy does not do</h2>
+<table>
+  <tr><th>Sends your data to us or anyone else</th><td>No. The extension makes no network requests of any kind.</td></tr>
+  <tr><th>Analytics, telemetry or crash reporting</th><td>None. We collect no usage data, not even anonymous counts.</td></tr>
+  <tr><th>Accounts or sign-in</th><td>None. Grispy has no user accounts.</td></tr>
+  <tr><th>Advertising, tracking or profiling</th><td>None, and no data is ever sold, rented or shared.</td></tr>
+  <tr><th>Third-party libraries or SDKs</th><td>None ship in the extension. All of its code is our own.</td></tr>
+  <tr><th>Cookies, browsing history, downloads</th><td>Not read. Grispy holds no permission for any of them.</td></tr>
+  <tr><th>Reading pages in the background</th><td>No. Grispy can only see a page after you click its toolbar button on that tab.</td></tr>
+</table>
+
+<h2>4. Permissions, and why each one exists</h2>
+<table>
+  <tr><th><code>activeTab</code></th><td>Lets Grispy read the page in the one tab where you clicked its button, and only after you click. It expires. It grants no standing access to any site.</td></tr>
+  <tr><th><code>scripting</code></th><td>Lets Grispy place its form-reading code into that same tab, at that same moment.</td></tr>
+  <tr><th><code>storage</code></th><td>Lets Grispy keep your saved forms on your device.</td></tr>
+</table>
+<p>Grispy requests no host permissions. That is why installing it shows no
+"read and change your data on all websites" warning: it genuinely cannot, until you ask it to,
+on the one tab you asked it on.</p>
+
+<h2>5. How to check this for yourself</h2>
+<p>Two ways, neither of which requires trusting this page:</p>
+<ul>
+  <li>Open your browser's extension settings and read Grispy's permission list. It is the
+  three above. A permission the extension does not hold is a capability it does not have.</li>
+  <li>Unpack the extension and search its code for the ways a browser can reach the network —
+  <code>fetch</code>, <code>XMLHttpRequest</code>, <code>WebSocket</code>,
+  <code>sendBeacon</code>, <code>EventSource</code>. There are no matches. The build refuses
+  to complete if any of them is ever added.</li>
+</ul>
+
+<h2>6. Your control over your data</h2>
+<p>Grispy's options page lets you see everything it has stored, export all of it to a JSON
+file, and delete it — one profile, one form, or everything at once. Deletion is immediate and
+final; there is no copy anywhere else to delete.</p>
+<p>Because we never receive your data, we cannot access it, restore it, or produce it on
+request. If you want a copy, use the export button.</p>
+
+<h2>7. Legal basis and data-protection status</h2>
+<p>Under the GDPR, we are neither a controller nor a processor of the form data you save in
+Grispy, because that data is never transmitted to us and we never come into possession of it.
+It stays under your control on your own device throughout.</p>
+<p>This policy covers the extension. If you later buy a licence, the payment is handled by a
+separate payment provider under its own privacy policy, and only your purchase details — not
+anything Grispy has stored — are involved. That will be named here when it applies.</p>
+
+<h2>8. Children</h2>
+<p>Grispy is a general-purpose tool and is not directed at children. It collects nothing from
+anyone, of any age.</p>
+
+<h2>9. Changes to this policy</h2>
+<p>If this policy changes, the effective date above changes with it, and any change that
+narrows the protections described here will be announced in the extension's release notes
+before the version making the change is published.</p>
+
+<h2>10. Contact</h2>
+<p>Questions about this policy, or about Grispy's handling of data:
+<a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>.</p>
+
+<footer>
+  Grispy is developed by Dimitris Chrysomalis. · <a href="../">Back to Grispy</a>
+</footer>
+
+</main>
+</body>
+</html>
