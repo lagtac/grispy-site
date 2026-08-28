@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grispy — Support</title>
+<meta name="description"
+  content="How to report a bug, ask a question or suggest a change to Grispy, and what to expect in return.">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c30; --accent:#7aa2ff; --code:#1e1e22; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); margin:0;
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  .sub { color:var(--muted); margin:0 0 2rem; }
+  .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
+  table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.94rem; }
+  th, td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; white-space:nowrap; }
+  code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  ul { padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Grispy — Support</h1>
+<p class="sub">Bugs, questions and ideas. One address, and a plain account of what to expect.</p>
+
+<p class="lede"><strong>Write to
+<a href="mailto:dchrysomallis@outlook.com">dchrysomallis@outlook.com</a>.</strong>
+Grispy is free to everyone, with no paid tier and no separate support product, and it is
+written by one person. So this is best effort: no help desk, no ticket number, no promised
+response time. We would rather say that than imply a service level that does not exist.</p>
+
+<h2>What to expect</h2>
+<p>Email is the only channel. There is no chat widget, no contact form and no forum — the
+same reason there is no analytics: this site makes no network requests of its own, and a form
+would have to send your message through somebody else's server before it reached us.
+A <code>mailto:</code> link sends it straight from your mail client to us, and nowhere else.</p>
+<p>Bugs that stop Grispy working are answered first. Everything else — questions, ideas,
+"why does it do that" — is answered when there is time, and sometimes the answer is no.</p>
+
+<h2>Two things worth checking before you write</h2>
+<p>Both are limits of the design rather than faults, and neither can be undone from our end,
+because nothing you save in Grispy ever reaches us:</p>
+<ul>
+  <li><strong>A forgotten passphrase cannot be recovered.</strong> Not by you, and not by us.
+  If you have a readable export taken while unlocked, use it; otherwise resetting Grispy is
+  the only way forward, and it deletes what is stored.
+  <a href="../privacy/#storage">The privacy policy explains why</a> — the key exists only in your
+  browser's memory, for one session, and is never written down anywhere.</li>
+  <li><strong>Deleting is immediate and final.</strong> There is no copy on a server to restore
+  from, because there is no server. Export before you reset Grispy or uninstall it.</li>
+</ul>
+
+<h2 id="bugs">Reporting a bug</h2>
+<p>Grispy has no crash reporting and no telemetry, so a fault on your computer tells us
+nothing at all unless you write. That also means the description in your email is the only
+evidence there is. What helps:</p>
+<table>
+  <tr><th>Browser and version</th><td>Chrome or Firefox, and the version number from its About page.</td></tr>
+  <tr><th>Grispy's version</th><td>Shown on the extension's options page.</td></tr>
+  <tr><th>The form</th><td>The address of the page it is on, if that page is public. A form behind a login we cannot reach is still worth reporting — say so, and describe it instead.</td></tr>
+  <tr><th>What you did</th><td>The clicks, in order, from opening Grispy to the point it went wrong.</td></tr>
+  <tr><th>What happened</th><td>What you expected, and what happened instead. A screenshot of the form, with your own answers removed, is usually worth more than a paragraph.</td></tr>
+</table>
+<p><strong>Please do not send us your saved data.</strong> Not an export file, not a screenshot
+of filled-in fields. Those hold whatever you typed into the form, which is exactly the material
+Grispy is built never to transmit — and an email would carry it out of your control and into
+ours. We do not want a copy, and we do not need one to fix a bug.</p>
+
+<h2>Suggesting a change</h2>
+<p>The most useful thing you can send is a form Grispy handles badly: a wizard it loses track
+of between steps, a field it will not fill, a control it does not recognise. A public URL for
+one of those is worth more than a feature description, because it can be tested against
+directly.</p>
+<p>Feature requests are welcome and are read. Grispy is deliberately small, and staying small
+is part of how it keeps its permission list to three lines, so a good suggestion may still be
+declined on those grounds. If it is, you will be told why.</p>
+
+<h2>Once Grispy is published</h2>
+<p>Grispy is not yet on the Chrome Web Store or addons.mozilla.org. When it is, its listings
+will point their support link here, and the store review pages become a second place to raise
+something in public. This address stays the direct route either way.</p>
+
+<h2>Privacy enquiries</h2>
+<p>Questions about what Grispy stores, or about data protection, go to the same address and are
+covered by <a href="../privacy/">the privacy policy</a>, which names it as the contact for
+exactly that purpose.</p>
+
+<footer>
+  Grispy is developed by Dimitris Chrysomalis. · <a href="../">Back to Grispy</a> ·
+  <a href="../privacy/">Privacy</a>
+</footer>
+
+</main>
+</body>
+</html>

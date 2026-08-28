@@ -13,6 +13,7 @@ covered by a proprietary licence.
 |---|---|---|
 | `index.html` | the site root | Landing page. Grows into the product page when there is something to sell. |
 | `privacy/index.html` | `/privacy/` | **The privacy policy.** Both the Chrome Web Store and addons.mozilla.org require a public, stable privacy-policy URL on the listing form. This is that URL. |
+| `support/index.html` | `/support/` | **The support page.** Both stores' listing forms take a support URL alongside the privacy one; this is that URL. States the single contact address and that support is best effort on a free, one-person product. |
 | `.nojekyll` | — | Serve the files as written; skip GitHub's Jekyll build. |
 
 ## Editing the privacy policy
