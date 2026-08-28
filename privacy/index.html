@@ -16,6 +16,7 @@
   h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
   h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
   h2:first-of-type { border-top:none; padding-top:0; }
+  h3 { font-size: 1.02rem; margin: 1.8rem 0 .5rem; }
   .sub { color:var(--muted); margin:0 0 2rem; }
   .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
     padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
@@ -33,11 +34,12 @@
 <main>
 
 <h1>Grispy — Privacy Policy</h1>
-<p class="sub">Effective 26 August 2026. Applies to the Grispy browser extension for Chrome and Firefox.</p>
+<p class="sub">Effective 28 August 2026. Applies to the Grispy browser extension for Chrome and Firefox.</p>
 
 <p class="lede"><strong>Grispy sends nothing anywhere.</strong> It has no server, no account,
-no analytics and no third-party code. Everything you save stays in your own browser, on your
-own computer. We never receive it, so there is nothing for us to sell, lose or hand over.</p>
+no analytics and no tracking. Everything you save stays in your own browser, on your own
+computer, and can be encrypted with a passphrase only you know. We never receive it, so there
+is nothing for us to sell, lose or hand over.</p>
 
 <h2>1. What Grispy stores</h2>
 <p>When you save a form, Grispy records it on your device so it can fill the same form again later:</p>
@@ -56,14 +58,34 @@ not inspect it, categorise it, or treat one kind differently from another.</p>
 your own computer. Grispy never uses your browser's sync storage, so nothing is copied to your
 other devices or to your browser vendor's servers.</p>
 
-<p><strong>Two limits you should know about, stated plainly:</strong></p>
+<h3>Encryption, and why it is your choice</h3>
+<p>Grispy can encrypt what it saves — every value you saved, and the names you gave your forms
+and profiles — with a passphrase only you know. The first time you save anything, Grispy asks
+whether you want one. You can decline, and it will not ask again; you can turn encryption on
+later from its options page whenever you change your mind.</p>
+<p>When encryption is on, you enter your passphrase once per browser session. It never leaves
+your computer and is never sent anywhere. The key it produces is held in your browser's memory
+for that session alone — it is never written to disk — and it is gone once you close the
+browser.</p>
+
+<p><strong>Four limits you should know about, stated plainly:</strong></p>
 <ul>
-  <li><strong>The data is not encrypted at rest.</strong> It is stored as ordinary readable
-  text. Anything that can read files on your computer — other software running under your
-  user account, another person using the same unlocked machine, or someone who takes an
-  unencrypted laptop — can read what Grispy has saved. Use your operating system's full-disk
-  encryption and a locked screen; those are what protect it. Encrypting Grispy's own storage
-  is planned but is not in the current version.</li>
+  <li><strong>If you decline the passphrase, nothing is encrypted.</strong> Your saved data is
+  stored as ordinary readable text, and anything that can read files on your computer — other
+  software running under your user account, another person on the same unlocked machine, or
+  someone who takes an unencrypted laptop — can read it. Your operating system's full-disk
+  encryption and a locked screen are then what protect it.</li>
+  <li><strong>Encryption conceals what you saved, not which sites you saved it on.</strong>
+  Grispy has to know whether a page has anything saved for it without asking for your
+  passphrase on every page you visit — otherwise you would be prompted constantly, nearly
+  always on pages with nothing saved. The list of addresses it holds data for is therefore
+  left readable. Someone with access to the files on your computer could see which sites you
+  have saved forms for, and how many forms and profiles you have, without being able to read
+  any of the values inside them.</li>
+  <li><strong>A forgotten passphrase cannot be recovered.</strong> Not by you, and not by us —
+  we never have it. Your options at that point are an export you took while unlocked, or
+  resetting Grispy, which deletes everything and starts you over. Resetting works even when
+  you cannot unlock.</li>
   <li><strong>Uninstalling deletes it.</strong> Removing the extension removes its storage.
   Export your data first if you want to keep it.</li>
 </ul>
@@ -74,7 +96,7 @@ other devices or to your browser vendor's servers.</p>
   <tr><th>Analytics, telemetry or crash reporting</th><td>None. We collect no usage data, not even anonymous counts.</td></tr>
   <tr><th>Accounts or sign-in</th><td>None. Grispy has no user accounts.</td></tr>
   <tr><th>Advertising, tracking or profiling</th><td>None, and no data is ever sold, rented or shared.</td></tr>
-  <tr><th>Third-party libraries or SDKs</th><td>None ship in the extension. All of its code is our own.</td></tr>
+  <tr><th>Third-party libraries or SDKs</th><td>None. No package is installed and no external code is loaded. The one piece of third-party material bundled is the path data that draws the icons, under open-source licences named in the extension's third-party notice; nothing is fetched at runtime.</td></tr>
   <tr><th>Cookies, browsing history, downloads</th><td>Not read. Grispy holds no permission for any of them.</td></tr>
   <tr><th>Reading pages in the background</th><td>No. Grispy can only see a page after you click its toolbar button on that tab.</td></tr>
 </table>
@@ -90,7 +112,7 @@ other devices or to your browser vendor's servers.</p>
 on the one tab you asked it on.</p>
 
 <h2>5. How to check this for yourself</h2>
-<p>Two ways, neither of which requires trusting this page:</p>
+<p>Three ways, none of which requires trusting this page:</p>
 <ul>
   <li>Open your browser's extension settings and read Grispy's permission list. It is the
   three above. A permission the extension does not hold is a capability it does not have.</li>
@@ -98,12 +120,18 @@ on the one tab you asked it on.</p>
   <code>fetch</code>, <code>XMLHttpRequest</code>, <code>WebSocket</code>,
   <code>sendBeacon</code>, <code>EventSource</code>. There are no matches, in any version
   we have published.</li>
+  <li>The encryption is your browser's own — the built-in WebCrypto implementation, AES-GCM for
+  the saved data and PBKDF2 for the passphrase. Grispy ships no cryptographic code of its own,
+  so there is no bespoke implementation of ours for you to have to trust.</li>
 </ul>
 
 <h2>6. Your control over your data</h2>
-<p>Grispy's options page lets you see everything it has stored, export all of it to a JSON
-file, and delete it — one profile, one form, or everything at once. Deletion is immediate and
-final; there is no copy anywhere else to delete.</p>
+<p>Grispy's options page lets you see everything it has stored, export it to a JSON file, and
+delete it — one profile, one form, or everything at once. When encryption is on you choose the
+export format: encrypted with your passphrase, or readable. A readable export is the only copy
+that survives a forgotten passphrase, so it is worth keeping one somewhere safe — and worth
+remembering that it is readable by anything that can open the file.</p>
+<p>Deletion is immediate and final; there is no copy anywhere else to delete.</p>
 <p>Because we never receive your data, we cannot access it, restore it, or produce it on
 request. If you want a copy, use the export button.</p>
 
