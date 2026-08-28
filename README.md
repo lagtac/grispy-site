@@ -15,6 +15,8 @@ covered by a proprietary licence.
 | `privacy/index.html` | `/privacy/` | **The privacy policy.** Both the Chrome Web Store and addons.mozilla.org require a public, stable privacy-policy URL on the listing form. This is that URL. |
 | `support/index.html` | `/support/` | **The support page.** Both stores' listing forms take a support URL alongside the privacy one; this is that URL. States the single contact address and that support is best effort on a free, one-person product. |
 | `.nojekyll` | — | Serve the files as written; skip GitHub's Jekyll build. |
+| `ROADMAP.md` | — | What the site serves now and what it grows into. Rows link to the CHANGELOG entry that records them. |
+| `CHANGELOG.md` | — | What changed on these pages, and the **Publication Contract**: the URLs a store listing will hold, and the announcement §9 of the policy owes before a protection narrows. |
 
 ## Editing the privacy policy
 
@@ -29,9 +31,14 @@ and each was checked before publication:
   deliberately claims only the checkable fact, not the process.
 - **"never uses sync storage"** — every storage call in the extension is
   `chrome.storage.local`.
-- **"no third-party code ships"** — the extension has no runtime dependencies.
-- **"not encrypted at rest"** — true today, and deliberately disclosed. If on-disk
-  encryption ships, §2 must be rewritten in the same release.
+- **"no package is installed and nothing is fetched at runtime"** — the extension has no
+  runtime dependencies. It is *not* true that no third-party material ships: the icon path
+  data is vendored under ISC and MIT. The policy was corrected on 28 August 2026 to claim
+  only the first, which is the part that bears on privacy.
+- **"can be encrypted with a passphrase only you know"** — encryption at rest shipped, and
+  §2 was rewritten in the same window to describe it along with its four limits. The one to
+  keep checking is that the readable part stays as small as §2 says: the addresses Grispy
+  holds data for, and nothing else.
 
 **If the extension's behaviour changes, this page changes first.** A privacy policy that
 overstates what the software does is worse than no policy, and the Chrome Web Store's
