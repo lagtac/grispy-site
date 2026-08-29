@@ -29,8 +29,18 @@ whose substance is wording rather than a page, at the section of
 | 3 | **Support page** — one address for bugs, questions and ideas, and a plain statement that support is best effort on a free product written by one person. Shipped; linked from the landing page, both footers and §10 of the policy. | ✅ | P1 | [changelog](CHANGELOG.md) 2026-08-28 |
 | 3b | **"Free to everyone" on the support page** — the page promises no paid tier while the policy leaves a licence open at §7, so one of the two has to move before a reader can quote either back. Blocked by the price decision row 6 records. | 💭 | P1 | [copy](docs/copy.md) §1 |
 | 4 | **Store links on the landing page** — the Availability section promises the Chrome Web Store and addons.mozilla.org links and currently carries neither, so the page tells a visitor to come back without saying when. Blocked by the extension's publication. | 💭 | P1 | — |
-| 5 | **Product page** — the landing page is a single screen of prose, which is the right size for a thing nobody can install yet. Nothing is decided beyond the README's framing that it grows into the product page when there is something to sell. | 💭 | P3 | — |
+| 5 | **Product page** — the landing page is a single screen of prose, which is the right size for a thing nobody can install yet. Absorbs the feature breakdown, screenshots and FAQ rather than letting each become its own row; nothing beyond that is decided. | 💭 | P3 | — |
 | 6 | **Payment provider named in the policy** — §7 already promises to name the provider here if a licence is ever sold, since the payment would be handled under that provider's own privacy policy rather than this one. Nothing to name yet. | 💭 | P2 | — |
+| 6b | **The pages selling requires** — terms of service, a right-of-withdrawal and refund policy, trader identification, and a page carrying the price. None exists, and the extension's proprietary licence is in a private repository, so there is no public terms document at all. One row because they arrive together or not at all; it splits the day the price question settles. | 💭 | P1 | [copy](docs/copy.md) §1 |
+| 8 | **A 404 page** — a mistyped or stale URL lands on GitHub's own generic 404, which reads as a broken site rather than a wrong address. A store listing's URLs are typed once and are awkward to correct afterwards, which is the case for having one before a listing points here. | 💭 | P2 | — |
+| 9 | **User guide** — `docs/guide/multi-step-forms.md` in the extension repository is already written for a user rather than a developer, and no user can read it: that repository is private. Open, and worth settling before the page exists: whether the site becomes the public source or renders a copy the extension repository still owns. | 💭 | P2 | — |
+
+**Four pages this site will not have, recorded so the question is not reopened:**
+a cookie notice, because there are no cookies and claiming one would contradict
+the no-network promise every other page makes; an accessibility statement, which
+no obligation here reaches; a release-notes page, since both stores carry release
+notes of their own; and a vulnerability-disclosure page, which the one support
+address already covers.
 
 ## Copy
 
