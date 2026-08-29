@@ -17,6 +17,7 @@ covered by a proprietary licence.
 | `.nojekyll` | — | Serve the files as written; skip GitHub's Jekyll build. |
 | `ROADMAP.md` | — | What the site serves now and what it grows into. Rows link to the CHANGELOG entry that records them. |
 | `CHANGELOG.md` | — | What changed on these pages, and the **Publication Contract**: the URLs a store listing will hold, and the announcement §9 of the policy owes before a protection narrows. |
+| `docs/` | — | **Copy, not pages.** `docs/copy.md` holds the words Grispy is described in — landing page, both store listings, and the claims-check table each one is verified against — so those surfaces and the Chrome Web Store's data-usage form cannot drift apart. Serves nothing; a source document. |
 
 ## Editing the privacy policy
 
