@@ -121,8 +121,6 @@ instructions.
 >   the way a person would drive them, not written past. A value that looks filled
 >   but that the page never registered is the failure Grispy is built to avoid: it
 >   checks each field afterwards and tells you which ones it could not confirm.
->   **[GATED — do not publish this sentence until [§8](#8-gates-before-submitting)
->   clears it.]**
 
 ### Your data stays yours
 
@@ -198,7 +196,6 @@ See [§1](#1-one-open-decision-price) before repeating "free" here.
 > - Drives search-as-you-type dropdowns and tag pickers, and correctly fills the
 >   checkboxes and radios that web frameworks manage themselves
 > - Checks each field after filling and tells you what it could not confirm
->   **[GATED — see [§8](#8-gates-before-submitting)]**
 > - Encrypts what it saves behind a passphrase, if you want one
 > - Exports and imports everything, so your data is portable and yours
 >
@@ -212,8 +209,8 @@ See [§1](#1-one-open-decision-price) before repeating "free" here.
 > after. It also cannot see rich-text editors, fields inside a web component's
 > shadow DOM, or custom pickers with no ordinary form control underneath.
 >
-> Privacy policy: https://lagtac.github.io/grispy-site/privacy/
-> Support: https://lagtac.github.io/grispy-site/support/
+> Privacy policy: <https://lagtac.github.io/grispy-site/privacy/>
+> Support: <https://lagtac.github.io/grispy-site/support/>
 
 ### Data-usage disclosure form
 
@@ -260,11 +257,11 @@ table before each submission; there is no CI enforcing any of it.
 | "runs only after you click it" | `activeTab` is scoped to the tab the action was invoked on; `scripting` injects only into that tab | 2026-08-29 | This is also the honest limit: no fill on page load |
 | "never uses sync storage" | every storage call is `chrome.storage.local` | 2026-08-28 (policy) | Policy §2 |
 | "can be encrypted with a passphrase only you know" | encryption at rest shipped 2026-08-28 | 2026-08-28 | Opt-in. **Never write "is encrypted"** — the user is asked once and may decline |
-| "conceals what you saved, not which sites you saved it on" | `ENCRYPTED_PREFIXES = ["form:", "profile:"]` in `src/core/storage.js:44`; `stepindex:` and `active:` are plaintext by design | 2026-08-29 | Wording is lifted verbatim from policy §2 — keep it that way |
+| "conceals what you saved, not which sites you saved it on" | `ENCRYPTED_PREFIXES = ["form:", "formpreset:"]` in `src/core/storage.js:44`; `stepindex:` and `active:` are plaintext by design | 2026-09-01 | Wording is lifted verbatim from policy §2 — keep it that way. Re-checked after the form-preset rename moved the second prefix from `profile:` |
 | "follows a form across every page it spans" | multi-step wizard attach/split/detach, plus step identity for wizards that do not change their address | 2026-08-29 | Bounded by the hidden-step limit, which the copy states |
 | "drives search-as-you-type dropdowns and tag pickers" | widget drive with per-field deadline; verification reads the widget's own display | 2026-08-29 | |
 | "correctly fills the checkboxes and radios that frameworks manage" | framework write-path fidelity shipped | 2026-08-28 | |
-| "tells you what it could not confirm" | fill reports an `unverified` outcome and the toast carries the count | 2026-08-29 | **Gated — see [§8](#8-gates-before-submitting).** The count is wrong on pages built from frames |
+| "tells you what it could not confirm" | fill reports an `unverified` outcome and the toast carries the count | 2026-09-01 | **Ungated 2026-09-01.** The framed-page miscount that held this back is fixed — extension roadmap row 5d, shipped 2026-08-29 |
 | "exports and imports everything" | export and import both shipped | 2026-08-28 | Whole-store file replaces; single-form file adds |
 | Cannot see contenteditable, shadow DOM, custom pickers | asserted deliberately as characterization tests in the extension's smoke suite | 2026-08-29 | These are tests that assert the *absence* of support, so they will fail loudly if it ever arrives |
 
@@ -295,12 +292,18 @@ withdrawn claims before rather than let them stand.
 
 Not copy. Things that must be true in the extension before this copy is honest.
 
-- **A fill on a page built from frames reports the wrong outcomes.** The fill
-  itself is correct — the fields do get filled — but only one frame's answers are
-  counted, measured at 20 of 21 fields reported as not-found on a page that had
-  actually filled them. Any listing promising that Grispy tells you what it filled
-  is contradicted on screen for those users. This is a bug with a known shape, not
-  a limit to disclose. Fix it, then the §6 row for that claim clears.
+- ~~**A fill on a page built from frames reports the wrong outcomes.**~~
+  **Cleared 2026-09-01.** Only one frame's answers were counted, measured at 20 of
+  21 fields reported as not-found on a page that had actually filled them, so any
+  listing promising that Grispy tells you what it filled was contradicted on
+  screen. Fixed as extension roadmap row 5d, shipped 2026-08-29: the fill asks each
+  frame by explicit `frameId` and merges to one outcome per field. The two
+  sentences this gated — §3's "checks each field afterwards" and §4's "tells you
+  what it could not confirm" — are unbracketed, and the §6 row is re-dated.
+
+  Kept rather than deleted because it is the one gate that has cleared, and
+  because it stood for three days after the fix landed while the sentence it
+  blocked is the differentiator §2 names.
 - **Settle the price question** ([§1](#1-one-open-decision-price)) and write the
   wording here before it appears anywhere.
 - **Install a packaged build and read Chrome's permission dialog**, so the
