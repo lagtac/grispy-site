@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grispy — Forms that span several pages</title>
+<meta name="description"
+  content="Multi-step wizards: the line that says which step Grispy thinks you are on, how to correct it, and the two kinds of wizard it cannot follow.">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5;
+    --warn:#8a5a00; --warnbg:#fff8e6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c30; --accent:#7aa2ff; --code:#1e1e22;
+      --warn:#e0b050; --warnbg:#2a2312; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); margin:0;
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  .sub { color:var(--muted); margin:0 0 2rem; }
+  .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
+  .warn { background:var(--warnbg); border-left:3px solid var(--warn); color:var(--fg);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:1.5rem 0; }
+  .crumb { font-size:.9rem; color:var(--muted); margin:0 0 1.5rem; }
+  table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.94rem; }
+  th, td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  th.nw { white-space:nowrap; }
+  code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  .dialog { background:var(--code); border-radius:6px; padding:.8rem 1rem; margin:1rem 0 1rem 1.3rem;
+    font-size:.95rem; }
+  .dialog p { margin:.2rem 0; }
+  ol.walk { padding-left:1.3rem; }
+  ol.walk li { margin:.6rem 0; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  ul { padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="crumb"><a href="../">Guide</a> → Forms that span several pages</p>
+
+<h1>Forms that span several pages</h1>
+<p class="sub">Multi-step wizards: the line that says where Grispy thinks you are, how to
+correct it, and the two kinds of wizard it cannot follow.</p>
+
+<p class="lede">Some forms are one page. Plenty are not — job applications, visa forms,
+checkouts and insurance quotes hand you a "Next" button and a fresh page for each part.
+Grispy can save all of those pages into <strong>one preset</strong>, so a single saved identity
+covers the whole application instead of leaving you with four unrelated fragments. It needs one
+small gesture from you the first time you visit each page, and never again afterwards.</p>
+
+<h2>The line that tells you where you are</h2>
+
+<p>Open the popup on any page and there is a small grey line just under the field count. It
+always says what Grispy currently believes this page is:</p>
+
+<table>
+  <tr><th class="nw">Step 2 of 3</th>
+    <td>This page is the second of three you have saved into one form.</td></tr>
+  <tr><th class="nw">Part of a saved form</th>
+    <td>Grispy knows this page, and the form has just the one page.</td></tr>
+  <tr><th class="nw">Which step is this?</th>
+    <td>Most of the saved answers are missing, and this page has never been named as a step of
+    its own — so Grispy is no longer sure which page this is.</td></tr>
+  <tr><th class="nw">Not part of a saved form</th>
+    <td>Grispy has never seen this address.</td></tr>
+</table>
+
+<p><strong>The line is also a button.</strong> Click it and a small window opens asking
+<em>This page is</em> — and whatever you answer there is what Grispy believes from then on.
+That is the whole mechanism: one line that states what it thinks, and one click to correct
+it.</p>
+
+<p>The line stops being a button in exactly one case: when you have nothing saved anywhere at
+all. There is no form to attach a page to yet, so there is nothing to correct.
+<a href="../saving-and-filling/">Save a page first.</a></p>
+
+<p><strong>A page you have already named keeps its name.</strong> <em>"Which step is this?"</em>
+only comes up on pages Grispy has never been told about. Once you have said a page is a step of
+its own, it is filed under its own address and goes on reading <strong>"Step 2 of 3"</strong>
+even if the site later changes most of the boxes on it. You will see that as
+<em>"· 2 fields changed"</em> beside the save date, and <strong>Fill</strong> stays the main
+button. A site being updated is not the same thing as a page being mistaken for another one,
+and only the second is worth interrupting you over.</p>
+
+<h2>Telling Grispy this is a different page</h2>
+
+<p><strong>You will see this on</strong> wizards where only a query or a <code>#</code> fragment
+changes: <code>site.com/wizard?step=1</code> → <code>?step=2</code> → <code>?step=3</code>, or
+<code>site.com/app#/details</code> → <code>#/payment</code>.</p>
+
+<p>Grispy deliberately ignores the <code>?…</code> and <code>#…</code> parts of an address when
+it files a page away — otherwise a stray tracking parameter would make the same form look like
+a brand new one every visit. The cost of that is that step 2 and step 3 of this kind of wizard
+can look identical to it.</p>
+
+<h3>Walkthrough</h3>
+
+<p>You are filling in a visa application at <code>visa.example.com/wizard?step=1</code>.</p>
+
+<ol class="walk">
+  <li><strong>Step 1.</strong> You fill it in and <strong>Save</strong>. Normal Grispy. The line
+  reads <strong>"Part of a saved form"</strong>.</li>
+  <li>You click <strong>Next</strong> and land on <code>?step=2</code>.</li>
+  <li><strong>Open the popup.</strong> Grispy thinks it knows this page — it shows your preset —
+  but the saved answers are step 1's, and most of them are not on screen. So the line reads
+  <strong>"Which step is this?"</strong>, and <strong>Save</strong> takes over as the main
+  button. <strong>Fill</strong> is still there beside it, but it is no longer what Grispy
+  recommends: it would write step 1's answers into step 2's boxes.</li>
+  <li><strong>Click the line.</strong> The window opens:
+    <div class="dialog">
+      <p><strong>This page is</strong></p>
+      <p>○ A new step</p>
+      <p>○ Not part of a form</p>
+    </div>
+  </li>
+  <li><strong>Choose "A new step"</strong> and click <strong>Make a new step</strong>. Grispy
+  files this page as a step of its own, leaving step 1 exactly as it was. A toast confirms
+  <em>"Saved as a new step."</em> The line now reads <strong>"Step 2 of 2"</strong>.</li>
+  <li><strong>Fill and Save.</strong> Step 2's answers join step 1's inside the same preset.</li>
+</ol>
+
+<p>Every later visit to <code>?step=2</code> lands on the right data with no message and nothing
+to click. A four-step wizard costs three corrections in total, ever.</p>
+
+<h3>If you skip a step</h3>
+
+<p>Steps you have never named still fall back to the first one you saved. So if you jump
+straight to <code>?step=9</code>, the line asks <strong>"Which step is this?"</strong> again.
+Answering it fixes that page the same way it fixed the others. This is the same mechanism, not
+a fault.</p>
+
+<h2>When the address never changes, but the page still shows where you are</h2>
+
+<p><strong>You will see this on</strong> wizards where clicking "Next" redraws the page in place
+— the address bar never moves, not even a <code>?</code> or a <code>#</code> — but the page
+itself still shows something that says which step you are on: a highlighted item in a list of
+steps, a tab marked as the current one, or a heading like "Step 2: Payment".</p>
+
+<p>This is one degree harder than the case above, because there is nothing in the address at all
+to go on. Grispy handles it the same way a person would: by reading what the page itself is
+telling you.</p>
+
+<h3>Walkthrough</h3>
+
+<p>You are filling in an application at <code>example.com/apply</code>, a single address for the
+whole thing.</p>
+
+<ol class="walk">
+  <li><strong>Step 1.</strong> You fill it in and <strong>Save</strong>. The line reads
+  <strong>"Part of a saved form"</strong>.</li>
+  <li>You click <strong>Next</strong>. The address does not change, but the page redraws with
+  step 2's boxes, and the step list on screen now highlights "Payment" instead of
+  "Details".</li>
+  <li><strong>Open the popup.</strong> Most of what was saved is not on this page, so the line
+  reads <strong>"Which step is this?"</strong>, exactly as it would for an address-based
+  wizard.</li>
+  <li><strong>Click the line.</strong> Because Grispy noticed what the page itself is showing,
+  the window names it:
+    <div class="dialog">
+      <p><strong>This page is</strong></p>
+      <p>○ A new step — "Payment"</p>
+      <p>○ Not part of a form</p>
+    </div>
+  </li>
+  <li><strong>Choose "A new step — 'Payment'"</strong> and confirm. A toast confirms
+  <em>"Saved as a new step."</em> The line now reads <strong>"Step 2 of 2"</strong>.</li>
+  <li><strong>Fill and Save.</strong> Step 2's answers join step 1's inside the same preset.</li>
+</ol>
+
+<p>Every later visit to this page is recognised the same way — by what it shows, not by its
+address — with nothing to click.</p>
+
+<h3>When the page shows nothing to go on</h3>
+
+<p>If the window's option just reads <strong>"A new step"</strong> with no name in quotes, or is
+greyed out with a reason underneath, the page is not showing Grispy anything it can use — see
+<a href="#known-limits">Known limits</a>.</p>
+
+<h2>Joining a page to a form you already saved</h2>
+
+<p><strong>You will see this on</strong> addresses that change as you advance:
+<code>site.com/apply</code> → <code>site.com/apply/experience</code> →
+<code>site.com/apply/references</code>.</p>
+
+<p>Here the second page has an address Grispy has never seen, so the line reads
+<strong>"Not part of a saved form"</strong>.</p>
+
+<ol class="walk">
+  <li><strong>Page 1</strong> (<code>/apply</code>) asks for your name, email and phone. You fill
+  it in, click <strong>Save</strong>, and name the preset "Me".</li>
+  <li>You click the site's <strong>Next</strong> button and land on
+  <code>/apply/experience</code>.</li>
+  <li><strong>Open the popup</strong>, and <strong>click the line</strong>. A window opens
+  listing every form you have ever saved — one row each:
+    <div class="dialog">
+      <p><strong>careers.example.com — Job application</strong></p>
+      <p>2 steps · saved 19/08/2026</p>
+    </div>
+  </li>
+  <li><strong>Click the row for the job application.</strong> The window closes and the popup
+  redraws as though it had recognised the page all along: your "Me" chip is back and selected,
+  and the line reads <strong>"Step 2 of 2"</strong>.</li>
+  <li><strong>Fill the page in and Save.</strong> Your experience details are added to the
+  <em>same</em> "Me" preset. Page 1's saved data is not touched.</li>
+</ol>
+
+<p>Repeat once for page 3, page 4, and so on. Afterwards nothing changes: the next visit is
+recognised straight away and offers <strong>Fill</strong>.</p>
+
+<h2>Filling a form that spans several pages</h2>
+
+<p><strong>Grispy fills one page at a time.</strong> There is no button that completes a whole
+four-page application in one go.</p>
+
+<p>On each page of the wizard you open the popup and click <strong>Fill</strong>; that page's
+saved answers go in, you click the site's <strong>Next</strong>, and you repeat. The preset
+holds all four pages, but each page is filled on the visit where you are actually looking at
+it. <a href="../what-a-fill-reports/">What the fill message tells you</a> is the same on every
+step.</p>
+
+<p>This is deliberate. Grispy can only read and write the page currently in front of it — it
+never works on pages in the background.</p>
+
+<h2>Taking a page back out</h2>
+
+<p>Joined a page to the wrong form? Named a step by mistake?</p>
+
+<p><strong>Click the line</strong> and choose <strong>"Not part of a form"</strong>, then
+<strong>Remove from this form</strong>. A toast confirms <em>"Removed from the form."</em> The
+page goes back to being unrecognised, with <strong>Save</strong> on screen exactly as before you
+touched it.</p>
+
+<h3>What happens to the answers you saved on that page</h3>
+
+<p>They are kept — the window says so as soon as you pick the row:
+<em>"Saved fields are kept if you attach it again."</em> Put the page back in the same form and
+everything you had saved there comes straight back.</p>
+
+<p>Be aware of the in-between, though: <strong>while a page is out, the answers it held are
+still stored, but nothing will fill them until you put the page back.</strong> They are not
+lost, and they are not hidden either — <a href="../settings/">the Settings page</a> lists them
+under <em>Unreachable records</em> as <em>"Data for a page detached from this form — kept so
+that reattaching it restores the data."</em>, and offers to remove them if that is what you
+want. It never removes them on its own, precisely because putting the page back is meant to
+bring them back.</p>
+
+<h3>When removing is refused</h3>
+
+<p>Sometimes <strong>"Not part of a form"</strong> is greyed out, with the reason underneath:
+<em>"Remove /wizard.html?step=3 from this form first."</em></p>
+
+<p>This happens on the <strong>first</strong> page of a same-address wizard — the
+<code>?step=1</code> page above — once you have named later steps off it. That first page is
+what the later ones are found through; removing it would strand them, and you would end up with
+a second, duplicate copy of the form.</p>
+
+<p>Take the later steps out first, then that one. Or simply leave it: nothing is wrong with the
+form as it stands.</p>
+
+<p>If that leaves nothing you can choose at all, the window still opens and still tells you why
+— it just offers <strong>Close</strong> rather than a button that would do nothing.</p>
+
+<h2 id="when-grispy-asks-before-saving">When Grispy asks before saving</h2>
+
+<p>If most of a page's saved answers have gone missing <strong>and</strong> its address is one
+Grispy cannot tell from a page you already saved, then pressing <strong>Save</strong> does not
+write straight away. It asks first.</p>
+
+<p>The reason is that saving replaces everything stored for that page. If Grispy has the wrong
+page in mind, saving would quietly destroy another step's answers with nothing to undo it. So it
+puts the same <em>This page is</em> window in front of you and names what it would
+overwrite:</p>
+
+<ul>
+  <li><strong>Replace Step 2</strong> — yes, this really is step 2, my answers just changed.</li>
+  <li><strong>Save as a new step</strong> — no, this is a different page; give it its own
+  slot.</li>
+  <li><strong>Cancel</strong> (or <code>Esc</code>) — neither; take me back. Your tick-boxes are
+  exactly as you left them.</li>
+</ul>
+
+<p>This only happens when <em>most</em> of the saved answers are missing. A form that renames one
+box out of seven is the site being updated, not a page being mistaken for another, and Grispy
+saves that without a word.</p>
+
+<h2>When two pages look identical</h2>
+
+<p>Sometimes there is nothing in the address to separate two pages at all. Then the window
+carries a note instead of a fix:</p>
+
+<div class="dialog">
+  <p><em>"This page's address is identical to the saved step's, so Grispy cannot tell them
+  apart."</em></p>
+</div>
+
+<p>There is no <strong>"A new step"</strong> to choose, because there is nothing Grispy could
+file the page under. If you are saving, you can still confirm the overwrite — that choice is
+yours to make and the window makes sure it is deliberate. See
+<a href="#known-limits">Known limits</a>.</p>
+
+<h2 id="known-limits">Known limits</h2>
+
+<h3>A wizard that shows nothing to tell its steps apart</h3>
+
+<p>A few sites are built so that clicking "Next" swaps the page's contents without changing the
+address <em>and</em> without showing anything on screen that says which step you are on — no
+highlighted item in a step list, no selected tab, no heading like "Step 2: Payment". Grispy has
+no way to tell those steps apart, so it treats them all as one page.</p>
+
+<p>You will recognise one by the note above — the addresses are identical and there is no new
+step to make — or, in the window, by an <strong>"A new step"</strong> option with no name in
+quotes, greyed out with the reason <em>"Nothing on this page tells it apart from the saved
+step."</em> That is a known gap, not a bug: there is nothing on either the address or the page
+for Grispy to key a new step by. What protects you meanwhile is the question in
+<a href="#when-grispy-asks-before-saving">When Grispy asks before saving</a> — you will not
+overwrite a step silently.</p>
+
+<p>That same greyed option appears in a second situation, and it is worth knowing them apart
+even though the wording is the same. Some wizards <em>do</em> mark their steps, but mark two of
+them identically — the same tab name, or the same heading, on what are really two different
+steps. Grispy will already have matched this page to the step saved under that marker, so making
+a new step here would give you two steps wearing one label and no way to tell which is which
+afterwards. It refuses for the same underlying reason: whatever the page shows, it does not tell
+this page apart from the one already saved. If you know the two steps are genuinely different,
+the addresses are what would separate them — a wizard that puts anything at all in its address,
+even <code>?step=2</code>, is one Grispy can split.</p>
+
+<h3>A wizard that hides its old step instead of swapping it out</h3>
+
+<div class="warn">
+  <p style="margin:0">Some wizards keep every step's boxes present on the page the whole time
+  and only hide the ones you are not currently on, rather than removing them when you click
+  "Next". Grispy reads every box on the page whether or not it is hidden — so on a wizard built
+  this way, it always sees all of every step's boxes at once, and always believes whatever you
+  saved is still a complete match for the page, no matter which step you have actually clicked
+  through to.</p>
+</div>
+
+<p>You will recognise this one because the line never says <strong>"Which step is this?"</strong>
+at all, even once you can plainly see you have moved to a different step — it just keeps reading
+whatever it read the first time, such as <strong>"Part of a saved form"</strong>. This is a
+limitation of how that particular wizard is built, not a mistake in what you saved, and there is
+no click-through fix for it today. Fixing it means teaching Grispy to notice which boxes on a
+page are actually visible, which is separate, forward-looking work — not this feature, which
+only reads what the page reports.</p>
+
+<h2>Every message, in one place</h2>
+
+<table>
+  <tr><th class="nw">"Step 2 of 3"</th>
+    <td>This form spans more than one page, and this is which one you are on. Click to change
+    it.</td></tr>
+  <tr><th class="nw">"Part of a saved form"</th>
+    <td>Grispy knows this page and the form has one page. Click to change it.</td></tr>
+  <tr><th class="nw">"Which step is this?"</th>
+    <td>Most of the saved answers are missing and this page has never been named as a step of its
+    own, so Grispy is no longer sure which page this is. Click to say.</td></tr>
+  <tr><th class="nw">"Not part of a saved form"</th>
+    <td>This page belongs to nothing. Click to join it to a form you already saved.</td></tr>
+  <tr><th class="nw">"This page is" (window)</th>
+    <td>The one question, and the answers available on this page.</td></tr>
+  <tr><th class="nw">"A new step"</th>
+    <td>Give this page its own slot in the form, leaving its sibling alone.</td></tr>
+  <tr><th class="nw">"A new step — 'Payment'"</th>
+    <td>The same choice, on a page whose address never changes — the quoted word is what Grispy
+    read on the page itself to tell this step apart.</td></tr>
+  <tr><th class="nw"><em>"Nothing on this page tells it apart from the saved step."</em></th>
+    <td>The "A new step" option is greyed out for this reason: there is nothing on the address or
+    the page to key a new step by. See Known limits.</td></tr>
+  <tr><th class="nw">"Not part of a form"</th>
+    <td>Take this page back out. Your answers are kept.</td></tr>
+  <tr><th class="nw"><em>"Saved fields are kept if you attach it again."</em></th>
+    <td>Removing a page deletes nothing.</td></tr>
+  <tr><th class="nw"><em>"Remove /wizard.html?step=3 from this form first."</em></th>
+    <td>This page is how that one is found. Take it out before this one.</td></tr>
+  <tr><th class="nw">"Which form is this?" (window title)</th>
+    <td>The list of forms you can join this page to.</td></tr>
+  <tr><th class="nw"><em>"Nothing is saved yet — save this page first."</em></th>
+    <td>You have no saved forms to join. Save a page first.</td></tr>
+  <tr><th class="nw"><em>"Page attached."</em></th>
+    <td>Done — this page is now a step of that form.</td></tr>
+  <tr><th class="nw"><em>"Saved as a new step."</em></th>
+    <td>Done — this page now saves separately from its sibling.</td></tr>
+  <tr><th class="nw"><em>"Removed from the form."</em></th>
+    <td>Done — this page is unrecognised again.</td></tr>
+  <tr><th class="nw"><em>"No fields match current page"</em></th>
+    <td>Grispy recognises the address but none of the saved fields are here.</td></tr>
+  <tr><th class="nw">"Save to Step 2?" / "Replace what's saved here?"</th>
+    <td>Saving would overwrite a page Grispy may have wrong. Confirm or redirect it.</td></tr>
+  <tr><th class="nw"><em>"This page's address is identical to the saved step's, so Grispy cannot
+    tell them apart."</em></th>
+    <td>Grispy cannot separate these pages. See Known limits.</td></tr>
+</table>
+
+<footer>
+  <a href="../">Guide</a> ·
+  <a href="../../">Back to Grispy</a> ·
+  <a href="../../privacy/">Privacy</a> ·
+  <a href="../../support/">Support</a>
+</footer>
+
+</main>
+</body>
+</html>

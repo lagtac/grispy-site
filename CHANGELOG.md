@@ -36,6 +36,23 @@ themselves make.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
 
+### 2026-09-01 — The multi-step guide is published, and the copy is gone (Roadmap #9)
+
+The sixth page. `/guide/multi-step-forms/` was written months ago for a user
+and lived in the extension's private repository, where no user could read it.
+
+- **Both halves in one change**, as row 9 required: the page is served here and
+  the extension repository's copy is deleted. There is one copy, not two, which
+  is the whole point of the decision recorded in `ROADMAP.md`.
+- **One stale line corrected on the way.** The guide told readers that detached
+  page data is listed on the **Manage** screen. The options page stopped being
+  called Manage on 2026-08-28, when it became four tabs called Settings, and the
+  guide was never swept. It now names Settings and links to that guide page.
+- **Three things did not survive the port**, all of them links into a private
+  repository: the "Shipped" banner citing extension roadmap rows, a link to
+  ROADMAP.md in Known limits, and the trailing note deriving the page from two
+  specs. A public page cannot cite documents its readers cannot open.
+
 ### 2026-09-01 — A user guide, at `/guide/` (Roadmap #9b)
 
 Grispy had exactly one page of user documentation, it covered multi-step
@@ -71,9 +88,9 @@ Two things about how these were written, both worth keeping:
   surface making checkable claims about extension behaviour, at higher density
   than the landing page, and nothing was tracking it.
 
-The multi-step page is not among these — that is row 9, and it is a port of an
-existing document rather than new writing. The index says so rather than
-carrying a dead link.
+These five shipped before the multi-step page, which is why the index briefly
+said that one was coming. Row 9 landed the same day and the index now lists all
+six.
 
 ### 2026-08-28 — A support page, and the one address behind it (Roadmap #3)
 

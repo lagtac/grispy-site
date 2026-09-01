@@ -4,12 +4,12 @@ The words Grispy is described in, kept in one place so the landing page, the two
 store listings, the Chrome Web Store's data-usage form and the pages under
 `/guide/` cannot drift apart.
 
-**The guide joined that list on 2026-09-01**, when the first five pages shipped.
-They are not marketing copy and their wording is not settled here — but they make
+**The guide joined that list on 2026-09-01**, when its six pages shipped. They
+are not marketing copy and their wording is not settled here — but they make
 checkable claims about extension behaviour at far higher density than the landing
 page does, which is exactly what [§6](#6-claims-check) exists to catch. The guide
 rows in that table are the load-bearing ones: the messages a page quotes verbatim,
-and the four claims a user could be harmed by relying on.
+and the claims a user could be harmed by relying on.
 
 Nothing here is served. This is a source document: copy is written and settled
 here, then poured into `index.html` and into each store's submission form when
@@ -288,6 +288,10 @@ changes falsifies the row that quotes it.
 | Rows built from checkbox or radio groups are not recognised as a group | extension ROADMAP row 8e, characterized in the smoke suite | 2026-09-01 | |
 | Export needs the store unlocked; Clear everything works while locked | `render()` disables export while locked; the Danger zone button is deliberately not disabled | 2026-09-01 | The guide leans on the second: reset is the only way back from a forgotten passphrase |
 | The four encryption limits | lifted verbatim from policy §2 rather than reworded, per rule 1 of this document | 2026-09-01 | If §2 changes, the passphrase page changes with it |
+| The four status-line readings: `Step 2 of 3`, `Part of a saved form`, `Which step is this?`, `Not part of a saved form` | `stepContextLabel` in `src/popup/popup.js` | 2026-09-01 | The multi-step page's whole mechanism hangs off these four |
+| The save-guard titles `Save to Step 2?` and `Replace what's saved here?` | the `askStep` branch of the save dialog in `src/popup/popup.js` | 2026-09-01 | |
+| Detached-page data is listed under *Unreachable records* on the **Settings** page | `src/core/audit.js` finding "F"; the options page has been four tabs called Settings since 2026-08-28 | 2026-09-01 | **The ported page said "Manage" and was wrong.** Corrected during the port. A page named in the guide that no longer exists under that name is the cheapest kind of drift to introduce and the hardest for a reader to recover from |
+| The step-marker example is a heading like `Step 2: Payment` | `STEP_SHAPED` in `src/content/content.js` requires punctuation immediately after the ordinal, so `Step 2 of 3` is rejected | 2026-09-01 | An earlier draft of the guide used `Step 2 of 3`, which would have told a reader their wizard was served when it is not. The published page uses the accepted form |
 
 ---
 
