@@ -11,7 +11,7 @@ therefore means *live, but not yet pointed at* — everything below is already o
 the web, and the boundary it is measured against is the moment a Chrome Web
 Store or addons.mozilla.org listing starts sending people to these URLs.
 
-## [Unreleased] — 2026-08-28
+## [Unreleased] — 2026-09-01
 
 ### Publication Contract
 
@@ -35,6 +35,45 @@ themselves make.
   matching that date.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
+
+### 2026-09-01 — A user guide, at `/guide/` (Roadmap #9b)
+
+Grispy had exactly one page of user documentation, it covered multi-step
+wizards, and it lived in a private repository where no user could read it. Five
+pages now cover the rest, with an index at `/guide/` linked from every footer.
+
+- **`/guide/saving-and-filling/`** — the core loop. Save a form under a name,
+  keep several sets of answers against it, switch, fill. Also every screen the
+  popup can show and how values appear in the save list.
+- **`/guide/what-a-fill-reports/`** — the page this set existed for. `docs/copy.md`
+  §3 and §4 were ungated the same day and now advertise that Grispy "tells you
+  what it could not confirm", with nothing anywhere explaining the two sentences
+  a fill actually shows.
+- **`/guide/passphrase/`** — what encryption covers, what it leaves readable, and
+  that a forgotten passphrase is unrecoverable. The four limits are lifted
+  verbatim from policy §2 rather than reworded, per rule 1 of `docs/copy.md`.
+- **`/guide/settings/`** — the inventory, every deletion, export and import, and
+  the reset that works while locked.
+- **`/guide/repeating-rows/`** — add-a-row forms, the question asked before rows
+  are dropped, and the position-matching limit that makes *Save just these* the
+  safer answer after a mid-list deletion.
+
+Two things about how these were written, both worth keeping:
+
+- **Every quoted string was read out of the extension's source, not recalled.**
+  That caught the error this row was first written on: ROADMAP row 9b originally
+  said the guide must explain `filled`, `not-found`, `refused` and `unverified`.
+  There are five such constants rather than four, and a user is shown none of
+  them — `not-found`, `refused` and `unchanged` fold into one denominator, so
+  the pages state that limit instead of teaching names the popup withholds.
+- **`docs/copy.md` §6 now covers `/guide/` as well.** Nine rows record the
+  load-bearing guide claims and where each was verified. The guide is a fourth
+  surface making checkable claims about extension behaviour, at higher density
+  than the landing page, and nothing was tracking it.
+
+The multi-step page is not among these — that is row 9, and it is a port of an
+existing document rather than new writing. The index says so rather than
+carrying a dead link.
 
 ### 2026-08-28 — A support page, and the one address behind it (Roadmap #3)
 

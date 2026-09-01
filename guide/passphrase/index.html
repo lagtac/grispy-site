@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grispy — Protecting your saved data</title>
+<meta name="description"
+  content="How Grispy's passphrase works: what it encrypts, what it deliberately leaves readable, and why a forgotten one cannot be recovered.">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5;
+    --warn:#8a5a00; --warnbg:#fff8e6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c30; --accent:#7aa2ff; --code:#1e1e22;
+      --warn:#e0b050; --warnbg:#2a2312; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); margin:0;
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  .sub { color:var(--muted); margin:0 0 2rem; }
+  .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
+  .warn { background:var(--warnbg); border-left:3px solid var(--warn); color:var(--fg);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:1.5rem 0; }
+  .crumb { font-size:.9rem; color:var(--muted); margin:0 0 1.5rem; }
+  table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.94rem; }
+  th, td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  th.nw { white-space:nowrap; }
+  code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  ol.walk { padding-left:1.3rem; }
+  ol.walk li { margin:.6rem 0; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  ul { padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="crumb"><a href="../">Guide</a> → Protecting your saved data</p>
+
+<h1>Protecting your saved data</h1>
+<p class="sub">What the passphrase encrypts, what it deliberately leaves readable, and the one
+thing that cannot be undone.</p>
+
+<p class="lede">Grispy writes what you save to a file inside your browser's profile directory
+on your own computer. <strong>You choose whether that file is encrypted.</strong> Without a
+passphrase it is ordinary readable text; with one, the values and the names you gave your forms
+and presets are sealed behind a key only you can produce.</p>
+
+<h2>The offer, once</h2>
+
+<p>The first time you ever save anything, Grispy asks:</p>
+
+<table>
+  <tr><th class="nw">Protect your saved data?</th>
+    <td>Grispy stores what you save in a file on this computer. A passphrase encrypts it, and
+    you enter it once each time you start your browser. It cannot be recovered if you forget
+    it.</td></tr>
+  <tr><th class="nw">Set a passphrase</th>
+    <td>Type it twice — deliberately, because with no recovery path a typo would lock you out
+    of your own data permanently and without any signal.</td></tr>
+  <tr><th class="nw">Not now</th>
+    <td>Declines. <strong>Grispy will not ask again</strong>, and you can turn encryption on
+    later from Settings whenever you change your mind.</td></tr>
+</table>
+
+<p>Set one and Grispy confirms: <code>Saved data is now encrypted on this computer.</code></p>
+
+<h2>Unlocking, once per browser session</h2>
+
+<p>With encryption on, the first time Grispy needs your saved data after you start your browser
+it shows this instead of the usual screen:</p>
+
+<table>
+  <tr><th class="nw">This page has saved data</th>
+    <td>Enter your passphrase to use it. There is no way to recover it if it is forgotten.</td></tr>
+</table>
+
+<p>Enter it once and Grispy stays unlocked for the rest of that browser session. The passphrase
+never leaves your computer and is never sent anywhere. The key it produces is held in your
+browser's memory for that session alone — it is never written to disk — and it is gone once you
+close the browser.</p>
+
+<p>To drop it early without closing the browser, use <strong>Lock now</strong> on the
+Encryption tab of <a href="../settings/">Settings</a>.</p>
+
+<h2>Four limits, stated plainly</h2>
+
+<p>These are the same four the <a href="../../privacy/#storage">privacy policy</a> states, and
+they are worth reading before you rely on any of it.</p>
+
+<h3>1. If you decline, nothing is encrypted</h3>
+<p>Your saved data is stored as ordinary readable text, and anything that can read files on
+your computer — other software running under your user account, another person on the same
+unlocked machine, or someone who takes an unencrypted laptop — can read it. Your operating
+system's full-disk encryption and a locked screen are then what protect it.</p>
+
+<h3>2. Encryption conceals what you saved, not which sites you saved it on</h3>
+<p>Grispy has to know whether a page has anything saved for it without asking for your
+passphrase on every page you visit — otherwise you would be prompted constantly, nearly always
+on pages with nothing saved. The list of addresses it holds data for is therefore left
+readable. Someone with access to the files on your computer could see which sites you have
+saved forms for, and how many forms and presets you have, without being able to read any of
+the values inside them.</p>
+
+<h3>3. A forgotten passphrase cannot be recovered</h3>
+<div class="warn">
+  <p><strong>Not by you, and not by us — we never have it.</strong> Your options at that point
+  are an export you took while unlocked, or resetting Grispy, which deletes everything and
+  starts you over. Resetting works even when you cannot unlock.</p>
+  <p style="margin-bottom:0">This is the reason to take
+  <a href="../settings/">a readable export</a> and keep it somewhere you trust. A readable
+  export is the only way back into your data if you forget your passphrase — and it is
+  readable by anything, so where you put it matters.</p>
+</div>
+
+<h3>4. Uninstalling deletes it</h3>
+<p>Removing the extension removes its storage. Export your data first if you want to keep it.</p>
+
+<h2>Changing your mind later</h2>
+
+<p>Everything below is on the <strong>Encryption</strong> tab of
+<a href="../settings/">Settings</a>. The tab always opens with a status line saying where you
+stand:</p>
+
+<table>
+  <tr><th class="nw">Saved data is not encrypted.</th><td>No passphrase set.</td></tr>
+  <tr><th class="nw">Encrypted · unlocked for this browser session</th><td>Set, and in use now.</td></tr>
+  <tr><th class="nw">Encrypted · locked</th><td>Set, and not yet entered this session.</td></tr>
+</table>
+
+<table>
+  <tr><th class="nw">Set a passphrase</th>
+    <td>Turns encryption on, including after you declined the first offer. Everything saved is
+    encrypted with it.</td></tr>
+  <tr><th class="nw">Lock now</th>
+    <td>Forgets the key for this session. The next thing that needs your data asks for the
+    passphrase again.</td></tr>
+  <tr><th class="nw">Change passphrase</th>
+    <td>Asks for the one you use now, then the new one twice. Everything already saved stays
+    readable — Grispy rewrites one small value rather than re-encrypting every record, so this
+    is quick however much you have stored.</td></tr>
+  <tr><th class="nw">Turn off encryption</th>
+    <td>Asks to confirm, then asks for your passphrase. Everything saved goes back to being
+    readable by anything with access to this computer.</td></tr>
+</table>
+
+<h2>Choosing a passphrase</h2>
+
+<ul>
+  <li><strong>Long beats complicated.</strong> Several unrelated words you will remember beat a
+  short string of symbols you will not.</li>
+  <li><strong>Do not reuse one you need elsewhere.</strong> There is no recovery here, so the
+  failure mode is different from a website password you can reset.</li>
+  <li><strong>Write it down somewhere real,</strong> or keep it in your password manager. This
+  is not the advice given for online accounts, and the reason is the same one: nobody can reset
+  this for you.</li>
+  <li><strong>Take a readable export before you rely on it.</strong> See limit 3 above.</li>
+</ul>
+
+<h2>Every message, in one place</h2>
+
+<table>
+  <tr><th class="nw"><code>Protect your saved data?</code></th><td>The one-time offer, after your first save.</td></tr>
+  <tr><th class="nw"><code>Saved data is now encrypted on this computer.</code></th><td>A passphrase was set.</td></tr>
+  <tr><th class="nw"><code>This page has saved data</code></th><td>Locked. Enter your passphrase to continue.</td></tr>
+  <tr><th class="nw"><code>That passphrase did not work.</code></th><td>Wrong passphrase. Nothing changed.</td></tr>
+  <tr><th class="nw"><code>Those did not match. Nothing was changed.</code></th><td>The two boxes differed.</td></tr>
+  <tr><th class="nw"><code>Passphrase changed.</code></th><td>Done. Everything saved is still readable.</td></tr>
+  <tr><th class="nw"><code>Encryption is off. Saved data is stored in plain text again.</code></th><td>Encryption removed.</td></tr>
+  <tr><th class="nw"><code>Could not set the passphrase. Your data is unchanged.</code></th><td>The change did not complete. Nothing was altered.</td></tr>
+  <tr><th class="nw"><code>Unlock first — a locked store has nothing readable to export.</code></th><td>Export needs the store unlocked.</td></tr>
+</table>
+
+<footer>
+  <a href="../">Guide</a> ·
+  <a href="../../">Back to Grispy</a> ·
+  <a href="../../privacy/">Privacy</a> ·
+  <a href="../../support/">Support</a>
+</footer>
+
+</main>
+</body>
+</html>

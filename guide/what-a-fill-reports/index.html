@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grispy — What a fill reports</title>
+<meta name="description"
+  content="What Grispy tells you after it fills a form: the two sentences it shows, what each number counts, and the one thing it deliberately does not tell you.">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c30; --accent:#7aa2ff; --code:#1e1e22; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); margin:0;
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  .sub { color:var(--muted); margin:0 0 2rem; }
+  .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
+  .crumb { font-size:.9rem; color:var(--muted); margin:0 0 1.5rem; }
+  table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.94rem; }
+  th, td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  th.nw { white-space:nowrap; }
+  code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  .say { display:block; background:var(--code); border-radius:6px; padding:.7rem .9rem;
+    margin:1rem 0; font-size:.95rem; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  ul { padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="crumb"><a href="../">Guide</a> → What a fill reports</p>
+
+<h1>What a fill reports</h1>
+<p class="sub">The two sentences Grispy shows after filling a form, what each number counts,
+and the one thing it deliberately does not tell you.</p>
+
+<p class="lede">Press <strong>Fill</strong> and a short message appears at the bottom of the
+popup. It is not decoration. Grispy checks every field after writing to it, and that message
+is the result of the check — which is why the number it reports is sometimes lower than the
+number of fields you can see filled in on the page.</p>
+
+<h2>The message, in full</h2>
+
+<p>At most three things appear, and only the first is always there:</p>
+
+<code class="say">Filled 7 of 10 fields. 2 could not be verified. · 3 of 5 saved rows present</code>
+
+<table>
+  <tr>
+    <th class="nw">Filled 7 of 10 fields.</th>
+    <td><strong>Always shown.</strong> 10 is how many fields Grispy had a saved answer for on
+    this page. 7 is how many of those it wrote and then read back successfully.</td>
+  </tr>
+  <tr>
+    <th class="nw">2 could not be verified.</th>
+    <td><strong>Only when that number is above zero.</strong> Grispy wrote to the field, or
+    found the right answer already in it, but could not prove it afterwards.</td>
+  </tr>
+  <tr>
+    <th class="nw">· 3 of 5 saved rows present</th>
+    <td><strong>Only on a form with repeating rows, and only when some are missing.</strong>
+    Nothing to do with the field counts before it — see
+    <a href="../repeating-rows/">forms that repeat a set of fields</a>.</td>
+  </tr>
+</table>
+
+<h2>What "10" counts, and what it does not</h2>
+
+<p>The second number is <em>the answers this preset holds for this page</em> — not the fields
+on the page. Those are different, and the difference is usually the explanation for a count
+that looks wrong.</p>
+
+<ul>
+  <li><strong>A field you did not tick when you saved is not counted.</strong> Saving lets you
+  choose which fields to keep, so a form with 30 fields where you saved 10 reports out of 10,
+  not out of 30.</li>
+  <li><strong>Fields belonging to another step are not counted.</strong> On a form that spans
+  several pages, each page is filled from the answers saved for that page.</li>
+  <li><strong>Nothing is counted twice.</strong> On a page built from frames, every frame is
+  asked and the answers are merged, so a field living in a frame counts once.</li>
+</ul>
+
+<h2>The gap: what happened to the other 3</h2>
+
+<p>When the first number is lower than the second, one of three things happened to each
+missing field — and <strong>Grispy does not tell you which</strong>:</p>
+
+<table>
+  <tr><th class="nw">It was not there</th>
+    <td>Nothing on the page matched the saved field. Common when a form changes, when a
+    section is collapsed or hidden, or when a page renders fewer rows than you saved.</td></tr>
+  <tr><th class="nw">A control refused</th>
+    <td>The field is driven by a search-as-you-type dropdown or tag picker, and the widget
+    would not take the value. Grispy will not force a value past a control that owns it,
+    because a value written past the control is one the page never registers.</td></tr>
+  <tr><th class="nw">It did not hold</th>
+    <td>Grispy wrote the value, read the field back, and found something else there. Usually
+    the page rejected or rewrote it.</td></tr>
+</table>
+
+<p>This is a real limit and worth stating plainly: the three are counted the same way, so the
+message cannot distinguish "Grispy could not find this field" from "the page would not accept
+this value." What it will never do is count any of them as filled. <strong>A number in that
+first position has been read back from the control.</strong></p>
+
+<h3>What to do about it</h3>
+<p>Look at the form. The fields Grispy could not fill are the ones still empty or still wrong,
+and there is no substitute for checking — which you should do anyway before submitting
+anything that matters. If a form fails the same way every time,
+<a href="../../support/#bugs">it is worth reporting</a>; a form Grispy handles badly is the
+single most useful thing you can send.</p>
+
+<h2>"Could not be verified" is not "failed"</h2>
+
+<p>This one confuses people, so it is worth being exact. An unverified field is one where
+Grispy did the work and the check came back inconclusive — not one where the work failed.</p>
+
+<p>It happens with dropdowns and pickers that draw their own display over an ordinary form
+control. Grispy drives them the way you would, then reads what the widget is <em>showing</em>
+to confirm the value took. When a widget's display cannot be read at all, there is nothing to
+confirm against. The value is very probably in place; Grispy will not claim it is.</p>
+
+<p>The alternative would be to count it as filled and be wrong some of the time, which is the
+failure this whole check exists to prevent. A form that reports success and submits the old
+value is worse than one that says it is not sure.</p>
+
+<h2>When the count is zero, or there is no message at all</h2>
+
+<table>
+  <tr><th class="nw">No message appears</th>
+    <td>Grispy had nothing saved for this page, so nothing was attempted. Check that the
+    preset you meant is the one selected.</td></tr>
+  <tr><th class="nw">Filled 0 of N</th>
+    <td>Every field was attempted and none could be confirmed. Usually the page changed, or
+    this is a different step of the form from the one the answers were saved on.</td></tr>
+  <tr><th class="nw">Failed to fill form. Please try again.</th>
+    <td>Grispy could not reach the page at all — it navigated, or closed, mid-fill. Nothing was
+    written.</td></tr>
+</table>
+
+<h2>Known limits</h2>
+
+<ul>
+  <li><strong>The three failure kinds are not distinguished.</strong> As above. The count tells
+  you how many need attention, not which kind of attention.</li>
+  <li><strong>The check reads the control, not the page's mind.</strong> Grispy confirms the
+  field holds the value. It cannot know whether the page's own validation is satisfied, so a
+  form can fill correctly and still refuse to submit until you touch a field yourself.</li>
+  <li><strong>Some fields are invisible to Grispy entirely</strong> — rich-text editors, fields
+  built inside a web component's shadow DOM, and custom pickers with no ordinary form control
+  underneath. These were never saved, so they are not in either number.</li>
+  <li><strong>The message describes one fill.</strong> It is not stored, and pressing Fill again
+  produces a fresh one.</li>
+</ul>
+
+<h2>Every message, in one place</h2>
+
+<table>
+  <tr><th class="nw"><code>Filled 7 of 10 fields.</code></th>
+    <td>7 fields written and confirmed, out of 10 Grispy had answers for.</td></tr>
+  <tr><th class="nw"><code>2 could not be verified.</code></th>
+    <td>2 more were written, or already correct, but could not be confirmed.</td></tr>
+  <tr><th class="nw"><code>· 3 of 5 saved rows present</code></th>
+    <td>A repeating group is showing fewer rows than you saved.
+    <a href="../repeating-rows/">More</a>.</td></tr>
+  <tr><th class="nw"><code>Failed to fill form. Please try again.</code></th>
+    <td>Grispy lost the page mid-fill. Nothing was written.</td></tr>
+</table>
+
+<footer>
+  <a href="../">Guide</a> ·
+  <a href="../../">Back to Grispy</a> ·
+  <a href="../../privacy/">Privacy</a> ·
+  <a href="../../support/">Support</a>
+</footer>
+
+</main>
+</body>
+</html>

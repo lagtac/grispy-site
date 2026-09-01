@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grispy — Saving and filling a form</title>
+<meta name="description"
+  content="The core of Grispy: save a form under a name, keep several sets of answers against it, and fill it back in.">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c30; --accent:#7aa2ff; --code:#1e1e22; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); margin:0;
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  .sub { color:var(--muted); margin:0 0 2rem; }
+  .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
+  .crumb { font-size:.9rem; color:var(--muted); margin:0 0 1.5rem; }
+  table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.94rem; }
+  th, td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  th.nw { white-space:nowrap; }
+  code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  ol.walk { padding-left:1.3rem; }
+  ol.walk li { margin:.6rem 0; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  ul { padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="crumb"><a href="../">Guide</a> → Saving and filling a form</p>
+
+<h1>Saving and filling a form</h1>
+<p class="sub">Save a form under a name, keep as many sets of answers against it as you need,
+and bring any of them back in one click.</p>
+
+<p class="lede"><strong>Grispy starts empty, and that is the mechanic rather than a fault.</strong>
+It has nothing to offer on a form it has never seen. You teach it a form once — by filling
+that form in yourself and pressing Save — and from then on it can fill that form for you, with
+whichever set of answers you pick.</p>
+
+<h2>What the popup shows when you open it</h2>
+
+<p>Click Grispy's toolbar button on any page. It reads the page there and then — it is not
+watching in the background — and shows one of these:</p>
+
+<table>
+  <tr><th class="nw">Scanning page…</th>
+    <td>Reading the page. Normally a moment.</td></tr>
+  <tr><th class="nw">12 fields found</th>
+    <td>The ordinary case. Below this line is everything else on this page.</td></tr>
+  <tr><th class="nw">No form fields found on this page.</th>
+    <td>Grispy read the page and there was nothing it recognised as a form field.</td></tr>
+  <tr><th class="nw">Cannot access this page.</th>
+    <td>Some pages are closed to every extension — your browser's own settings pages, the
+    extension gallery, and files it has not been given access to.</td></tr>
+  <tr><th class="nw">This page has saved data</th>
+    <td>You have set a passphrase and this is the first time this browser session that Grispy
+    needs it. See <a href="../passphrase/">protecting your saved data</a>.</td></tr>
+</table>
+
+<h2>Saving a form for the first time</h2>
+
+<ol class="walk">
+  <li><strong>Fill the form in yourself,</strong> the way you normally would. Grispy saves what
+  is in the fields, so it has to be there first.</li>
+  <li><strong>Open Grispy and press Save.</strong> The popup switches to a list of every field
+  it found, each with the value currently in it.</li>
+  <li><strong>Choose what to keep.</strong> Everything starts ticked. Untick anything you do
+  not want stored — a one-off reference number, a comment, anything you would rather not have
+  written to disk at all. <em>Select all</em> at the top toggles the lot.</li>
+  <li><strong>Press Confirm Save.</strong> Grispy answers
+  <code>Saved 12 fields for this page.</code></li>
+</ol>
+
+<p>The first thing you ever save also brings up one question about
+<a href="../passphrase/">encrypting what Grispy stores</a>. It is asked once, you can decline,
+and it does not come back.</p>
+
+<h3>How values are shown in the list</h3>
+
+<table>
+  <tr><th class="nw">✓ Checked / ✗ Unchecked</th><td>A checkbox.</td></tr>
+  <tr><th class="nw">(none selected)</th><td>A set of options with nothing chosen.</td></tr>
+  <tr><th class="nw">(empty)</th><td>A field you left blank. It can still be saved — saving a
+  blank is how you make a later fill clear that field.</td></tr>
+  <tr><th class="nw">Surname (row 2)</th><td>A field inside a repeating set of rows. See
+  <a href="../repeating-rows/">forms that repeat a set of fields</a>.</td></tr>
+</table>
+
+<h2>Filling it back in</h2>
+
+<p>Go back to the same form later and open Grispy. Because it recognises the page, the popup
+now shows a <strong>Fill</strong> button and a line saying when this set of answers was
+saved:</p>
+
+<table>
+  <tr><th class="nw">Saved 14/08/2026</th><td>The date this preset was last written.</td></tr>
+  <tr><th class="nw">Saved 14/08/2026 · 3 fields changed</th>
+    <td>Three fields you saved are no longer on the page. Usually the form changed. The rest
+    still fill.</td></tr>
+  <tr><th class="nw">No fields match current page</th>
+    <td>Grispy has this page on file but recognises none of the saved fields on it. On a form
+    that spans several pages this usually means you are on a different step, and the status line
+    just above the buttons is where you say so.</td></tr>
+</table>
+
+<p>Press Fill and Grispy writes the answers back, then checks each one and tells you what it
+managed. That message is worth understanding —
+<a href="../what-a-fill-reports/">what a fill reports</a> explains it in full.</p>
+
+<h2>More than one set of answers for the same form</h2>
+
+<p>This is the part your browser's autofill cannot do. Autofill knows one identity: one name,
+one address, one card. Grispy holds as many sets against a single form as you need, each under
+a name you choose. They appear as a row of chips at the top of the popup.</p>
+
+<ol class="walk">
+  <li><strong>The first thing you save</strong> becomes a preset called <em>Default</em>.</li>
+  <li><strong>Press the <code>+</code> chip</strong> to start another. Grispy names it
+  <em>Save 2</em>, then <em>Save 3</em>, and so on.</li>
+  <li><strong>Fill the form in with the new answers</strong> and press Save. Those answers go
+  to the new preset; <em>Default</em> is untouched.</li>
+  <li><strong>Click any chip to switch.</strong> The chip you click becomes the active one, and
+  Fill uses it. Grispy remembers which one you had selected per form.</li>
+</ol>
+
+<h3>Renaming and deleting</h3>
+
+<p>Once you have <strong>two or more</strong> presets, a <code>⋯</code> button appears beside
+the saved date with <em>Rename</em> and <em>Delete</em> in it. It is hidden with only one
+preset because neither action does anything useful there, and <em>Delete</em> stays disabled on
+the last remaining preset rather than leaving a form with none.</p>
+
+<p>Deleting a preset is immediate and cannot be undone. To remove a whole form, or everything
+at once, use <a href="../settings/">the Settings page</a>.</p>
+
+<h2>What saving again does</h2>
+
+<p>Saving over a preset replaces what it holds <em>for the page you are on</em>. On a form
+spanning several pages, the other pages' answers are untouched — each page is stored
+separately under the same preset.</p>
+
+<p>Two saves are worth knowing about before you make them:</p>
+
+<ul>
+  <li><strong>A save with fields unticked drops them.</strong> If a field was saved before and
+  you untick it now, its stored value goes.</li>
+  <li><strong>A save on a page showing fewer repeating rows than you saved</strong> would
+  discard the rows that are not on screen, so Grispy asks first rather than doing it.
+  <a href="../repeating-rows/">That question is explained here</a>.</li>
+</ul>
+
+<h2>Known limits</h2>
+
+<ul>
+  <li><strong>It acts only when you click it.</strong> Grispy never fills on page load. That is
+  the same choice that lets it ask for no standing access to any website — it can read a page
+  only after you invoke it, on the tab you invoked it on.</li>
+  <li><strong>Some fields it cannot see.</strong> Rich-text editors, fields built inside a web
+  component's shadow DOM, and custom pickers with no ordinary form control underneath are
+  invisible to it. They cannot be saved and cannot be filled.</li>
+  <li><strong>A form is identified by its address.</strong> Grispy keys what it saves to the
+  site and path of the page, ignoring anything after the <code>?</code>. Two genuinely
+  different forms at one address need
+  the step controls in the popup to tell them apart.</li>
+  <li><strong>Nothing syncs.</strong> What you save stays in this browser on this computer. To
+  move it, <a href="../settings/">export and import a file</a>.</li>
+</ul>
+
+<h2>Every message, in one place</h2>
+
+<table>
+  <tr><th class="nw"><code>12 fields found</code></th><td>What the scan saw on this page.</td></tr>
+  <tr><th class="nw"><code>Saved 12 fields for this page.</code></th><td>The save succeeded.</td></tr>
+  <tr><th class="nw"><code>Saved 14/08/2026</code></th><td>When the active preset was last written.</td></tr>
+  <tr><th class="nw"><code>· 3 fields changed</code></th><td>Saved fields no longer on the page.</td></tr>
+  <tr><th class="nw"><code>No fields match current page</code></th><td>Known page, none of its saved fields present.</td></tr>
+  <tr><th class="nw"><code>No form fields found on this page.</code></th><td>Nothing recognisable to save.</td></tr>
+  <tr><th class="nw"><code>Cannot access this page.</code></th><td>A page closed to extensions.</td></tr>
+  <tr><th class="nw"><code>Failed to save. Please try again.</code></th><td>The write did not complete. Nothing was changed.</td></tr>
+</table>
+
+<footer>
+  <a href="../">Guide</a> ·
+  <a href="../../">Back to Grispy</a> ·
+  <a href="../../privacy/">Privacy</a> ·
+  <a href="../../support/">Support</a>
+</footer>
+
+</main>
+</body>
+</html>

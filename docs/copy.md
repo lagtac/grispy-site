@@ -1,7 +1,15 @@
 # Marketing copy
 
 The words Grispy is described in, kept in one place so the landing page, the two
-store listings and the Chrome Web Store's data-usage form cannot drift apart.
+store listings, the Chrome Web Store's data-usage form and the pages under
+`/guide/` cannot drift apart.
+
+**The guide joined that list on 2026-09-01**, when the first five pages shipped.
+They are not marketing copy and their wording is not settled here — but they make
+checkable claims about extension behaviour at far higher density than the landing
+page does, which is exactly what [§6](#6-claims-check) exists to catch. The guide
+rows in that table are the load-bearing ones: the messages a page quotes verbatim,
+and the four claims a user could be harmed by relying on.
 
 Nothing here is served. This is a source document: copy is written and settled
 here, then poured into `index.html` and into each store's submission form when
@@ -264,6 +272,22 @@ table before each submission; there is no CI enforcing any of it.
 | "tells you what it could not confirm" | fill reports an `unverified` outcome and the toast carries the count | 2026-09-01 | **Ungated 2026-09-01.** The framed-page miscount that held this back is fixed — extension roadmap row 5d, shipped 2026-08-29 |
 | "exports and imports everything" | export and import both shipped | 2026-08-28 | Whole-store file replaces; single-form file adds |
 | Cannot see contenteditable, shadow DOM, custom pickers | asserted deliberately as characterization tests in the extension's smoke suite | 2026-08-29 | These are tests that assert the *absence* of support, so they will fail loudly if it ever arrives |
+
+**Guide pages** (`/guide/`), added 2026-09-01. Each page ends with an "Every
+message, in one place" table quoting the extension's own strings; a string that
+changes falsifies the row that quotes it.
+
+| Claim as written | Verified against | Checked | Notes |
+|---|---|---|---|
+| `Filled 7 of 10 fields.` and `2 could not be verified.` are the whole of what a fill reports | `fillForm` in `src/popup/popup.js`; the second sentence is appended only when the count is above zero | 2026-09-01 | The guide states the limit these two sentences carry: `not-found`, `refused` and `unchanged` all fold into the denominator, so a user cannot tell which happened |
+| The five outcome constants are never shown to a user | `src/shared/outcomes.js` defines five; the popup surfaces only the FILLED and UNVERIFIED counts | 2026-09-01 | **Do not write the constant names into a page.** ROADMAP row 9b was first drafted from this file rather than from the screen and got it wrong twice |
+| A first save creates a preset named "Default"; `+` creates "Save 2", "Save 3" | `confirmSave` (`presetId ?? "default"`, name `"Default"`) and `nextPresetName` in `src/popup/popup.js` | 2026-09-01 | |
+| The ⋯ menu appears only with two or more presets, and Delete is disabled on the last one | `overflowIsUseful` and `syncOverflowMenu` in `src/popup/popup.js` | 2026-09-01 | |
+| The row question preselects the non-destructive answer | `renderRowChoices` sets `keep` checked | 2026-09-01 | The guide's advice to choose *Save just these* after a mid-list deletion follows from the position-matching limit (extension ROADMAP row 8c), not from the code preselecting it |
+| Grispy does not add repeat rows for you | extension ROADMAP row 8d, open | 2026-09-01 | Stated in the guide as a limit with a workaround, not as a defect |
+| Rows built from checkbox or radio groups are not recognised as a group | extension ROADMAP row 8e, characterized in the smoke suite | 2026-09-01 | |
+| Export needs the store unlocked; Clear everything works while locked | `render()` disables export while locked; the Danger zone button is deliberately not disabled | 2026-09-01 | The guide leans on the second: reset is the only way back from a forgotten passphrase |
+| The four encryption limits | lifted verbatim from policy §2 rather than reworded, per rule 1 of this document | 2026-09-01 | If §2 changes, the passphrase page changes with it |
 
 ---
 

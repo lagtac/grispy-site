@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grispy — Forms that repeat a set of fields</title>
+<meta name="description"
+  content="Add-a-participant and add-a-line forms: how Grispy saves repeating rows, the question it asks before dropping any, and where it still needs help.">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5;
+    --warn:#8a5a00; --warnbg:#fff8e6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c30; --accent:#7aa2ff; --code:#1e1e22;
+      --warn:#e0b050; --warnbg:#2a2312; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); margin:0;
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  .sub { color:var(--muted); margin:0 0 2rem; }
+  .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
+  .warn { background:var(--warnbg); border-left:3px solid var(--warn); color:var(--fg);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:1.5rem 0; }
+  .crumb { font-size:.9rem; color:var(--muted); margin:0 0 1.5rem; }
+  table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.94rem; }
+  th, td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  th.nw { white-space:nowrap; }
+  code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  .say { display:block; background:var(--code); border-radius:6px; padding:.7rem .9rem;
+    margin:1rem 0; font-size:.95rem; }
+  ol.walk { padding-left:1.3rem; }
+  ol.walk li { margin:.6rem 0; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  ul { padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="crumb"><a href="../">Guide</a> → Forms that repeat a set of fields</p>
+
+<h1>Forms that repeat a set of fields</h1>
+<p class="sub">Add-a-participant, add-a-line, add-another-dependant. How Grispy saves rows, and
+the one question it asks before it would drop any.</p>
+
+<p class="lede">Some forms let you add the same set of fields over and over — a name and date of
+birth per traveller, a description and amount per line. Grispy recognises those as
+<strong>rows</strong> and saves each one separately, so a four-participant booking comes back as
+four participants rather than one.</p>
+
+<h2>How rows appear</h2>
+
+<p>In the save list and the preset preview, a field inside a repeating group carries its row
+number:</p>
+
+<code class="say">Surname (row 1) · Surname (row 2) · Surname (row 3)</code>
+
+<p>Rows are numbered from the top of the page as it stands when you save. A field that is not
+inside a repeating group has no row number at all.</p>
+
+<h2>The problem this creates, and the question that solves it</h2>
+
+<p>Forms like this usually start with <em>one</em> row and grow as you press "Add another". So
+the page you return to is very often showing fewer rows than you saved — and a save writes what
+is on the page.</p>
+
+<p>Left alone, that would silently destroy the rows you could not see. Grispy will not do that.
+When a save would drop rows, it stops and asks:</p>
+
+<table>
+  <tr><th class="nw">This page shows 2 of 5 saved rows</th>
+    <td>The headline. What the page is showing, against what is stored.</td></tr>
+  <tr><th class="nw">Saving just these 2 discards the other 3. There is no undo.</th>
+    <td>What the destructive answer costs.</td></tr>
+  <tr><th class="nw">Keep all 5</th>
+    <td><strong>Preselected.</strong> The rows on screen are updated, and the ones that are not
+    rendered survive untouched.</td></tr>
+  <tr><th class="nw">Save just these 2</th>
+    <td>A deliberate replacement: the stored rows become exactly what is on screen.</td></tr>
+</table>
+
+<p>When the page is showing <em>no</em> rows of a group you saved, the wording changes to match
+— <code>This page shows none of the 5 saved rows</code>, with <em>Save without them</em> as the
+destructive answer.</p>
+
+<p>The question appears only when there is something to lose. An ordinary save on a page showing
+everything you saved never sees it.</p>
+
+<h2>Filling a form with rows</h2>
+
+<p>Press Fill and the answers go into the rows the page is currently rendering. When some rows
+are missing, the message says so:</p>
+
+<code class="say">Filled 8 of 20 fields. · 2 of 5 saved rows present</code>
+
+<p>The row clause comes after a middot and is separate from the field counts — it is not a
+third sentence, and it is not derived from the fields. It counts rows; the numbers before it
+count fields. <a href="../what-a-fill-reports/">More on the field counts.</a></p>
+
+<div class="warn">
+  <p style="margin:0"><strong>Grispy does not press "Add another" for you.</strong> If the page
+  is showing two rows and you saved five, three rows have nowhere to go — they are reported as
+  not filled, and you add the rows by hand and fill again. Adding rows for you needs Grispy to
+  find each form's own Add button, which has no reliable name to find it by; it is not built.</p>
+</div>
+
+<h3>The routine that works</h3>
+
+<ol class="walk">
+  <li><strong>Press "Add another" until the page shows as many rows as you saved.</strong> The
+  popup tells you the number: <em>2 of 5 saved rows present</em>.</li>
+  <li><strong>Then press Fill.</strong> With the rows in place, every one of them fills.</li>
+  <li><strong>If you fill first,</strong> nothing is lost — add the rows and fill again. The
+  second fill overwrites the first harmlessly.</li>
+</ol>
+
+<h2>Known limits</h2>
+
+<p>Three, and the first is the one that can actually cost you something.</p>
+
+<h3>Rows are matched by position, not identity</h3>
+<div class="warn">
+  <p style="margin:0">Grispy knows a row by <em>where it sits</em>, so it cannot tell a page
+  showing your 3rd and 4th saved rows from one showing your 1st and 2nd. <strong>If you delete
+  a row from the middle of a list and then save with "Keep all", the rows on screen can be
+  merged over the wrong stored ones.</strong> When you have deleted a row, the safe answer is
+  the other one: get every row you want on screen, then choose <em>Save just these</em>, which
+  replaces the stored set outright.</p>
+</div>
+
+<h3>Rows built from checkboxes or radio buttons are not recognised</h3>
+<p>Where each repeating row is a set of checkboxes or radio buttons rather than text fields,
+Grispy does not see a repeating group at all. Those fields are saved and filled as ordinary
+loose fields, which on a multi-row form will not do what you want.</p>
+
+<h3>A row you cannot see is a row Grispy will not guess at</h3>
+<p>Everything above follows one rule: Grispy acts on what the page is showing. It does not
+invent rows, and it will not quietly drop the ones it cannot see.</p>
+
+<h2>Every message, in one place</h2>
+
+<table>
+  <tr><th class="nw"><code>Surname (row 2)</code></th><td>A field in the second row of a repeating group.</td></tr>
+  <tr><th class="nw"><code>This page shows 2 of 5 saved rows</code></th><td>The save question's headline.</td></tr>
+  <tr><th class="nw"><code>This page shows none of the 5 saved rows</code></th><td>The same, with nothing rendered.</td></tr>
+  <tr><th class="nw"><code>Saving just these 2 discards the other 3. There is no undo.</code></th><td>What the destructive answer costs.</td></tr>
+  <tr><th class="nw"><code>Keep all 5</code></th><td>Preselected. Unrendered rows survive.</td></tr>
+  <tr><th class="nw"><code>Save just these 2</code> / <code>Save without them</code></th><td>Replace the stored rows with what is on screen.</td></tr>
+  <tr><th class="nw"><code>· 2 of 5 saved rows present</code></th><td>On the fill message. Rows, not fields.</td></tr>
+</table>
+
+<footer>
+  <a href="../">Guide</a> ·
+  <a href="../../">Back to Grispy</a> ·
+  <a href="../../privacy/">Privacy</a> ·
+  <a href="../../support/">Support</a>
+</footer>
+
+</main>
+</body>
+</html>

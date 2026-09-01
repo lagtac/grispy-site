@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grispy — Guide</title>
+<meta name="description"
+  content="How to use Grispy: saving and filling a form, what a fill reports, protecting your saved data, the Settings page, and forms with repeating rows.">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c30; --accent:#7aa2ff; --code:#1e1e22; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); margin:0;
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  .sub { color:var(--muted); margin:0 0 2rem; }
+  .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
+  .toc { list-style:none; padding:0; margin:1.5rem 0; }
+  .toc li { margin:0; border-bottom:1px solid var(--line); }
+  .toc li:last-child { border-bottom:none; }
+  .toc a { display:block; padding:.9rem .2rem .4rem; font-weight:600; font-size:1.02rem;
+    text-decoration:none; }
+  .toc a:hover { text-decoration:underline; }
+  .toc p { margin:0 .2rem .9rem; color:var(--muted); font-size:.94rem; }
+  .soon { padding:.9rem .2rem; color:var(--muted); font-size:.94rem; }
+  .soon strong { color:var(--fg); }
+  code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Grispy — Guide</h1>
+<p class="sub">How to use it, what each message means, and what it cannot do.</p>
+
+<p class="lede"><strong>New to Grispy? Start with
+<a href="saving-and-filling/">saving and filling a form</a>.</strong> Everything else here
+assumes you have saved one form at least once, because that is the moment Grispy stops being
+empty and starts being useful.</p>
+
+<h2>The pages</h2>
+
+<ul class="toc">
+  <li>
+    <a href="saving-and-filling/">Saving and filling a form</a>
+    <p>The core of it. Save a form under a name, keep as many sets of answers against it as you
+    need, switch between them, and fill any of them back in. Also: what each screen of the popup
+    means, and how values appear in the save list.</p>
+  </li>
+  <li>
+    <a href="what-a-fill-reports/">What a fill reports</a>
+    <p>Grispy checks every field after writing to it, which is why the number it reports is
+    sometimes lower than what you see on the page. What <code>Filled 7 of 10 fields.</code>
+    counts, what "could not be verified" means, and the one thing the message deliberately does
+    not tell you.</p>
+  </li>
+  <li>
+    <a href="passphrase/">Protecting your saved data</a>
+    <p>The passphrase: what it encrypts, what it deliberately leaves readable, and why a
+    forgotten one cannot be recovered by anyone, us included. Read this before you rely on
+    it.</p>
+  </li>
+  <li>
+    <a href="settings/">The Settings page</a>
+    <p>Everything Grispy has saved, in one list. Deleting any part of it, exporting a backup,
+    restoring one, and the reset that works even when you cannot unlock.</p>
+  </li>
+  <li>
+    <a href="repeating-rows/">Forms that repeat a set of fields</a>
+    <p>Add-a-participant and add-a-line forms. How rows are saved, the question Grispy asks
+    before it would drop any, and the routine that fills them all.</p>
+  </li>
+</ul>
+
+<p class="soon"><strong>Forms that span several pages</strong> — multi-step wizards, and the
+status line that says which step Grispy thinks you are on — is written but not yet published
+here. It is the next page to go up.</p>
+
+<h2>If something is wrong</h2>
+
+<p>Every page here ends with a list of the messages it covers and the limits it knows about,
+so the fastest way to explain a surprise is usually to find the message you saw. If none of
+them fit, or a form is handled badly, <a href="../support/">the support page</a> says what to
+send — a form Grispy cannot fill is the single most useful thing you can report.</p>
+
+<footer>
+  <a href="../">Back to Grispy</a> ·
+  <a href="../privacy/">Privacy</a> ·
+  <a href="../support/">Support</a>
+</footer>
+
+</main>
+</body>
+</html>
