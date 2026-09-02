@@ -32,9 +32,13 @@ markup, no layout, no decisions about what a page looks like.
    listing takes no relative path, so every link below is the full public URL.
    `index.html` is served from the site root and links to `privacy/` relatively
    today — shorten on paste rather than copying the absolute form into it.
-   The public URL is derived from the repository (`lagtac/grispy-site` on GitHub
-   Pages) and **has not been confirmed against the live Pages settings**; a
-   custom domain would change every one of them.
+   **The base URL is confirmed: `https://lagtac.github.io/grispy-site/`.**
+   Checked on 2026-09-02 by fetching it — it served this repository's
+   `index.html`, and `/privacy/`, `/support/` and `/guide/` each answered 200.
+   That confirms the URL a store listing would be given actually resolves,
+   which is what the listing needs; it is not a reading of the Pages settings
+   panel, so a custom domain configured later would still change every link
+   below, and this note with them.
 
 ---
 
