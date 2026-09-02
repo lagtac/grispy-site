@@ -36,6 +36,53 @@ themselves make.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
 
+### 2026-09-02 — The policy covers global presets (Roadmap #2b)
+
+The extension's spec for global presets lists exactly one blocking dependency,
+and it is this page: the policy has to change before any of that code is
+written. The reason is that a global preset is a different kind of record from
+anything Grispy has stored before. A saved form holds **your**
+answers to a form. A global preset holds a named set of facts about a subject who
+may not be you — a client, a colleague, an applicant, a customer — and the people
+whose names, tax numbers and passport numbers end up in one never installed
+anything and cannot be asked here.
+
+Four edits, none of which narrows a protection:
+
+- **§1 gains global presets as a second thing Grispy stores**, stated separately
+  from saved form values rather than folded into them, and says outright that a
+  preset may hold someone else's details. The point of the feature is that it
+  usually will.
+- **§2's list of limits goes from four to five.** The roster first went into the
+  existing "conceals what you saved, not which sites" bullet and read as two
+  limits stitched together, because they are two: which sites you saved on is a
+  readable list by design, whereas a global preset has no readable list at all —
+  its *name* sits inside the encrypted record with its contents, deliberately,
+  since a plaintext index of other people's names is the thing most worth
+  protecting. All a reader of your files can work out is how many you have. It is
+  now its own bullet, and the declining-the-passphrase limit names global presets
+  too, since that is the choice that leaves identity records readable on disk.
+- **§6 says an export of everything carries the roster.** The support page already
+  asks people not to attach exports to bug reports; that request stops being
+  hygiene the moment the file can contain a third party's passport number, so the
+  policy now says so and links to it.
+- **§7 gains the paragraph this feature really needs.** Our own GDPR position is
+  unchanged and unchangeable — the data never reaches us. The user's position is
+  not: someone holding clients' personal data in Grispy may carry a controller's
+  responsibilities for it, and we cannot carry them on their behalf. The paragraph
+  says that, and declines to give legal advice about it.
+
+**§9's release-note gate does not fire.** It promises an announcement before any
+change that *narrows* the protections stated here. Nothing narrows:
+`globalpreset:` joins `form:` and `formpreset:` in the extension's encrypted
+prefixes on the same terms. What changed is that a new category of data is
+described, which that gate does not cover.
+
+**This is committed, not published.** Pushing is what publishes, and the page now
+describes a feature nobody can use yet. The push belongs beside the extension
+shipping ROADMAP row 16 — and the effective date, which this repository treats as
+the policy's version number, wants re-dating to that day rather than to this one.
+
 ### 2026-09-02 — The landing page says what the settled copy says (Roadmap #1b)
 
 `docs/copy.md` §3 has held the landing page's replacement wording since

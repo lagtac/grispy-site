@@ -34,7 +34,7 @@
 <main>
 
 <h1>Grispy — Privacy Policy</h1>
-<p class="sub">Effective 28 August 2026. Applies to the Grispy browser extension for Chrome and Firefox.</p>
+<p class="sub">Effective 2 September 2026. Applies to the Grispy browser extension for Chrome and Firefox.</p>
 
 <p class="lede"><strong>Grispy sends nothing anywhere.</strong> It has no server, no account,
 no analytics and no tracking. Everything you save stays in your own browser, on your own
@@ -52,6 +52,21 @@ is nothing for us to sell, lose or hand over.</p>
 information — your name, address, telephone number, or anything else you typed. Grispy does
 not inspect it, categorise it, or treat one kind differently from another.</p>
 
+<p>Grispy also stores <strong>global presets</strong>: named sets of facts you reuse across
+different forms, rather than answers saved against one particular form. A global preset holds
+whatever you put in it, under a name you choose — typically things like a name, an address, a
+telephone number, a tax or social-security number, or a passport number.</p>
+
+<p><strong>A global preset may hold someone else's details rather than your own.</strong> That
+is what the feature is for: if you fill forms on behalf of clients, colleagues, applicants or
+customers, you can keep one preset for each of them and pick between them. Grispy does not
+inspect what a preset holds and has no idea whose details are in it.</p>
+
+<p>Where that data goes does not change — it stays on your device and is never transmitted, as
+sections 2 and 3 describe. What does change is who is holding it. If you store other people's
+personal information in Grispy, you are the one holding it, and the responsibility that comes
+with that is yours rather than ours. Section 7 sets out what that means.</p>
+
 <h2 id="storage">2. Where it is stored, and who can reach it</h2>
 <p>All of it is written to your browser's local extension storage
 (<code>chrome.storage.local</code>), which is a file inside your browser profile directory on
@@ -68,13 +83,15 @@ your computer and is never sent anywhere. The key it produces is held in your br
 for that session alone — it is never written to disk — and it is gone once you close the
 browser.</p>
 
-<p><strong>Four limits you should know about, stated plainly:</strong></p>
+<p><strong>Five limits you should know about, stated plainly:</strong></p>
 <ul>
   <li><strong>If you decline the passphrase, nothing is encrypted.</strong> Your saved data is
   stored as ordinary readable text, and anything that can read files on your computer — other
   software running under your user account, another person on the same unlocked machine, or
   someone who takes an unencrypted laptop — can read it. Your operating system's full-disk
-  encryption and a locked screen are then what protect it.</li>
+  encryption and a locked screen are then what protect it. This covers global presets as well
+  as saved forms, which is worth weighing before you decline if yours will hold other people's
+  identity details.</li>
   <li><strong>Encryption conceals what you saved, not which sites you saved it on.</strong>
   Grispy has to know whether a page has anything saved for it without asking for your
   passphrase on every page you visit — otherwise you would be prompted constantly, nearly
@@ -82,6 +99,13 @@ browser.</p>
   left readable. Someone with access to the files on your computer could see which sites you
   have saved forms for, and how many forms and presets you have, without being able to read
   any of the values inside them.</li>
+  <li><strong>A global preset's name is sealed; the fact that you have one is not.</strong>
+  Global presets are encrypted like everything else you save, and they go one step further:
+  there is no readable list of them anywhere, deliberately, because a plaintext index of other
+  people's names is exactly the thing worth protecting. The name you gave a preset sits inside
+  the encrypted record along with its contents. What someone with access to your files can
+  still work out is how many global presets you have — not what any of them is called, and not
+  whose details are in it.</li>
   <li><strong>A forgotten passphrase cannot be recovered.</strong> Not by you, and not by us —
   we never have it. Your options at that point are an export you took while unlocked, or
   resetting Grispy, which deletes everything and starts you over. Resetting works even when
@@ -131,6 +155,10 @@ delete it — one preset, one form, or everything at once. When encryption is on
 export format: encrypted with your passphrase, or readable. A readable export is the only copy
 that survives a forgotten passphrase, so it is worth keeping one somewhere safe — and worth
 remembering that it is readable by anything that can open the file.</p>
+<p>An export of everything includes your global presets, so if any of those hold other
+people's details, the file holds them too. Keep such a file where you would keep those details
+in any other form, and do not attach one to a bug report or email it to us. The
+<a href="../support/">support page</a> asks the same thing; this is why it asks.</p>
 <p>Deletion is immediate and final; there is no copy anywhere else to delete.</p>
 <p>Because we never receive your data, we cannot access it, restore it, or produce it on
 request. If you want a copy, use the export button.</p>
@@ -139,6 +167,13 @@ request. If you want a copy, use the export button.</p>
 <p>Under the GDPR, we are neither a controller nor a processor of the form data you save in
 Grispy, because that data is never transmitted to us and we never come into possession of it.
 It stays under your control on your own device throughout.</p>
+<p>Your own position may not be the same as ours. If you use Grispy to hold other people's
+personal data — a client's, a colleague's, a customer's — then in relation to that data you
+are the one processing it, and where the GDPR applies to what you are doing, a controller's
+responsibilities are yours. We cannot carry them on your behalf, because the data never
+reaches us and we have no way to see, correct or delete it. Whether that applies to you is a
+question about your own activity rather than about Grispy, and it is worth putting to whoever
+advises you on such things.</p>
 <p>This policy covers the extension. If you later buy a licence, the payment is handled by a
 separate payment provider under its own privacy policy, and only your purchase details — not
 anything Grispy has stored — are involved. That will be named here when it applies.</p>
