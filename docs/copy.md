@@ -89,6 +89,9 @@ Two consequences for the copy:
 Replaces the copy in `index.html`. Section headings are content, not layout
 instructions.
 
+**Poured into `index.html` on 2026-09-02** (ROADMAP row 1b). The live page and
+this section now say the same thing; an edit to one is owed to the other.
+
 ### Headline
 
 > **Grispy**
@@ -300,19 +303,31 @@ changes falsifies the row that quotes it.
 Lines currently published that this positioning does not support. This site has
 withdrawn claims before rather than let them stand.
 
-1. **`index.html`** — *"Grispy follows a form across every page it spans and
-   refills the whole thing."* The first half holds. "The whole thing" overclaims:
-   a wizard that hides its earlier steps is not followed, and some field types are
-   not reached at all. Amend to the §3 wording, which keeps the capability and
-   states its edge.
-2. **`index.html`** — the no-network claim sits in its own box below the fold,
-   under a heading. It is the strongest thing on the page and the only claim a
-   reader can check *before* installing. Move it into the opening.
-3. **`index.html`** — no mention of encryption at rest, which shipped on
-   2026-08-28. A reader comparing the landing page to the policy finds the policy
-   describing a protection the landing page does not know about.
+**Corrections 1 to 3 were made on 2026-09-02**, when `index.html` was rewritten
+against [§3](#3-landing-page). They are struck rather than deleted, so what was
+published and why it changed stays on the record.
+
+1. ~~**`index.html`** — *"Grispy follows a form across every page it spans and
+   refills the whole thing."*~~ **Cleared 2026-09-02.** The first half held;
+   "the whole thing" overclaimed, because a wizard that hides its earlier steps
+   is not followed and some field types are not reached at all. The capability
+   now sits in *What it does that autofill does not* with its edge stated, and
+   the hidden-step wizard is named outright in *What it cannot do yet*.
+2. ~~**`index.html`** — the no-network claim sits in its own box below the
+   fold, under a heading.~~ **Cleared 2026-09-02.** It is the strongest thing
+   on the page and the only claim a reader can check *before* installing. It is
+   now the second paragraph of the opening, above the first heading.
+3. ~~**`index.html`** — no mention of encryption at rest, which shipped on
+   2026-08-28.~~ **Cleared 2026-09-02.** *Your data stays yours* carries the §3
+   wording verbatim — "can be encrypted with a passphrase only you know",
+   never "is encrypted", because the user is asked once and may decline.
 4. **`support/index.html`** — "free to everyone, with no paid tier." Blocked on
    [§1](#1-one-open-decision-price); no edit until the question is settled.
+
+   The landing page's own "Grispy is free and is written by one person" was
+   **left exactly as it stands**, on the same grounds: it is not on this list,
+   and the price question governs whether it moves. The rewrite added no second
+   instance of the word.
 
 ---
 
