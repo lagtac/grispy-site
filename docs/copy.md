@@ -359,17 +359,18 @@ published and why it changed stays on the record.
    2026-08-28.~~ **Cleared 2026-09-02.** *Your data stays yours* carries the §3
    wording verbatim — "can be encrypted with a passphrase only you know",
    never "is encrypted", because the user is asked once and may decline.
-4. **`support/index.html`** — "free to everyone, with no paid tier." **Unblocked
-   2026-09-03**: [§1](#1-price-settled-2026-09-03) settles the price, so the
-   sentence is now known to be wrong rather than merely unsupported. The edit is
-   deliberately *not* made yet — it and the landing page's own unqualified
-   "free" are live pages, and correcting them announces paid tiers the extension
-   does not have. Both travel with the release that ships them (roadmap row 6f).
+4. ~~**`support/index.html`** — "free to everyone, with no paid tier."~~
+   **Cleared 2026-09-03.** [§1](#1-price-settled-2026-09-03) settled the price,
+   which made the sentence wrong rather than merely unsupported. Both it and the
+   landing page's unqualified "free" now read *free for personal use*, and the
+   correction was made in the same push as `/terms/` — publishing a terms page
+   requiring a licence for commercial work, beside a support page promising there
+   is no paid tier, would have left the site contradicting itself.
 
    The landing page's own "Grispy is free and is written by one person" was
-   **left exactly as it stands**, and stays that way for now on the narrower
-   ground above: the price is settled, but the pages that state it wait for the
-   feature. The rewrite added no second instance of the word.
+   corrected in the same pass, to the same wording, for the same reason. Neither
+   page carries a price — only the qualification. Prices appear when row 6e's
+   page is written and the gates §1.3 names are closed.
 
 ---
 

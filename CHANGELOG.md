@@ -57,10 +57,11 @@ retract:
 - **Never describe how the licence is checked.** The terms say what a licence
   covers; the mechanism is not a selling point and not the reader's problem.
 
-**`/terms/` is new, and is not pushed.** It follows the same reasoning row 2b
-recorded for the policy's global-presets edit: the page describes something the
-extension cannot do yet, so publishing it would advertise tiers that do not
-exist. It goes live beside the release that ships them.
+**`/terms/` is live, and it carries no price.** It was first written to be held
+back on row 2b's reasoning — a page describing what the extension cannot do yet.
+That reasoning was overridden deliberately: the page states what a licence
+*covers*, not what it costs, and no price appears on this site until row 6e's
+page is written and §1.3's gates are closed. It is linked from every footer.
 
 What the page says, beyond the tier table: free is the whole product rather than
 a trial of it; a licence is granted to people rather than to computers; paying
@@ -76,9 +77,11 @@ settled they no longer do. Terms are written (6b). A right-of-withdrawal and
 refund policy is undecided and is a checkout-flow question as much as a page
 (6c). Trader identification is blocked on the sole proprietorship existing, since
 there is nothing yet to identify (6d). A page carrying the price is unwritten
-(6e). And the two live pages that still say "free" without qualification get
-their own row, so the correction travels with the release rather than ahead of it
-(6f).
+(6e). And the two live pages that said "free" without qualification are
+corrected in this same change rather than a later one (6f) — publishing a terms
+page that requires a licence for commercial work, beside a support page promising
+there is no paid tier, would have left the site contradicting itself. Both now
+read *free for personal use*; neither carries a price.
 
 ### 2026-09-02 — The policy covers global presets (Roadmap #2b)
 
