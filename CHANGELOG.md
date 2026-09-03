@@ -36,6 +36,26 @@ themselves make.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
 
+### 2026-09-03 — The prices come back out of `docs/copy.md`
+
+The entry below settled three tiers and wrote their amounts into `docs/copy.md`
+§1.1. That was wrong, and it was wrong in a way the same section forbids: this
+repository is public and `docs/` is served — `/docs/copy.md` returns 200 — so a
+price written in this file is a published price. It was reachable for about an
+hour, unlinked from any page and with no way to buy anything.
+
+**A price is an offer, and an offer made into the EU carries obligations that do
+not exist yet**: a fourteen-day withdrawal right with its digital-content
+exception (row 6c, undecided) and an identified trader with a tax registration
+(row 6d, blocked on the sole proprietorship existing). Publishing amounts before
+those is the precise thing row 6b was written to prevent.
+
+§1.1 keeps the tier structure and the sentences the pages use, and loses the
+amounts; they live in the extension repository's private revenue model until the
+gates close. §1.2's rule is rewritten to name this file rather than only "a
+page", because "not on a page" was never the boundary — the boundary is the
+repository being public.
+
 ### 2026-09-03 — Licence terms, and the price question closed (Roadmap #6b)
 
 `docs/copy.md` §1 had held the price open since the file was written, under the

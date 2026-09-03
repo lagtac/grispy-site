@@ -56,11 +56,18 @@ than the decision it serves — a reader needs the terms, not the reasoning.
 
 ### 1.1 The three tiers, in the words the pages use
 
-| Tier | Price | The one sentence |
-|---|---|---|
-| **Free** | €0 | Grispy is free for personal use — every form, every preset, no limit and no account. |
-| **Pro** | €9 a month, or €90 a year | For one person using Grispy as part of their paid work. |
-| **Team** | €10 per person a month, or €100 a year, minimum three people | For a business, billed for the people who use it. |
+| Tier | The one sentence |
+|---|---|
+| **Free** | Grispy is free for personal use — every form, every preset, no limit and no account. |
+| **Pro** | For one person using Grispy as part of their paid work. |
+| **Team** | For a business, billed for the people who use it. |
+
+**The figures are deliberately not written here.** This repository is public and
+this file is served — `/docs/copy.md` returns 200 — so a price written in it is
+a published price, and §1.2's rule against that applies to this file as much as
+to any page. The amounts live in the extension repository's private
+`docs/product/2026-09-03-revenue-model.md` §3 until the gates in §1.3 close, at
+which point row 6e's page carries them and this table gains the column back.
 
 **Paid features are free for the first seven days after installing**, then stop
 until a licence key is entered. Everything else keeps working, free, without
@@ -77,8 +84,13 @@ limit.
 - **Never advertise how the licence is checked**, or that it is not enforced
   beyond the key. The terms state what a licence covers; they do not describe
   the mechanism.
-- **Never let a price appear on a page while §8's gates are open.** A price is
-  an offer, and an offer needs the pages row 6c and 6d cover.
+- **Never let a price appear anywhere in this repository while §1.3's gates are
+  open** — not on a page, and not in this file. A price is an offer; an offer in
+  the EU carries a withdrawal right and an identified trader, which rows 6c and
+  6d cover and which do not exist yet. The repository is public and `docs/` is
+  served, so "not on a page" is not the boundary. **This rule was broken on
+  2026-09-03 and repaired the same day**, which is why it now names the file it
+  is written in.
 
 ### 1.3 What this does not settle
 
