@@ -11,7 +11,7 @@ therefore means *live, but not yet pointed at* — everything below is already o
 the web, and the boundary it is measured against is the moment a Chrome Web
 Store or addons.mozilla.org listing starts sending people to these URLs.
 
-## [Unreleased] — 2026-09-02
+## [Unreleased] — 2026-09-03
 
 ### Publication Contract
 
@@ -35,6 +35,51 @@ themselves make.
   matching that date.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
+
+### 2026-09-03 — The licence terms are withdrawn (Roadmap #6g)
+
+**`/terms/` described a product that does not exist, and it was live for a day.**
+It stated that using Grispy as part of your work needs a paid licence, described
+a Pro and a Team licence, and said paid features stop working seven days after
+install. The extension has no licence key surface, no setting to hold a key, no
+verification, and no capability a key could gate.
+
+**The sharper problem is that it contradicted the licence that ships.** `LICENSE`
+grants every installer the right to run Grispy for their own use, and that
+includes commercial use. So the page did not merely describe a ladder that has
+not been built — it told professional users they owed something they could not
+pay for and did not in fact owe.
+
+This was fixed before store registration rather than at leisure, because both
+stores read the linked terms. A terms page describing paid gating that the
+submitted build does not contain is a listing/build mismatch, and it sits badly
+beside the "nothing can be bought" answers the Chrome data-usage form will carry.
+
+**The page is rewritten, not removed** — `index.html`, `/privacy/`, `/support/`
+and `/guide/` all link it from their footers. What went: the work-use
+requirement, the tier table and the seven-day section. What stayed: what free
+means, what no licence lets you do, what is not collected, changes to terms, and
+questions. The title is now *Terms of use* rather than *Licence terms*, since it
+governs a free product.
+
+**One section is new, and it is an announcement rather than an offer.**
+Capabilities meant for people who fill forms as part of their job are being
+built, and those will need a paid licence. Everything in this version stays free,
+and so do two things still being built — reusing one saved set of details across
+different forms, and being told when a saved detail has gone out of date. That
+promise is written as a term, so it can be checked rather than remembered. There
+are no prices, no named paid features and no dates, and anyone who wants to hear
+when there are is asked to write to the support address. No form, no signup
+service, nothing that would put a data processor behind a site whose strongest
+sentence is that nothing leaves your machine.
+
+**"Free for personal use" reverts to plain "free"** on the landing page, the
+support page and the terms page — the correction the entry below made, corrected
+in turn. The support page does **not** get its original *"free to everyone, with
+no paid tier"* back: a paid tier is now announced as coming, so that clause would
+be wrong in the other direction. Roadmap rows 6b and 6f keep their ✅, because
+they record what was genuinely published; row 6g carries the withdrawal, and row
+3b closes on the same decision.
 
 ### 2026-09-03 — The prices come back out of `docs/copy.md`
 

@@ -42,7 +42,16 @@ markup, no layout, no decisions about what a page looks like.
 
 ---
 
-## 1. Price, settled 2026-09-03
+## 1. Price, settled 2026-09-03 — **not publishable**
+
+> **Bracketed 2026-09-03, the same day, and kept rather than deleted.** Every
+> tier sentence below is settled and will be needed. None of it may reach a page
+> yet: nothing in the extension can be bought, so a page describing what a
+> licence covers describes software that does not exist. That is the mistake
+> `/terms/` made — see [§7](#7-corrections-owed-to-live-copy) item 5 and roadmap
+> row 6g. The reasoning is in the extension repository's private
+> `docs/plans/2026-09-03-free-release-cut-spec.md`. **Read §1.2 before writing
+> anything from this section: its first rule is now reversed.**
 
 **The price question this section held open is decided.** What follows is the
 wording every other surface takes from; nothing here may be paraphrased into a
@@ -69,15 +78,21 @@ to any page. The amounts live in the extension repository's private
 `docs/product/2026-09-03-revenue-model.md` §3 until the gates in §1.3 close, at
 which point row 6e's page carries them and this table gains the column back.
 
-**Paid features are free for the first seven days after installing**, then stop
-until a licence key is entered. Everything else keeps working, free, without
-limit.
+~~**Paid features are free for the first seven days after installing**, then stop
+until a licence key is entered.~~ **Not publishable, 2026-09-03.** There are no
+paid features, no key to enter and no clock. This sentence was published on
+`/terms/` and withdrawn the next day; see [§7](#7-corrections-owed-to-live-copy)
+item 5.
 
 ### 1.2 What may not be said
 
-- **Never "Grispy is free" without qualification.** It is free *for personal
-  use*. The unqualified form is what §7's item 4 has to retract, and repeating
-  it anywhere rebuilds the same debt.
+- ~~**Never "Grispy is free" without qualification.** It is free *for personal
+  use*.~~ **Reversed 2026-09-03.** The unqualified form is now the correct one,
+  and this rule is what would put the wrong sentence back. Grispy is free for
+  every use, including work: `LICENSE` grants it, and nothing exists to charge
+  for. Restore the qualification only when a licence can actually be bought.
+  **Also do not restore "with no paid tier"** — a paid tier is announced as
+  coming, so that clause would be wrong in the other direction.
 - **Never imply the free tier is a trial, a demo, or time-limited.** It is a
   complete product that does not expire. The seven-day clock applies only to
   the paid capabilities layered on top.
@@ -273,6 +288,12 @@ See [§1](#1-price-settled-2026-09-03) before repeating "free" here.
 > Privacy policy: <https://lagtac.github.io/grispy-site/privacy/>
 > Support: <https://lagtac.github.io/grispy-site/support/>
 
+**Note, 2026-09-03 — "Grispy starts empty" has an expiry date.** It is true of
+the build being submitted and can ship as written. It stops being true when the
+extension's roadmap row 16 (global presets) ships, which is what that row exists
+to change: a first visit to a portal will have something to offer. Rewrite this
+paragraph and retake the screenshots in the same release, not after it.
+
 ### Data-usage disclosure form
 
 Must agree with the privacy policy exactly. The answers the policy supports:
@@ -384,6 +405,27 @@ published and why it changed stays on the record.
    page carries a price — only the qualification. Prices appear when row 6e's
    page is written and the gates §1.3 names are closed.
 
+5. ~~**`/terms/`** — "using Grispy as part of your work needs a paid licence",
+   the Pro and Team tier table, and "paid features work for seven days after you
+   install".~~ **Withdrawn 2026-09-03, the day after it was published.** This is
+   item 4's correction being corrected: §1 settled the price, item 4 made the
+   live pages agree with it, and none of it was true of the software. There is no
+   licence key surface, no capability a key could gate, and `LICENSE` grants every
+   installer commercial use for nothing — so the page did not merely anticipate a
+   ladder that does not exist, it contradicted the licence that ships.
+
+   The site got ahead of the product. Both stores read the linked terms, so a
+   terms page describing gating the submitted build does not contain is a
+   listing/build mismatch, which is why this was fixed before registration rather
+   than at leisure. `/terms/` is rewritten rather than removed — four footers link
+   it — and now says Grispy is free, that nothing you can do today will ever
+   start needing a licence, and that capabilities for professional use are being
+   built and will need one. No prices, no named paid features, no dates.
+
+   **This is the second correction to the same page in two days**, and it is on
+   the record for that reason. The rule it produced is in §1's bracket: settled
+   wording is not publishable wording until the software it describes exists.
+
 ---
 
 ## 8. Gates before submitting
@@ -402,8 +444,11 @@ Not copy. Things that must be true in the extension before this copy is honest.
   Kept rather than deleted because it is the one gate that has cleared, and
   because it stood for three days after the fix landed while the sentence it
   blocked is the differentiator §2 names.
-- **Settle the price question** ([§1](#1-one-open-decision-price)) and write the
-  wording here before it appears anywhere.
+- ~~**Settle the price question** ([§1](#1-one-open-decision-price)) and write the
+  wording here before it appears anywhere.~~ **Cleared 2026-09-03, by removing the
+  dependency rather than by answering it.** The first release is free and has
+  nothing to sell, so no price has to be settled before submitting. §1 stays
+  bracketed until there is.
 - **Install a packaged build and read Chrome's permission dialog**, so the
   strongest claim on the page can be written from observation rather than from the
   manifest.
