@@ -42,26 +42,60 @@ markup, no layout, no decisions about what a page looks like.
 
 ---
 
-## 1. One open decision: price
+## 1. Price, settled 2026-09-03
 
-**The copy below says nothing about price, and that is deliberate — it is not an
-oversight to fill in.** The live pages already take a position, and it is a
-position that is expensive to walk back:
+**The price question this section held open is decided.** What follows is the
+wording every other surface takes from; nothing here may be paraphrased into a
+page without matching it, because the promises below are the ones a reader will
+quote back.
 
-| Where | What it says today |
-|---|---|
-| `support/index.html`, opening paragraph | "Grispy is free to everyone, with no paid tier and no separate support product" |
-| `privacy/index.html` §7 | "if a licence is ever sold" — leaves the door open |
-| `ROADMAP.md` row 6 | a payment provider to be named in the policy, "nothing to name yet" |
+The decision itself, and the arithmetic behind it, is the extension
+repository's `docs/product/2026-09-03-revenue-model.md`. That document is
+private. This section is the public half of it, and it is deliberately shorter
+than the decision it serves — a reader needs the terms, not the reasoning.
 
-The extension repository's own working notes assume licence keys are the plan.
-Two of the three surfaces above are compatible with that; the support page's
-promise is not, and it is the one a reader is most likely to quote back.
+### 1.1 The three tiers, in the words the pages use
 
-Adding a third instance of "free" to a landing page and two store listings makes
-that promise four times harder to retract. So this document stays silent until
-the question is settled. **Settle it before submitting anything**, then add the
-wording here first.
+| Tier | Price | The one sentence |
+|---|---|---|
+| **Free** | €0 | Grispy is free for personal use — every form, every preset, no limit and no account. |
+| **Pro** | €9 a month, or €90 a year | For one person using Grispy as part of their paid work. |
+| **Team** | €10 per person a month, or €100 a year, minimum three people | For a business, billed for the people who use it. |
+
+**Paid features are free for the first seven days after installing**, then stop
+until a licence key is entered. Everything else keeps working, free, without
+limit.
+
+### 1.2 What may not be said
+
+- **Never "Grispy is free" without qualification.** It is free *for personal
+  use*. The unqualified form is what §7's item 4 has to retract, and repeating
+  it anywhere rebuilds the same debt.
+- **Never imply the free tier is a trial, a demo, or time-limited.** It is a
+  complete product that does not expire. The seven-day clock applies only to
+  the paid capabilities layered on top.
+- **Never advertise how the licence is checked**, or that it is not enforced
+  beyond the key. The terms state what a licence covers; they do not describe
+  the mechanism.
+- **Never let a price appear on a page while §8's gates are open.** A price is
+  an offer, and an offer needs the pages row 6c and 6d cover.
+
+### 1.3 What this does not settle
+
+Three of the four things selling requires are still missing, and the price
+wording above cannot ship without them — roadmap row 6b splits into 6b, 6c, 6d
+and 6e for exactly this reason:
+
+- **A right-of-withdrawal and refund policy.** EU consumer law gives a
+  fourteen-day withdrawal right on distance sales; digital content can be
+  excepted from it, but only where the buyer expressly consents and
+  acknowledges losing the right, which is a checkout-flow requirement and not
+  only a page. **Undecided, and not a decision this document can make.**
+- **Trader identification.** A trader selling into the EU must identify itself:
+  legal name, address, contact, and tax registration. **Blocked on the sole
+  proprietorship existing** — there is nothing to identify yet.
+- **The payment provider**, which roadmap row 6 says the privacy policy must
+  name once money moves through it.
 
 ---
 
@@ -175,7 +209,7 @@ this section now say the same thing; an edit to one is owed to the other.
 ### Contact
 
 Unchanged from the live page — one address, best effort, link to `/support/`.
-See [§1](#1-one-open-decision-price) before repeating "free" here.
+See [§1](#1-price-settled-2026-09-03) before repeating "free" here.
 
 ---
 
@@ -325,13 +359,17 @@ published and why it changed stays on the record.
    2026-08-28.~~ **Cleared 2026-09-02.** *Your data stays yours* carries the §3
    wording verbatim — "can be encrypted with a passphrase only you know",
    never "is encrypted", because the user is asked once and may decline.
-4. **`support/index.html`** — "free to everyone, with no paid tier." Blocked on
-   [§1](#1-one-open-decision-price); no edit until the question is settled.
+4. **`support/index.html`** — "free to everyone, with no paid tier." **Unblocked
+   2026-09-03**: [§1](#1-price-settled-2026-09-03) settles the price, so the
+   sentence is now known to be wrong rather than merely unsupported. The edit is
+   deliberately *not* made yet — it and the landing page's own unqualified
+   "free" are live pages, and correcting them announces paid tiers the extension
+   does not have. Both travel with the release that ships them (roadmap row 6f).
 
    The landing page's own "Grispy is free and is written by one person" was
-   **left exactly as it stands**, on the same grounds: it is not on this list,
-   and the price question governs whether it moves. The rewrite added no second
-   instance of the word.
+   **left exactly as it stands**, and stays that way for now on the narrower
+   ground above: the price is settled, but the pages that state it wait for the
+   feature. The rewrite added no second instance of the word.
 
 ---
 

@@ -36,6 +36,50 @@ themselves make.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
 
+### 2026-09-03 — Licence terms, and the price question closed (Roadmap #6b)
+
+`docs/copy.md` §1 had held the price open since the file was written, under the
+heading *One open decision: price*, and instructed every page to say nothing
+until it closed. It is closed. The extension repository's revenue model settles
+three tiers — Free at €0, Pro at €9 a month, Team at €10 per person — and §1 is
+now the public half of that decision: the tier table the pages take their wording
+from, and four things that may never be said.
+
+The three that matter most, because each is a promise that is expensive to
+retract:
+
+- **Never "Grispy is free" unqualified.** It is free *for personal use*. That
+  unqualified form is exactly the debt §7's item 4 exists to pay off, and
+  repeating it anywhere rebuilds it.
+- **Never imply the free tier is a trial or a demo.** It does not expire and it
+  does not count anything. The seven-day clock applies only to the paid
+  capabilities layered on top of it.
+- **Never describe how the licence is checked.** The terms say what a licence
+  covers; the mechanism is not a selling point and not the reader's problem.
+
+**`/terms/` is new, and is not pushed.** It follows the same reasoning row 2b
+recorded for the policy's global-presets edit: the page describes something the
+extension cannot do yet, so publishing it would advertise tiers that do not
+exist. It goes live beside the release that ships them.
+
+What the page says, beyond the tier table: free is the whole product rather than
+a trial of it; a licence is granted to people rather than to computers; paying
+changes nothing about the network position, because there is no account, no login
+and no server, and the privacy policy is the same document for a paying customer
+as for anyone else. The last section states the consequence plainly — we cannot
+recover anything from an installation we cannot see, and paying does not change
+that.
+
+**Row 6b splits, as it always said it would.** It named four things selling
+requires and treated them as one row because they arrive together; with the price
+settled they no longer do. Terms are written (6b). A right-of-withdrawal and
+refund policy is undecided and is a checkout-flow question as much as a page
+(6c). Trader identification is blocked on the sole proprietorship existing, since
+there is nothing yet to identify (6d). A page carrying the price is unwritten
+(6e). And the two live pages that still say "free" without qualification get
+their own row, so the correction travels with the release rather than ahead of it
+(6f).
+
 ### 2026-09-02 — The policy covers global presets (Roadmap #2b)
 
 The extension's spec for global presets lists exactly one blocking dependency,
