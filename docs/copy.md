@@ -137,6 +137,18 @@ does not quietly drift off it:
 > what goes in the box, but remembering what you put there last time, and having
 > more than one answer available.
 
+**Amended 2026-09-04, when saved details shipped** (extension roadmap row 16).
+The frame above is **narrowed, not reversed**, and the distinction is the whole
+of what may be written from it. A *set of details* — a named bag of facts held by
+what each fact **is** rather than by where it sat on some form — can now be aimed
+at a form Grispy has never seen, so "not for filling a form you have never seen"
+has stopped being true as an absolute. What survives is the reason that sentence
+was written. Grispy still holds nothing until you give it something; it still
+never guesses; and on a form it has never seen it reaches only the fields it can
+identify from the page itself, which is some of a form and rarely all of it. What
+moved is *when* the cold start ends — it was once per form, and it is now once
+ever.
+
 Two consequences for the copy:
 
 - **Never use the words "form filler" as the headline category.** It invites a
@@ -147,6 +159,12 @@ Two consequences for the copy:
   with it — *save once, fill every time after* — sets the expectation correctly
   and costs nothing.
 
+  **Re-checked 2026-09-04 and unchanged.** Saved details end the cold start
+  sooner, not on install: a reader who installs Grispy and presses Fill on a
+  fresh page still gets nothing, because there is nothing saved to offer. This
+  bullet is what stops the new capability being written as though it removed the
+  cold start.
+
 ---
 
 ## 3. Landing page
@@ -154,8 +172,9 @@ Two consequences for the copy:
 Replaces the copy in `index.html`. Section headings are content, not layout
 instructions.
 
-**Poured into `index.html` on 2026-09-02** (ROADMAP row 1b). The live page and
-this section now say the same thing; an edit to one is owed to the other.
+**Poured into `index.html` on 2026-09-02** (ROADMAP row 1b), and re-poured on
+2026-09-04 (row 1c). The live page and this section now say the same thing; an
+edit to one is owed to the other.
 
 ### Headline
 
@@ -181,9 +200,17 @@ this section now say the same thing; an edit to one is owed to the other.
 > - the same supplier or client onboarding, twelve suppliers deep
 > - the same claim, booking or registration form, a new file each time
 > - a five-step portal wizard you work through every month
+> - one client's details into five portals that have never heard of them
 >
-> The more often you return to one form, the more Grispy is worth. If you fill a
-> form once and never again, it is not for you.
+> The more often you come back — to one form, or to one set of details — the more
+> Grispy is worth. If you fill a single form once and never type anything like it
+> again, it is not for you.
+
+**Amended 2026-09-04.** The last sentence used to read *"the more often you return
+to one form"*, which excluded the reader saved details were built for: one
+subject into five portals is five first visits and no return at all. The
+qualification is kept — Grispy is still worth nothing to someone who types one
+form once — but it now turns on repetition of *something*, not of one form.
 
 ### What it does that autofill does not
 
@@ -197,6 +224,11 @@ this section now say the same thing; an edit to one is owed to the other.
 >   the way a person would drive them, not written past. A value that looks filled
 >   but that the page never registered is the failure Grispy is built to avoid: it
 >   checks each field afterwards and tells you which ones it could not confirm.
+> - **One set of details, any form.** Save a named set of details once — a client,
+>   an applicant, yourself — and Grispy can offer it on a form it has never seen,
+>   because those details are held by what each one *is* rather than by where it
+>   sat on the form you saved. An email is an email on every portal. It fills the
+>   fields it can identify from the page and leaves the rest to you.
 
 ### Your data stays yours
 
@@ -216,7 +248,12 @@ this section now say the same thing; an edit to one is owed to the other.
 
 > Stated plainly, because finding out afterwards is worse:
 >
-> - **It starts empty.** Grispy has nothing to offer on a form you have not saved.
+> - **It starts empty.** Grispy holds nothing until you give it something, and it
+>   never invents an answer. Save a form once, or save one set of details once.
+> - **On a form it has never seen it fills what it recognises, not everything.** A
+>   set of details reaches the fields Grispy can identify from the page itself.
+>   That is some of a form and rarely all of it; the rest you fill in, and can
+>   save.
 > - **It acts only when you click it.** No filling on page load, by design — it is
 >   the same choice that lets it ask for no access to any site.
 > - **Some fields it cannot see.** Rich-text editors, fields built inside a web
@@ -236,7 +273,7 @@ this section now say the same thing; an edit to one is owed to the other.
 ### Contact
 
 Unchanged from the live page — one address, best effort, link to `/support/`.
-See [§1](#1-price-settled-2026-09-03) before repeating "free" here.
+See [§1](#1-price-settled-2026-09-03--not-publishable) before repeating "free" here.
 
 ---
 
@@ -267,6 +304,8 @@ See [§1](#1-price-settled-2026-09-03) before repeating "free" here.
 > **What it does**
 >
 > - Saves and refills any number of named answer sets per form
+> - Holds named sets of details that belong to no form, and offers them on a form
+>   it has never seen — filling the fields it can identify from the page
 > - Follows a form across every page it spans, including wizards that never change
 >   their address
 > - Drives search-as-you-type dropdowns and tag pickers, and correctly fills the
@@ -280,19 +319,37 @@ See [§1](#1-price-settled-2026-09-03) before repeating "free" here.
 > no network requests of any kind. Grispy runs on the page in front of you, only
 > after you click its button, and everything it saves stays in your browser.
 >
-> **Before you install, know this:** Grispy starts empty. It has nothing to offer
-> on a form you have not saved yet — save a form once, and it is there every time
-> after. It also cannot see rich-text editors, fields inside a web component's
-> shadow DOM, or custom pickers with no ordinary form control underneath.
+> **Before you install, know this:** Grispy starts empty and stays empty until you
+> give it something — it never invents an answer. Save a form once and it fills
+> that form every time after. Save one named set of details once and it can offer
+> those on a form it has never seen, filling the fields it can identify from the
+> page rather than all of them. It also cannot see rich-text editors, fields
+> inside a web component's shadow DOM, or custom pickers with no ordinary form
+> control underneath.
 >
 > Privacy policy: <https://lagtac.github.io/grispy-site/privacy/>
 > Support: <https://lagtac.github.io/grispy-site/support/>
 
-**Note, 2026-09-03 — "Grispy starts empty" has an expiry date.** It is true of
+~~**Note, 2026-09-03 — "Grispy starts empty" has an expiry date.** It is true of
 the build being submitted and can ship as written. It stops being true when the
 extension's roadmap row 16 (global presets) ships, which is what that row exists
 to change: a first visit to a portal will have something to offer. Rewrite this
-paragraph and retake the screenshots in the same release, not after it.
+paragraph and retake the screenshots in the same release, not after it.~~
+
+**Discharged 2026-09-04.** Row 16 shipped that day and the paragraph above is
+rewritten. Kept rather than deleted because it is the one place this document
+predicted its own drift and named the release that would cause it — and because
+half of it is still owed: **the screenshots have not been retaken.** Any shot
+showing the popup on a form Grispy has not saved now shows a screen that no
+longer exists. See [§7](#7-corrections-owed-to-live-copy) item 6 and
+[§8](#8-gates-before-submitting).
+
+**What was deliberately not changed**, so the next reader does not read it as an
+oversight: the short description, the AMO summary and the landing page's opening
+still describe Grispy by what it does with *one form*. Each is true, none is
+falsified by saved details, and repositioning a listing around a new
+differentiator is a decision about the listing rather than a correction to a
+false sentence. It belongs with the submission, not with this pass.
 
 ### Data-usage disclosure form
 
@@ -339,13 +396,17 @@ table before each submission; there is no CI enforcing any of it.
 | "runs only after you click it" | `activeTab` is scoped to the tab the action was invoked on; `scripting` injects only into that tab | 2026-08-29 | This is also the honest limit: no fill on page load |
 | "never uses sync storage" | every storage call is `chrome.storage.local` | 2026-08-28 (policy) | Policy §2 |
 | "can be encrypted with a passphrase only you know" | encryption at rest shipped 2026-08-28 | 2026-08-28 | Opt-in. **Never write "is encrypted"** — the user is asked once and may decline |
-| "conceals what you saved, not which sites you saved it on" | `ENCRYPTED_PREFIXES = ["form:", "formpreset:"]` in `src/core/storage.js:44`; `stepindex:` and `active:` are plaintext by design | 2026-09-01 | Wording is lifted verbatim from policy §2 — keep it that way. Re-checked after the form-preset rename moved the second prefix from `profile:` |
+| "conceals what you saved, not which sites you saved it on" | `ENCRYPTED_PREFIXES = ["form:", "formpreset:", "globalpreset:", "concept:"]` in `src/core/storage.js:59`; `stepindex:` and `active:` are plaintext by design | 2026-09-04 | Wording is lifted verbatim from policy §2 — keep it that way. **Re-checked 2026-09-04:** saved details and the details a user adds joined the encrypted list when roadmap row 16 shipped, so the claim covers them too and the line number moved. Re-checked once before, after the form-preset rename moved the second prefix from `profile:` |
 | "follows a form across every page it spans" | multi-step wizard attach/split/detach, plus step identity for wizards that do not change their address | 2026-08-29 | Bounded by the hidden-step limit, which the copy states |
 | "drives search-as-you-type dropdowns and tag pickers" | widget drive with per-field deadline; verification reads the widget's own display | 2026-08-29 | |
 | "correctly fills the checkboxes and radios that frameworks manage" | framework write-path fidelity shipped | 2026-08-28 | |
 | "tells you what it could not confirm" | fill reports an `unverified` outcome and the toast carries the count | 2026-09-01 | **Ungated 2026-09-01.** The framed-page miscount that held this back is fixed — extension roadmap row 5d, shipped 2026-08-29 |
 | "exports and imports everything" | export and import both shipped | 2026-08-28 | Whole-store file replaces; single-form file adds |
 | Cannot see contenteditable, shadow DOM, custom pickers | asserted deliberately as characterization tests in the extension's smoke suite | 2026-08-29 | These are tests that assert the *absence* of support, so they will fail loudly if it ever arrives |
+| "can offer a set of details on a form it has never seen" | `globalFillPlan` in `src/popup/popup.js` builds a fill from the selected set alone, with no saved form; `matchFields` in `src/core/match.js` decides which field holds which detail | 2026-09-04 | Extension roadmap row 16, shipped 2026-09-04 |
+| "fills the fields it can identify from the page rather than all of them" | the matcher reads a learned mapping, then the page's own `autocomplete`, then the field's name, then its label; a fourth layer can only rule a candidate *out* | 2026-09-04 | **This qualifier is not modesty and may not be dropped.** How much of an unseen form fills is set by which details Grispy knows about, not by how good the matching is |
+| "Grispy never invents an answer" / "it never guesses" | `globalFillPlan` adds a field to the plan only when the matcher named a detail **and** the set holds a value for it **and** the value can be written into that control; every other field is skipped | 2026-09-04 | The same function is what makes "it fills the fields it can identify and leaves the rest to you" true: a field Grispy does not write is left exactly as the page had it, never blanked |
+| Nothing about the Greek details pack | — | — | **There is deliberately no row here, and no page may add one.** The details engine ships a Greek pack, but not one field in the 143-field corpus the matching was measured against carried a Greek tax or identity number, so its support is argued and not measured (extension roadmap row 24). Naming ΑΦΜ, ΑΜΚΑ or ΑΔΤ on any page or listing would publish a claim this table cannot verify, which is what rule 2 of [*How to use this document*](#how-to-use-this-document) forbids. **They are named here and nowhere else on purpose**: §1.2's rule that a served `docs/` is still publication is about *offers* — a price is one whether it sits on a page or in this file — while a refusal naming what may not be claimed asserts nothing about the product and is the only form in which the refusal can be checked |
 
 **Guide pages** (`/guide/`), added 2026-09-01. Each page ends with an "Every
 message, in one place" table quoting the extension's own strings; a string that
@@ -353,8 +414,12 @@ changes falsifies the row that quotes it.
 
 | Claim as written | Verified against | Checked | Notes |
 |---|---|---|---|
-| `Filled 7 of 10 fields.` and `2 could not be verified.` are the whole of what a fill reports | `fillForm` in `src/popup/popup.js`; the second sentence is appended only when the count is above zero | 2026-09-01 | The guide states the limit these two sentences carry: `not-found`, `refused` and `unchanged` all fold into the denominator, so a user cannot tell which happened |
+| ~~`Filled 7 of 10 fields.` and `2 could not be verified.` are the whole of what a fill reports~~ | `fillForm` in `src/popup/popup.js`; the second sentence is appended only when the count is above zero | 2026-09-04 | **False since 2026-09-02, corrected in the guide on 2026-09-04.** Two surfaces have joined the toast. Extension roadmap row 20 paints a chip beside each field on the page itself (`src/content/mark.js`), and row 16 added a line *above* the buttons, before you press anything, saying what a fill will write. The two sentences are still the whole of what the toast says, and the guide now says that instead |
+| A fill also marks each field it touched, on the page, with one of `FILLED`, `UNVERIFIED` or `NOT FILLED` | `LABELS` in `src/content/mark.js` holds them title-cased and `mark.css` sets `text-transform: uppercase`, so the **screen** shows capitals — which is what the guide quotes, per this table's own rule about drafting from the file instead of the screen | 2026-09-04 | Extension roadmap row 20, shipped 2026-09-02. Two limits the guide states with it: a field Grispy could not locate carries **no** chip and still counts against the total, and a chip says the field was **written**, never that something was overwritten |
+| `Fill writes 3 of 9 fields.` and the three sentences that follow it | `applyGlobalFillAffordance` in `src/popup/popup.js` composes the line from four parts, and hides it entirely when no set of details is selected | 2026-09-04 | The other three, quoted in the guide: `<name> is not applied.`, `N fields on this page cannot be written into yet.`, and `N fields are left blank: this form asks for the same detail about more than one person.` |
+| Filling a set of details and then a form preset can overwrite one subject's details with another's | `fillPlan` and `globalFillPlan` each write independently; nothing compares them, and the extension's own spec calls the line above the buttons its whole mitigation | 2026-09-04 | **The sharpest thing the guide owes a reader**, because nothing on screen reports it after the fact: row 20's chip says *written*, not *overwritten*. **The safe order is the form's own preset first and the set of details last** — a form preset saved while filling for one subject carries that subject's identity fields, so it must not land second. Stated that way round in the guide; an earlier draft of this row had it backwards |
 | The five outcome constants are never shown to a user | `src/shared/outcomes.js` defines five; the popup surfaces only the FILLED and UNVERIFIED counts | 2026-09-01 | **Do not write the constant names into a page.** ROADMAP row 9b was first drafted from this file rather than from the screen and got it wrong twice |
+| A blank field starts unticked in the save preview, and a filled one starts ticked | the preview's `isEmpty` test in `src/popup/popup.js` asks `isOptionBacked` and `isBooleanValue`, so a cleared checkbox or an unpicked radio group still counts as an answer | 2026-09-04 | **The guide said "everything starts ticked" and was wrong from the day it shipped**, in a way that mattered: a save replaces everything held for the page, so the unticked blank is what stops today's empty box erasing last week's answer. Corrected 2026-09-04. Extension roadmap row 21 widened the same protection to date and time fields on 2026-09-02 |
 | A first save creates a preset named "Default"; `+` creates "Save 2", "Save 3" | `confirmSave` (`presetId ?? "default"`, name `"Default"`) and `nextPresetName` in `src/popup/popup.js` | 2026-09-01 | |
 | The ⋯ menu appears only with two or more presets, and Delete is disabled on the last one | `overflowIsUseful` and `syncOverflowMenu` in `src/popup/popup.js` | 2026-09-01 | |
 | The row question preselects the non-destructive answer | `renderRowChoices` sets `keep` checked | 2026-09-01 | The guide's advice to choose *Save just these* after a mid-list deletion follows from the position-matching limit (extension ROADMAP row 8c), not from the code preselecting it |
@@ -364,7 +429,12 @@ changes falsifies the row that quotes it.
 | The four encryption limits | lifted verbatim from policy §2 rather than reworded, per rule 1 of this document | 2026-09-01 | If §2 changes, the passphrase page changes with it |
 | The four status-line readings: `Step 2 of 3`, `Part of a saved form`, `Which step is this?`, `Not part of a saved form` | `stepContextLabel` in `src/popup/popup.js` | 2026-09-01 | The multi-step page's whole mechanism hangs off these four |
 | The save-guard titles `Save to Step 2?` and `Replace what's saved here?` | the `askStep` branch of the save dialog in `src/popup/popup.js` | 2026-09-01 | |
-| Detached-page data is listed under *Unreachable records* on the **Settings** page | `src/core/audit.js` finding "F"; the options page has been four tabs called Settings since 2026-08-28 | 2026-09-01 | **The ported page said "Manage" and was wrong.** Corrected during the port. A page named in the guide that no longer exists under that name is the cheapest kind of drift to introduce and the hardest for a reader to recover from |
+| Detached-page data is listed under *Unreachable records* on the **Settings** page | `src/core/audit.js` finding "F"; the options page has been called Settings since 2026-08-28 | 2026-09-04 | **The ported page said "Manage" and was wrong.** Corrected during the port. A page named in the guide that no longer exists under that name is the cheapest kind of drift to introduce and the hardest for a reader to recover from. **The count moved on 2026-09-04:** Settings is five tabs, not four — *Saved forms*, *Details*, *Encryption*, *Backup*, *Danger zone* |
+| Exactly one thing is ever selected — a set of details, or one of a form's own presets, never both | `selectGlobalPreset` clears `activePresetId`, `renderPresets` re-checks the selection at render time, and both chip rows use one highlight colour | 2026-09-04 | The guide leans on this: the highlighted chip is what Fill writes, wherever it sits |
+| A selected set of details is forgotten when the browser closes; a form's own preset is not | `src/core/selection.js` keeps it in `chrome.storage.session`; a form preset lives in `active:<formId>` in local storage | 2026-09-04 | Deliberate. A selection naming a third party is not carried across a boundary the user is not watching — and the guide says so, because otherwise the popup quietly fills something different tomorrow |
+| Creating and deleting a set of details happen on the Settings page, not in the popup | `btn-global-new` and `btn-global-delete` exist only in `src/options/options.html`; `Storage.removeGlobalPreset` has exactly one caller | 2026-09-04 | The popup can *create* one by learning from a page, which is reviewed before it writes. It can delete nothing |
+| Learning from a page writes nothing until you press *Save details* | `confirmCapture` in `src/popup/popup.js` holds the only two writes on that path, and it runs from the confirm button alone | 2026-09-04 | A wrong capture is not a wrong fill: it persists and fans out into every form filled afterwards, which is why every row is shown with the reason it was matched |
+| A detail Grispy has added can be renamed but not deleted | `conceptField` in `src/options/options.js` renders a rename button for a user's own details and no delete control anywhere | 2026-09-04 | Extension roadmap row 31, open. The guide states it as a limit rather than implying a button exists |
 | The step-marker example is a heading like `Step 2: Payment` | `STEP_SHAPED` in `src/content/content.js` requires punctuation immediately after the ordinal, so `Step 2 of 3` is rejected | 2026-09-01 | An earlier draft of the guide used `Step 2 of 3`, which would have told a reader their wizard was served when it is not. The published page uses the accepted form |
 
 ---
@@ -393,7 +463,7 @@ published and why it changed stays on the record.
    wording verbatim — "can be encrypted with a passphrase only you know",
    never "is encrypted", because the user is asked once and may decline.
 4. ~~**`support/index.html`** — "free to everyone, with no paid tier."~~
-   **Cleared 2026-09-03.** [§1](#1-price-settled-2026-09-03) settled the price,
+   **Cleared 2026-09-03.** [§1](#1-price-settled-2026-09-03--not-publishable) settled the price,
    which made the sentence wrong rather than merely unsupported. Both it and the
    landing page's unqualified "free" now read *free for personal use*, and the
    correction was made in the same push as `/terms/` — publishing a terms page
@@ -426,6 +496,32 @@ published and why it changed stays on the record.
    the record for that reason. The rule it produced is in §1's bracket: settled
    wording is not publishable wording until the software it describes exists.
 
+6. ~~**Everywhere** — "Grispy starts empty. It has nothing to offer on a form you
+   have not saved."~~ **Corrected 2026-09-04**, on the landing page
+   (`index.html`), in the guide's opening page, and in the Chrome listing's
+   *Before you install* paragraph here in [§4](#4-chrome-web-store-listing).
+
+   The extension's roadmap row 16 shipped that day and made the second sentence
+   false: a named set of details is held by what each detail *is* rather than by
+   where it sat on a form, so Grispy can now offer one on a form it has never
+   seen. [§4](#4-chrome-web-store-listing) predicted this correction on
+   2026-09-03 and named the release that would force it, which is why this item
+   is a discharge rather than a discovery.
+
+   **This is the mirror image of item 5, and worth holding both in view.** There
+   the site got ahead of the software and had to withdraw a claim. Here the
+   software got ahead of the site, and the pages understated it until somebody
+   read them against the release — which is the safer direction, and still
+   drift. The rule item 5 produced has a
+   second half: settled wording is not publishable wording until the software
+   exists, *and* shipped software is owed its wording in the same release.
+
+   **Two things this correction did not do**, so neither reads as an oversight:
+   the pages do not name the Greek details pack, because nothing has measured
+   that it matches anything on a real form ([§6](#6-claims-check) carries the
+   refusal as a row); and the screenshots were not retaken, which
+   [§8](#8-gates-before-submitting) now holds.
+
 ---
 
 ## 8. Gates before submitting
@@ -444,11 +540,17 @@ Not copy. Things that must be true in the extension before this copy is honest.
   Kept rather than deleted because it is the one gate that has cleared, and
   because it stood for three days after the fix landed while the sentence it
   blocked is the differentiator §2 names.
-- ~~**Settle the price question** ([§1](#1-one-open-decision-price)) and write the
+- ~~**Settle the price question** ([§1](#1-price-settled-2026-09-03--not-publishable)) and write the
   wording here before it appears anywhere.~~ **Cleared 2026-09-03, by removing the
   dependency rather than by answering it.** The first release is free and has
   nothing to sell, so no price has to be settled before submitting. §1 stays
   bracketed until there is.
+- **Retake the screenshots.** Every existing shot predates 2026-09-04 and any
+  showing the popup on a form Grispy has not saved shows a screen that no longer
+  exists: that state now carries a second row of chips, a line saying what a fill
+  will write, and a Fill button where there was none. A listing whose images
+  contradict its own description is the same listing/build mismatch item 5 was
+  corrected for, arriving through the pictures instead of the prose.
 - **Install a packaged build and read Chrome's permission dialog**, so the
   strongest claim on the page can be written from observation rather than from the
   manifest.

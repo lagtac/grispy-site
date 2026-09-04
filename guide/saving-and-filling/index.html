@@ -46,9 +46,10 @@
 and bring any of them back in one click.</p>
 
 <p class="lede"><strong>Grispy starts empty, and that is the mechanic rather than a fault.</strong>
-It has nothing to offer on a form it has never seen. You teach it a form once — by filling
-that form in yourself and pressing Save — and from then on it can fill that form for you, with
-whichever set of answers you pick.</p>
+You teach it a form once — by filling that form in yourself and pressing Save — and from then on
+it can fill that form for you, with whichever set of answers you pick. This page is about that
+loop. For a form Grispy has <em>never</em> seen, there is a second thing it can hold:
+<a href="../saved-details/">details that fit any form</a>.</p>
 
 <h2>What the popup shows when you open it</h2>
 
@@ -77,9 +78,10 @@ watching in the background — and shows one of these:</p>
   is in the fields, so it has to be there first.</li>
   <li><strong>Open Grispy and press Save.</strong> The popup switches to a list of every field
   it found, each with the value currently in it.</li>
-  <li><strong>Choose what to keep.</strong> Everything starts ticked. Untick anything you do
-  not want stored — a one-off reference number, a comment, anything you would rather not have
-  written to disk at all. <em>Select all</em> at the top toggles the lot.</li>
+  <li><strong>Choose what to keep.</strong> Every field you filled in starts ticked, and
+  every field you left <em>blank</em> starts unticked. Untick anything else you do not want
+  stored — a one-off reference number, a comment, anything you would rather not have written to
+  disk at all. <em>Select all</em> at the top toggles the lot.</li>
   <li><strong>Press Confirm Save.</strong> Grispy answers
   <code>Saved 12 fields for this page.</code></li>
 </ol>
@@ -93,8 +95,10 @@ and it does not come back.</p>
 <table>
   <tr><th class="nw">✓ Checked / ✗ Unchecked</th><td>A checkbox.</td></tr>
   <tr><th class="nw">(none selected)</th><td>A set of options with nothing chosen.</td></tr>
-  <tr><th class="nw">(empty)</th><td>A field you left blank. It can still be saved — saving a
-  blank is how you make a later fill clear that field.</td></tr>
+  <tr><th class="nw">(empty)</th><td>A field you left blank. It starts <em>unticked</em>,
+  because a save replaces everything held for this page and an accidental blank would erase what
+  you saved last week. Tick it deliberately when you do want a later fill to clear that
+  field.</td></tr>
   <tr><th class="nw">Surname (row 2)</th><td>A field inside a repeating set of rows. See
   <a href="../repeating-rows/">forms that repeat a set of fields</a>.</td></tr>
 </table>
@@ -124,7 +128,13 @@ managed. That message is worth understanding —
 
 <p>This is the part your browser's autofill cannot do. Autofill knows one identity: one name,
 one address, one card. Grispy holds as many sets against a single form as you need, each under
-a name you choose. They appear as a row of chips at the top of the popup.</p>
+a name you choose. They appear as a row of chips at the top of the popup, under the label
+<strong>This form</strong>.</p>
+
+<p>The second row of chips, under <strong>Any form</strong>, is a different thing: sets of
+details that belong to no form at all.
+<a href="../saved-details/">That page explains them</a>, including the rule that matters here —
+only one chip is ever selected across both rows, and it is the one Fill writes.</p>
 
 <ol class="walk">
   <li><strong>The first thing you save</strong> becomes a preset called <em>Default</em>.</li>
@@ -177,6 +187,9 @@ separately under the same preset.</p>
   <a href="../multi-step-forms/">the step controls</a> to tell them apart.</li>
   <li><strong>Nothing syncs.</strong> What you save stays in this browser on this computer. To
   move it, <a href="../settings/">export and import a file</a>.</li>
+  <li><strong>A saved form holds answers for that form only.</strong> They are keyed to where
+  each answer sat on it, so they cannot be offered anywhere else. What can be is
+  <a href="../saved-details/">a set of details</a>.</li>
 </ul>
 
 <h2>Every message, in one place</h2>

@@ -11,7 +11,7 @@ therefore means *live, but not yet pointed at* — everything below is already o
 the web, and the boundary it is measured against is the moment a Chrome Web
 Store or addons.mozilla.org listing starts sending people to these URLs.
 
-## [Unreleased] — 2026-09-03
+## [Unreleased] — 2026-09-04
 
 ### Publication Contract
 
@@ -35,6 +35,74 @@ themselves make.
   matching that date.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
+
+### 2026-09-04 — The pages said Grispy has nothing to offer on a form you have not saved (Roadmap #1c, #9c)
+
+**The extension's roadmap row 16 shipped on 2026-09-04 and made that sentence
+false.** A *set of details* holds facts by what each one is — an email, a phone
+number, a postcode — rather than by which box it sat in on a form you filled
+once, so Grispy can now offer one on a form it has never seen. Three live
+surfaces still said otherwise: the landing page's *What it cannot do yet*, the
+opening of the guide's first page, and the *Before you install* paragraph of the
+Chrome listing copy.
+
+**This is row 6g's mistake reflected.** There the site published a paid ladder
+the software did not have and had to withdraw it. Here the software grew a
+capability the site did not describe. That is the safer direction — a page that
+understates cannot mislead a buyer — and it is still the same failure of the
+rule this repository's roadmap took from the privacy policy: *when behaviour
+changes, the page here changes first.*
+
+What changed:
+
+- **The landing page** gains *One set of details, any form* under what autofill
+  cannot do, and its *It starts empty* bullet now says what is actually true —
+  Grispy holds nothing until you give it something, and on a form it has never
+  seen it fills the fields it can identify rather than all of them. *Who it is
+  for* gained the reader the capability was built for: one client's details into
+  five portals that have never heard of them. The old closing line, *the more
+  often you return to one form*, excluded exactly that person.
+- **The guide** gains a seventh page, *[Details that fit any
+  form](https://lagtac.github.io/grispy-site/guide/saved-details/)*, and
+  corrections to three others. It states the one hazard nothing on screen
+  reports after the fact: fill a set of details and then a form's own preset, and
+  the second fill writes the earlier subject's name over the new one, silently —
+  because a preset saved while filling for one subject carries that subject's
+  identity fields. The safe order is the form's own preset first and the details
+  last.
+- **The Settings page's guide** said four tabs. There are five; the new one is
+  *Details*, and it is the only place a set of details can be deleted.
+- **What a fill reports** covered only the message afterwards. Two other things
+  report a fill and neither was described: the line above the buttons saying what
+  Fill will write before you press it, and the chips the extension has painted
+  beside each field since 2026-09-02 — *Filled*, *Unverified*, *Not filled* —
+  with a field it could not locate carrying no chip at all.
+- **A correction older than any of this.** The guide said every field starts
+  ticked in the save preview. A field you left blank starts *unticked*, and has
+  since before the guide was written — the protection that stops today's empty
+  box erasing last week's answer. It is now described.
+
+**Two things deliberately not done**, both recorded in
+[`docs/copy.md`](docs/copy.md) rather than left implicit. No page names the
+Greek details pack: the extension ships one, but no field in the corpus its
+matching was measured against carried a Greek tax or identity number, so its
+support is argued and not measured, and §6 carries the refusal as a row. And the
+screenshots are not retaken — every existing shot of the popup on an unsaved
+form now shows a screen that no longer exists. §8 holds that before submission.
+
+### 2026-09-04 — The policy says what saved details actually do (Roadmap #2b)
+
+**Written before the code existed, and it showed.** The policy gained its
+global-presets sections on 2026-09-02, ahead of the feature; when the feature
+shipped on 2026-09-04 two of its sentences were wrong. The policy said Grispy
+"does not inspect it, categorise it, or treat one kind differently from
+another", and categorising a value by what it *is* is precisely what a set of
+details does. It also never mentioned the store holding the kinds of detail a
+user adds.
+
+It now says what is true instead: Grispy knows what kind each value is, and has
+no idea whose it is. The effective date moves to 4 September, matching the
+release it describes.
 
 ### 2026-09-03 — The licence terms are withdrawn (Roadmap #6g)
 

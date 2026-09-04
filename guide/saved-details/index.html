@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grispy — Details that fit any form</title>
+<meta name="description"
+  content="Saved details: a named set of facts that belongs to no form, so Grispy has something to offer on a form it has never seen.">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5;
+    --warn:#8a5a00; --warnbg:#fff8e6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --fg:#ececec; --muted:#a0a0a0; --line:#2c2c30; --accent:#7aa2ff; --code:#1e1e22;
+      --warn:#e0b050; --warnbg:#2a2312; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); margin:0;
+    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.9rem; line-height:1.2; margin:0 0 .4rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  .sub { color:var(--muted); margin:0 0 2rem; }
+  .lede { font-size:1.05rem; background:var(--code); border-left:3px solid var(--accent);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:0 0 2rem; }
+  .warn { background:var(--warnbg); border-left:3px solid var(--warn); color:var(--fg);
+    padding:1rem 1.1rem; border-radius:0 6px 6px 0; margin:1.5rem 0; }
+  .crumb { font-size:.9rem; color:var(--muted); margin:0 0 1.5rem; }
+  table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.94rem; }
+  th, td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  th.nw { white-space:nowrap; }
+  code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  .say { display:block; background:var(--code); border-radius:6px; padding:.7rem .9rem;
+    margin:1rem 0; font-size:.95rem; }
+  ol.walk { padding-left:1.3rem; }
+  ol.walk li { margin:.6rem 0; }
+  a { color:var(--accent); }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  ul { padding-left:1.2rem; }
+  li { margin:.35rem 0; }
+</style>
+</head>
+<body>
+<main>
+
+<p class="crumb"><a href="../">Guide</a> → Details that fit any form</p>
+
+<h1>Details that fit any form</h1>
+<p class="sub">A named set of details belongs to no form, so Grispy has something to offer on a
+form it has never seen.</p>
+
+<p class="lede"><strong>Everything else in this guide starts with a form you have saved.</strong>
+This page is about the other half. A <em>set of details</em> holds facts by what each one
+<em>is</em> — an email, a phone number, a postcode — rather than by which box it sat in on some
+form you filled once. An email is an email on every portal, so a set of details can be aimed at
+a form Grispy has never seen before.</p>
+
+<p>It does not remove the cold start; it moves it. Grispy still holds nothing when you install
+it. What changes is that you teach it <strong>once, ever</strong> instead of once per form.</p>
+
+<h2>Where they are in the popup</h2>
+
+<p>Open Grispy on any page and there are two rows of chips, each with a label above it. The
+labels are the only thing that tells them apart, so they are worth reading:</p>
+
+<table>
+  <tr><th class="nw">This form</th>
+    <td>The sets of answers saved against <em>this</em> form. Empty and hidden until you have
+    saved this form at least once. Covered in
+    <a href="../saving-and-filling/">saving and filling a form</a>.</td></tr>
+  <tr><th class="nw">Any form</th>
+    <td>Your sets of details. Always shown, even before you have any, because it is the way in
+    to everything on this page.</td></tr>
+</table>
+
+<p>The last chip on the <em>Any form</em> row always opens the full list. What it says depends
+on how many you have:</p>
+
+<table>
+  <tr><th class="nw">No presets yet</th><td>You have none. Click it anyway — this is where you
+  make the first one.</td></tr>
+  <tr><th class="nw">All details</th><td>You have some, and they all fit on the row.</td></tr>
+  <tr><th class="nw">4 more</th><td>You have more than six. The row shows the six you made most
+  recently; this opens the whole list, with a box to filter it by name.</td></tr>
+  <tr><th class="nw">Locked</th><td>You have set a passphrase and have not entered it yet. Your
+  details are encrypted, so Grispy cannot read their names.
+  <a href="../passphrase/">More</a>.</td></tr>
+</table>
+
+<h2>Making your first set</h2>
+
+<p>There are three ways in, and the first is the one to start with.</p>
+
+<h3>Learn it from a form you have just filled in</h3>
+
+<ol class="walk">
+  <li><strong>Fill a form in yourself</strong> — any form that holds the details you want to
+  keep. Grispy reads values off the page, so they have to be on it.</li>
+  <li><strong>Open Grispy, click the last chip on the <em>Any form</em> row</strong>, then
+  <strong>Learn from this page</strong> at the bottom of the list.</li>
+  <li><strong>Read the list.</strong> Every field on the page is shown with the detail Grispy
+  thinks it holds, the reason it thinks so, and the value it would keep.</li>
+  <li><strong>Correct anything wrong</strong> with the dropdown on the row, and untick anything
+  you do not want stored.</li>
+  <li><strong>Name the set</strong> — a client, an applicant, yourself — and press
+  <strong>Save details</strong>.</li>
+</ol>
+
+<p><strong>Nothing is written until you press that button.</strong> This is deliberate and it is
+not the same caution as saving a form. A wrong saved form is recoverable and affects one form; a
+wrong detail is copied into every form you fill afterwards, looking entirely plausible in each
+of them.</p>
+
+<p>The reason on each row is the useful part when something looks wrong:</p>
+
+<table>
+  <tr><th class="nw">The page's own autocomplete says this field is “email”.</th>
+    <td>The strongest evidence there is. The page told Grispy what the field is for.</td></tr>
+  <tr><th class="nw">The field is named “tel”.</th>
+    <td>Taken from the field's own name in the page's markup.</td></tr>
+  <tr><th class="nw">The field is labelled “Postcode”.</th>
+    <td>Taken from the words you can see beside the field.</td></tr>
+  <tr><th class="nw">You mapped this field to this detail on this form.</th>
+    <td>You corrected it before, on this form. Your correction wins over everything above.</td></tr>
+  <tr><th class="nw">Nothing on the page named this field.</th>
+    <td>Grispy has no idea what this field holds. Set it yourself, or leave it.</td></tr>
+</table>
+
+<h3>Promote a set of answers you have already saved</h3>
+
+<p>If you have saved this form before, the <code>⋯</code> menu beside the saved date has
+<em>Promote to global preset</em> in it. It opens the same review list, filled from the answers
+that preset holds for the page you are on rather than from what is on screen.</p>
+
+<p>It needs you to be <em>on</em> the form's page: Grispy re-reads the live page to work out
+what each saved answer is, and a stored copy does not carry enough to do that. It covers the
+step you are looking at, not every page of a multi-step form.</p>
+
+<h3>Type one in from scratch</h3>
+
+<p>Open <a href="../settings/">Settings</a> → <strong>Details</strong> → <strong>New</strong>.
+You get a name field and every detail Grispy knows about, grouped under headings, and you fill
+in the ones you have. Nothing needs a form open.</p>
+
+<h2>Filling with one</h2>
+
+<p>Click a chip on the <em>Any form</em> row and it fills with colour. Above the buttons, a line
+appears saying what Fill is about to do — <strong>before</strong> you press anything:</p>
+
+<code class="say">Fill writes 6 of 14 fields. Contract is not applied.</code>
+
+<table>
+  <tr><th class="nw"><code>Fill writes 6 of 14 fields.</code></th>
+    <td>14 is every field Grispy found on this page. 6 is how many it can match to a detail this
+    set actually holds. The other 8 are left exactly as they are.</td></tr>
+  <tr><th class="nw"><code>Contract is not applied.</code></th>
+    <td>Only when this form also has its own saved answers. It names the preset that is
+    <em>not</em> being written, so the highlighted chip is never ambiguous.</td></tr>
+  <tr><th class="nw"><code>2 fields on this page cannot be written into yet.</code></th>
+    <td>Grispy matched the field and holds a value, but cannot put that value into that
+    particular control.</td></tr>
+  <tr><th class="nw"><code>2 fields are left blank: this form asks for the same detail about
+  more than one person.</code></th>
+    <td>The form has two boxes for the same thing — two surnames, two tax numbers. Grispy will
+    not guess which one is yours, so it fills neither. Type those two yourself.</td></tr>
+</table>
+
+<p>Press <strong>Fill</strong> and it behaves exactly as a normal fill does, including the chips
+it paints beside each field and the message it reports afterwards —
+<a href="../what-a-fill-reports/">what a fill reports</a>.</p>
+
+<h2>Only one thing is ever selected</h2>
+
+<p>Across both rows of chips, exactly one chip is ever filled with colour, and
+<strong>that one is what Fill writes</strong>. Clicking a set of details deselects the form's own
+preset, and clicking the filled details chip again clears it and hands the selection back.
+There is no order to remember and no combining: one chip, one Fill, one source.</p>
+
+<div class="warn">
+  <p style="margin:0 0 .6rem"><strong>If a form needs both, fill the form's own preset first
+  and the set of details last.</strong> Two fills, in that order.</p>
+  <p style="margin:0">A preset saved on a form you filled for someone else still carries
+  <em>their</em> name and phone number alongside the form's boilerplate. Do it the other way
+  round — details first, then that preset — and the second fill writes the earlier subject's
+  name over the one you just put in, in a live portal, with nothing on screen afterwards saying
+  it happened. Details last is safe because the details are what you want to win. The chips a
+  fill paints mark a field as <em>written</em>; they never say what was there before. The line
+  above the buttons naming the preset that is not applied is the only warning you get, and it
+  is only there before you press Fill.</p>
+</div>
+
+<h3>What a browser restart does</h3>
+
+<p>A selected set of details is forgotten when the browser closes. A form's own preset is not —
+Grispy remembers that per form, indefinitely.</p>
+
+<p>This is on purpose: a set of details may be about somebody who is not you, and carrying that
+selection into tomorrow, unwatched, is not something Grispy does. The cost is that the same
+popup on the same page can fill something different after a restart, which is why the chip is
+filled with colour before you press anything. Read the chip, not your memory of yesterday.</p>
+
+<h2>Details Grispy does not know about</h2>
+
+<p>Grispy ships a fixed list of details — names, contact details, address parts, a few profile
+links — and you can add your own from <a href="../settings/">Settings</a> → <strong>Details</strong>
+with <strong>+ Add a detail</strong>. One thing to know before you do:</p>
+
+<ul>
+  <li><strong>A detail you add matches nothing on its own.</strong> The shipped ones are
+  recognised because Grispy knows what they are usually called. Yours has no such history, so
+  it reaches a field only after you point at that field once — see below.</li>
+  <li><strong>A detail you add can be renamed, but not deleted.</strong> A typo is recoverable;
+  an unwanted one stays in the list. Deleting one would strand any value saved against it, and
+  the machinery to find and report that does not exist yet.</li>
+</ul>
+
+<h3>Pointing at a field without saving its value</h3>
+
+<p>On a form you have saved, open the same list — the last chip on the <em>Any form</em> row,
+then <strong>Learn from this page</strong> — and press <strong>Just map the fields</strong> at
+the top. The values disappear and you are left with the fields and their dropdowns. Set the ones
+you care about and confirm: Grispy remembers that <em>this field on this form</em> is that
+detail, permanently, and writes no values at all.</p>
+
+<p>This needs a form Grispy has already saved, because the mapping is kept alongside that form.
+On a page it does not know, the button is replaced by a line saying so.</p>
+
+<h2>Where they are kept</h2>
+
+<ul>
+  <li><strong>In this browser, on this computer</strong>, like everything else Grispy holds.
+  Nothing is sent anywhere.</li>
+  <li><strong>Encrypted, if you have set a passphrase</strong> — sets of details and the details
+  you add are both covered by it. <a href="../passphrase/">More</a>.</li>
+  <li><strong>Edited and deleted from <a href="../settings/">Settings</a> →
+  Details.</strong> The popup can create a set by learning one; it can delete nothing. Deletion
+  is kept on a page you do not have open all day.</li>
+  <li><strong>Included in an export</strong>, and restored by an import. A restore otherwise
+  replaces everything, but a backup taken before 4 September 2026 holds no details at all, so
+  restoring one leaves yours alone rather than wiping them.</li>
+</ul>
+
+<h2>Known limits</h2>
+
+<ul>
+  <li><strong>It fills what it recognises, not everything.</strong> How much of an unfamiliar
+  form fills is set by which details Grispy knows about, not by how hard it tries. Six of
+  fourteen is a normal result and not a failure.</li>
+  <li><strong>It never guesses.</strong> A field it cannot identify, or holds no value for, is
+  left exactly as the page had it. A fill never blanks a field it did not write.</li>
+  <li><strong>Two people on one form defeat it.</strong> Where a form asks for the same detail
+  about more than one person, both are left blank rather than one being filled at random.</li>
+  <li><strong>A set of details cannot hold a form's own answers.</strong> Dropdown choices,
+  tickboxes, dates specific to one application — those live in that form's own preset. The two
+  are different tools and most real work uses both.</li>
+</ul>
+
+<h2>Every message, in one place</h2>
+
+<table>
+  <tr><th class="nw"><code>No presets yet</code></th><td>You have no sets of details. Click it
+  to make one.</td></tr>
+  <tr><th class="nw"><code>All details</code></th><td>Opens the full list with a filter.</td></tr>
+  <tr><th class="nw"><code>4 more</code></th><td>You have more sets than the row of chips
+  shows.</td></tr>
+  <tr><th class="nw"><code>Locked</code></th><td>Set a passphrase and not yet entered it.</td></tr>
+  <tr><th class="nw"><code>No details saved yet.</code></th><td>The full list, before you have
+  made one.</td></tr>
+  <tr><th class="nw"><code>None — fill nothing from a saved detail set</code></th>
+    <td>Clears the selection.</td></tr>
+  <tr><th class="nw"><code>Learn from this page</code></th><td>Opens the review list.</td></tr>
+  <tr><th class="nw"><code>Fill writes 6 of 14 fields.</code></th><td>What Fill will do, before
+  you press it.</td></tr>
+  <tr><th class="nw"><code>Contract is not applied.</code></th><td>The form's own preset is not
+  the one selected.</td></tr>
+  <tr><th class="nw"><code>2 fields on this page cannot be written into yet.</code></th>
+    <td>Matched, but the value will not go into that control.</td></tr>
+  <tr><th class="nw"><code>2 fields are left blank: this form asks for the same detail about
+  more than one person.</code></th><td>Two subjects on one form; Grispy fills neither.</td></tr>
+  <tr><th class="nw"><code>Nothing on the page named this field.</code></th><td>On a review row:
+  no idea what this field holds.</td></tr>
+  <tr><th class="nw"><code>Grispy has not saved this form yet, so there is nowhere to keep a
+  mapping. Save the form first to map its fields.</code></th>
+    <td>Why <em>Just map the fields</em> is not offered here.</td></tr>
+</table>
+
+<footer>
+  <a href="../">Guide</a> ·
+  <a href="../../">Back to Grispy</a> ·
+  <a href="../../privacy/">Privacy</a> ·
+  <a href="../../support/">Support</a>
+</footer>
+
+</main>
+</body>
+</html>
