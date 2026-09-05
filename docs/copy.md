@@ -351,6 +351,42 @@ falsified by saved details, and repositioning a listing around a new
 differentiator is a decision about the listing rather than a correction to a
 false sentence. It belongs with the submission, not with this pass.
 
+### Screenshot captions
+
+Five images, in listing order. Each carries a heading and one line under it, burnt
+into the image, so they are copy and are settled here like everything else. Three
+headings are lifted verbatim from [§3](#3-landing-page); the other two are new and
+are recorded as new.
+
+| # | Heading | Line under it |
+|---|---|---|
+| 1 | **One set of details, any form.** (§3) | A form Grispy has never seen, and it already knows what goes where. It says how much it will fill before you press anything. |
+| 2 | **Many answers per form.** (§3) | As many named sets as you need against one form. Autofill has exactly one identity. |
+| 3 | **It checks each field afterwards and tells you which ones it could not confirm.** (§3) | Every field it wrote is marked on the page itself. |
+| 4 | **Nothing is written until you confirm it.** (new) | Every field, what Grispy thinks it holds, and why it thinks so. |
+| 5 | **Your details, in one place you can edit.** (new) | Everything it saves stays in your browser. No account, no server, no network requests of any kind. |
+
+**Caption 3 is the longest heading by some way and that is deliberate.** It is the
+one claim in the set a reader cannot check from the picture, so it is stated in the
+words [§6](#6-claims-check) verified rather than compressed into something shorter
+that would need verifying again.
+
+**How the images are made, because it bears on what they claim.** The extension in
+every frame is a capture of the built `dist/chrome/` running in Chromium, driven
+through the gestures a user makes — the presets were made by pressing Save, the set
+of details by learning it from a page, the fill by pressing Fill. The popup is then
+composited over the page, which is unavoidable: Chrome draws it as a panel anchored
+under the toolbar button and no automation can photograph browser chrome. **No
+browser chrome is drawn in**, because drawing the one part that cannot be captured
+is where a screenshot stops being a capture. The extension repository's
+`docs/runbooks/2026-08-28-store-submission-kit.md` §5 holds the command and the
+three things the set does not cover.
+
+The two forms behind the popup are invented — Harbourline Logistics and Vantage
+Marine do not exist, both pages say so, and every value in them is made up. A
+listing image resembling a real organisation's portal is a different kind of claim
+from the ones this table checks, and not one this project makes.
+
 ### Data-usage disclosure form
 
 Must agree with the privacy policy exactly. The answers the policy supports:
@@ -545,12 +581,16 @@ Not copy. Things that must be true in the extension before this copy is honest.
   dependency rather than by answering it.** The first release is free and has
   nothing to sell, so no price has to be settled before submitting. §1 stays
   bracketed until there is.
-- **Retake the screenshots.** Every existing shot predates 2026-09-04 and any
+- ~~**Retake the screenshots.** Every existing shot predates 2026-09-04 and any
   showing the popup on a form Grispy has not saved shows a screen that no longer
-  exists: that state now carries a second row of chips, a line saying what a fill
-  will write, and a Fill button where there was none. A listing whose images
-  contradict its own description is the same listing/build mismatch item 5 was
-  corrected for, arriving through the pictures instead of the prose.
+  exists.~~ **A current set exists as of 2026-09-05**, produced by `pnpm
+  screenshots` in the extension repository against a build that includes saved
+  details, with the captions above. **The gate is not closed, only narrowed**: the
+  images that ship must be regenerated from the build actually submitted, not from
+  whatever was on disk that day, and nobody has yet seen them at the size a store
+  displays them. A listing whose images contradict its own description is the same
+  listing/build mismatch item 5 was corrected for, arriving through the pictures
+  instead of the prose.
 - **Install a packaged build and read Chrome's permission dialog**, so the
   strongest claim on the page can be written from observation rather than from the
   manifest.
