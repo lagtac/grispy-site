@@ -11,7 +11,7 @@ therefore means *live, but not yet pointed at* — everything below is already o
 the web, and the boundary it is measured against is the moment a Chrome Web
 Store or addons.mozilla.org listing starts sending people to these URLs.
 
-## [Unreleased] — 2026-09-04
+## [Unreleased] — 2026-09-09
 
 ### Publication Contract
 
@@ -35,6 +35,20 @@ themselves make.
   matching that date.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
+
+### 2026-09-09 — The guide said a detail could only be reached through a set (Roadmap #9d)
+
+**The extension's roadmap row 33 makes that false.** Settings' second tab is now
+**Details & sets** and holds two views: *Details* lists every detail Grispy can
+fill, with **Rename** on the ones you added and a **New detail** button that
+belongs to no set; *Sets* is the roster as it was. The guide's *Settings* page
+indexed the tab under its old name and its Rename row said to open a set first,
+and the *saved details* page opened its "add your own" path the same way.
+
+**The page changes before the build, and that is the rule rather than an
+accident.** The container `CLAUDE.md` puts the public wording first, so between
+this commit and the extension's own release the guide describes a tab that has
+not shipped. The reverse — row 1c's mistake — is the one worth avoiding.
 
 ### 2026-09-04 — The pages said Grispy has nothing to offer on a form you have not saved (Roadmap #1c, #9c)
 
