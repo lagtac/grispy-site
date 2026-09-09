@@ -77,8 +77,11 @@ with that is yours rather than ours. Section 7 sets out what that means.</p>
 <p>Finally, Grispy stores the <strong>names of any detail types you add yourself</strong>. It
 ships knowing a fixed list — email, telephone, tax number and so on — and you can extend it:
 if you add "Blood type" as a detail, that name is recorded on your device so the same detail
-can be filled on other forms. Only the name is stored this way; the value itself lives in
-whichever sets of details you put it in.</p>
+can be filled on other forms. The value itself is not stored with the name — it lives in
+whichever sets of details you put it in. One other thing can be recorded alongside the name:
+if you tell Grispy to recognise a detail on any form, it also stores the field name and the
+label that form used for it, exactly as that page spelled them, so it can recognise the same
+field elsewhere. It does not record which site you taught it on.</p>
 
 <h2 id="storage">2. Where it is stored, and who can reach it</h2>
 <p>All of it is written to your browser's local extension storage
@@ -118,8 +121,9 @@ browser.</p>
   people's names is exactly the thing worth protecting. The name you gave a preset sits inside
   the encrypted record along with its contents. What someone with access to your files can
   still work out is how many global presets you have — not what any of them is called, and not
-  whose details are in it. The names of any detail types you added yourself are sealed the same
-  way, for the same reason: what you chose to keep track of can be as revealing as the value.</li>
+  whose details are in it. The names of any detail types you added yourself, and any field
+  names and labels you taught them against, are sealed the same way, for the same reason: what
+  you chose to keep track of can be as revealing as the value.</li>
   <li><strong>A forgotten passphrase cannot be recovered.</strong> Not by you, and not by us —
   we never have it. Your options at that point are an export you took while unlocked, or
   resetting Grispy, which deletes everything and starts you over. Resetting works even when
