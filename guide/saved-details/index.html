@@ -75,15 +75,17 @@ labels are the only thing that tells them apart, so they are worth reading:</p>
     to everything on this page.</td></tr>
 </table>
 
-<p>The last chip on the <em>Any form</em> row always opens the full list. What it says depends
-on how many you have:</p>
+<p>The <strong>⋯</strong> chip on the <em>Any form</em> row opens the full list. What the row
+shows depends on how many you have:</p>
 
 <table>
-  <tr><th class="nw">No presets yet</th><td>You have none. Click it anyway — this is where you
-  make the first one.</td></tr>
-  <tr><th class="nw">All details</th><td>You have some, and they all fit on the row.</td></tr>
-  <tr><th class="nw">4 more</th><td>You have more than six. The row shows the six you made most
-  recently; this opens the whole list, with a box to filter it by name.</td></tr>
+  <tr><th class="nw">No presets yet</th><td>You have none. This is a note, not a button — the
+  <strong>scan</strong> chip beside it is where you make the first one.</td></tr>
+  <tr><th class="nw">⋯</th><td>You have some, and they all fit on the row. Opens the whole
+  list.</td></tr>
+  <tr><th class="nw">⋯ 4</th><td>You have more than six. The row shows the six you made most
+  recently, and four more are behind this chip — which opens the whole list, with a box to
+  filter it by name.</td></tr>
   <tr><th class="nw">Locked</th><td>You have set a passphrase and have not entered it yet. Your
   details are encrypted, so Grispy cannot read their names.
   <a href="../passphrase/">More</a>.</td></tr>
@@ -98,8 +100,8 @@ on how many you have:</p>
 <ol class="walk">
   <li><strong>Fill a form in yourself</strong> — any form that holds the details you want to
   keep. Grispy reads values off the page, so they have to be on it.</li>
-  <li><strong>Open Grispy, click the last chip on the <em>Any form</em> row</strong>, then
-  <strong>Learn from this page</strong> at the bottom of the list.</li>
+  <li><strong>Open Grispy and click the scan chip</strong> — the dashed square at the end of
+  the <em>Any form</em> row. Hover it and it names itself.</li>
   <li><strong>Read the list.</strong> Every field on the page is shown with the detail Grispy
   thinks it holds, the reason it thinks so, and the value it would keep.</li>
   <li><strong>Correct anything wrong</strong> with the dropdown on the row, and untick anything
@@ -224,15 +226,19 @@ that one goes straight into the set. Two things to know before you do:</p>
 
 <h3>Pointing at a field without saving its value</h3>
 
-<p>On a form you have saved, open the same list — the last chip on the <em>Any form</em> row,
-then <strong>Learn from this page</strong> — and press <strong>Just map the fields</strong> at
-the top. The values disappear and you are left with the fields and their dropdowns. Set the ones
-you care about and confirm: Grispy remembers that <em>this field on this form</em> is that
-detail, permanently, and writes no values at all.</p>
+<p>On a form you have saved, open the same list — the scan chip at the end of the
+<em>Any form</em> row — and leave the checkbox at the top <strong>unticked</strong>. The list
+shows the fields and their dropdowns and no values at all. Set the ones you care about and
+confirm: Grispy remembers that <em>this field on this form</em> is that detail, permanently,
+and writes no values.</p>
 
-<p>On a page Grispy has not saved, <strong>Just map the fields</strong> still works, but only
-in its "anywhere" form: there is no saved form to keep a per-form mapping on, so every field
-you set is learned for every form instead. The line above the list says so.</p>
+<p>Tick <strong>Also create a preset with the values on the form</strong> and the values come
+back, with a tick beside each one and a box to name the set. Ticking it adds; it never takes
+anything away.</p>
+
+<p>On a page Grispy has not saved, mapping still works, but only in its "anywhere" form: there
+is no saved form to keep a per-form mapping on, so every field you set is learned for every
+form instead. The line above the list says so.</p>
 
 <h2>Where they are kept</h2>
 
@@ -267,17 +273,16 @@ you set is learned for every form instead. The line above the list says so.</p>
 <h2>Every message, in one place</h2>
 
 <table>
-  <tr><th class="nw"><code>No presets yet</code></th><td>You have no sets of details. Click it
-  to make one.</td></tr>
-  <tr><th class="nw"><code>All details</code></th><td>Opens the full list with a filter.</td></tr>
-  <tr><th class="nw"><code>4 more</code></th><td>You have more sets than the row of chips
+  <tr><th class="nw"><code>No presets yet</code></th><td>You have no sets of details. A note,
+  not a button.</td></tr>
+  <tr><th class="nw"><code>⋯</code></th><td>Opens the full list with a filter.</td></tr>
+  <tr><th class="nw"><code>⋯ 4</code></th><td>You have more sets than the row of chips
   shows.</td></tr>
   <tr><th class="nw"><code>Locked</code></th><td>Set a passphrase and not yet entered it.</td></tr>
   <tr><th class="nw"><code>No details saved yet.</code></th><td>The full list, before you have
   made one.</td></tr>
-  <tr><th class="nw"><code>None — fill nothing from a saved detail set</code></th>
-    <td>Clears the selection.</td></tr>
-  <tr><th class="nw"><code>Learn from this page</code></th><td>Opens the review list.</td></tr>
+  <tr><th class="nw"><code>4 details · click to clear</code></th><td>On the set you have
+  selected. Clicking that row clears the selection.</td></tr>
   <tr><th class="nw"><code>Fill writes 6 of 14 fields.</code></th><td>What Fill will do, before
   you press it.</td></tr>
   <tr><th class="nw"><code>Contract is not applied.</code></th><td>The form's own preset is not
