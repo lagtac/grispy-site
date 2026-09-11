@@ -11,7 +11,7 @@ therefore means *live, but not yet pointed at* — everything below is already o
 the web, and the boundary it is measured against is the moment a Chrome Web
 Store or addons.mozilla.org listing starts sending people to these URLs.
 
-## [Unreleased] — 2026-09-09
+## [Unreleased] — 2026-09-11
 
 ### Publication Contract
 
@@ -35,6 +35,37 @@ themselves make.
   matching that date.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
+
+### 2026-09-09 — The policy discloses learned field names and labels (Roadmap #2c, #9e)
+
+**The extension's roadmap row 35 lets a detail you added be taught once and
+recognised on every form afterwards, and what that records is page text.** The
+field name and the label, exactly as the page spelled them, are kept on the
+detail so the same field can be found elsewhere; where you taught it is not
+recorded. §1 had said only the detail's name is stored, and §2's encryption
+bullet named only that name as sealed. Both now say otherwise, and both changed
+before the build that does it — the container rule, and the safer of the two
+drift directions.
+
+- **The policy's effective date did not move with them, and does now.** §9 of
+  the policy promises that it changes with any edit, and the Publication
+  Contract above says a store reviewer checking a data-usage disclosure is
+  matching that date. The served page carried 9 September's text under 4
+  September's date from then until this commit. It now reads **Effective 9
+  September 2026**.
+- **The Chrome Web Store data-usage declaration needs no amendment.** Checked
+  when the disclosure was written: page-derived field text is already covered
+  under *Website content* and *User activity*.
+- **The guide stopped saying that teaching a field needs a saved form.** It no
+  longer does: on a page Grispy has not saved, *Just map the fields* still
+  works, in its "anywhere" form only, and the message table quotes the sentence
+  the popup now shows instead of the one it withdrew.
+
+**Two of that row's surfaces are still undescribed here, filed as roadmap row
+9f** — the per-row choice between learning a field for one form and learning it
+anywhere, and the Settings list that removes what was learned. The guide
+currently gives the per-form outcome as the only one on a saved form, which the
+same row made false.
 
 ### 2026-09-09 — The guide said a detail could only be reached through a set (Roadmap #9d)
 
