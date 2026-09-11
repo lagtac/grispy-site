@@ -175,10 +175,11 @@ it paints beside each field and the message it reports afterwards —
 
 <h2>Only one thing is ever selected</h2>
 
-<p>Across both rows of chips, exactly one chip is ever filled with colour, and
+<p>Across both rows of chips, at most one chip is ever filled with colour, and
 <strong>that one is what Fill writes</strong>. Clicking a set of details deselects the form's own
-preset, and clicking the filled details chip again clears it and hands the selection back.
-There is no order to remember and no combining: one chip, one Fill, one source.</p>
+preset, and clicking the filled details chip again clears it — leaving nothing selected, so Fill
+is not offered until you pick a chip. There is no order to remember and no combining: one chip,
+one Fill, one source.</p>
 
 <div class="warn">
   <p style="margin:0 0 .6rem"><strong>If a form needs both, fill the form's own preset first
