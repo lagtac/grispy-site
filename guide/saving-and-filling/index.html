@@ -28,6 +28,7 @@
   th { color:var(--muted); font-weight:600; }
   th.nw { white-space:nowrap; }
   code { background:var(--code); padding:.1rem .35rem; border-radius:3px; font-size:.88em; }
+  .icon { width:1em; height:1em; vertical-align:-0.125em; }
   ol.walk { padding-left:1.3rem; }
   ol.walk li { margin:.6rem 0; }
   a { color:var(--accent); }
@@ -138,7 +139,8 @@ only one chip is ever selected across both rows, and it is the one Fill writes.<
 
 <ol class="walk">
   <li><strong>The first thing you save</strong> becomes a preset called <em>Default</em>.</li>
-  <li><strong>Press the <code>+ New preset</code> chip</strong> to start another. Grispy
+  <li><strong>Press the <code><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="new preset" focusable="false"><path d="M5 12h14"/><path d="M12 5v14"/></svg></code> chip</strong> at the end of the
+  <em>This form</em> row — hover it and it names itself — to start another. Grispy
   names it <em>Save 2</em>, then <em>Save 3</em>, and so on.</li>
   <li><strong>Fill the form in with the new answers</strong> and press Save. Those answers go
   to the new preset; <em>Default</em> is untouched.</li>
@@ -148,7 +150,7 @@ only one chip is ever selected across both rows, and it is the one Fill writes.<
 
 <h3>Renaming and deleting</h3>
 
-<p>Once you have <strong>two or more</strong> presets, a <code>⋯</code> button appears beside
+<p>Once you have <strong>two or more</strong> presets, a <code><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="more" focusable="false"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></code> button appears beside
 the saved date with <em>Rename</em> and <em>Delete</em> in it. It is hidden with only one
 preset because neither action does anything useful there, and <em>Delete</em> stays disabled on
 the last remaining preset rather than leaving a form with none.</p>

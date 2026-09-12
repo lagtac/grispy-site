@@ -18,6 +18,7 @@ covered by a proprietary licence.
 | `ROADMAP.md` | — | What the site serves now and what it grows into. Rows link to the CHANGELOG entry that records them. |
 | `CHANGELOG.md` | — | What changed on these pages, and the **Publication Contract**: the URLs a store listing will hold, and the announcement §9 of the policy owes before a protection narrows. |
 | `guide/` | `/guide/` | **The user guide.** One page per topic, plus an index. The source, not a mirror: the extension repository keeps no copy — see `ROADMAP.md` row 9 for why, and rows 9/9b for what is written and what is not. |
+| `THIRD-PARTY.md` | — | **The notice for the two Lucide icons the guide draws inline.** The guide pictures a control with the same artwork the popup renders rather than a look-alike character, so this repository now serves vendored path data and owes the notice that comes with it. |
 | `docs/` | — | **Copy, not pages.** `docs/copy.md` holds the words Grispy is described in — landing page, both store listings, and the claims-check table each one is verified against — so those surfaces and the Chrome Web Store's data-usage form cannot drift apart. Serves nothing; a source document. |
 
 ## Editing the privacy policy
@@ -36,7 +37,11 @@ and each was checked before publication:
 - **"no package is installed and nothing is fetched at runtime"** — the extension has no
   runtime dependencies. It is *not* true that no third-party material ships: the icon path
   data is vendored under ISC and MIT. The policy was corrected on 28 August 2026 to claim
-  only the first, which is the part that bears on privacy.
+  only the first, which is the part that bears on privacy. **Since 2026-09-12 this is true
+  of the site too** — the guide draws two of those icons inline rather than as look-alike
+  characters, so it serves the same vendored path data under the same two licences; see
+  [`THIRD-PARTY.md`](THIRD-PARTY.md). The *fetching* half is unchanged and is what the
+  policy claims: these pages load no script, font or stylesheet from any other origin.
 - **"can be encrypted with a passphrase only you know"** — encryption at rest shipped, and
   §2 was rewritten in the same window to describe it along with its four limits. The one to
   keep checking is that the readable part stays as small as §2 says: the addresses Grispy

@@ -11,7 +11,7 @@ therefore means *live, but not yet pointed at* — everything below is already o
 the web, and the boundary it is measured against is the moment a Chrome Web
 Store or addons.mozilla.org listing starts sending people to these URLs.
 
-## [Unreleased] — 2026-09-11
+## [Unreleased] — 2026-09-12
 
 ### Publication Contract
 
@@ -35,6 +35,41 @@ themselves make.
   matching that date.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
+
+### 2026-09-12 — The guide catches up with the strip's glyph chips
+
+**The extension turned three strip chips into icons with no words, and the guide
+went on naming the words.** The *Any form* row's create chip, its overflow chip
+and the *This form* row's `+ New preset` all became 32×32 glyphs, sized so that
+two controls which must never scroll off the row cost what an icon costs rather
+than what a phrase costs. The guide was written against the phrases.
+
+- **The `⋯` chip is drawn, not spelled.** Seven places across
+  [saved details](guide/saved-details/) and
+  [saving and filling](guide/saving-and-filling/) used `⋯`, the midline
+  horizontal ellipsis character, as a picture of a button. They now carry the
+  same Lucide `ellipsis` artwork the popup itself renders, inline, so a reader
+  comparing page to popup sees one shape and not two. Inline rather than an
+  `<img>`, because an inline SVG inherits the surrounding text colour and an
+  image cannot — which is what keeps the icon legible in both the light and the
+  dark palette these pages already switch between.
+
+- **`+ New preset` named a label that no longer exists.** That chip now shows a
+  plus and carries its name in a tooltip, so the instruction *"press the
+  `+ New preset` chip"* pointed at words the user could not find. It now shows
+  the plus, says where on the row to look, and tells the reader the chip names
+  itself on hover.
+
+- **The site owes a notice for what it now serves**, and
+  [`THIRD-PARTY.md`](THIRD-PARTY.md) is it. Drawing those two icons means this
+  repository publishes vendored Lucide path data for the first time. Nothing is
+  fetched to do it — these pages still load no script, font or stylesheet from
+  any other origin, which is the half of that claim the privacy policy makes.
+
+**The rewording of the saved-details page went live on 2026-09-11 and was not
+recorded here.** It is folded into this entry rather than back-dated: everything
+under `[Unreleased]` is already on the web, so the date that matters is the one
+this window carries.
 
 ### 2026-09-09 — The policy discloses learned field names and labels (Roadmap #2c, #9e)
 
