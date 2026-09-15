@@ -11,7 +11,7 @@ therefore means *live, but not yet pointed at* — everything below is already o
 the web, and the boundary it is measured against is the moment a Chrome Web
 Store or addons.mozilla.org listing starts sending people to these URLs.
 
-## [Unreleased] — 2026-09-12
+## [Unreleased] — 2026-09-15
 
 ### Publication Contract
 
@@ -35,6 +35,28 @@ themselves make.
   matching that date.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
+
+### 2026-09-15 — The paid licence is no longer announced (Roadmap #6h)
+
+**The paid plan is dropped, so `/terms/` stops announcing it.** Since row 6g the
+page said that capabilities for people filling forms at work, in volume, were
+being built and would need a paid licence, and it invited readers to email for
+price news. Nothing is being built to sell, so both sentences are gone.
+
+- **What stayed:** the promise that nothing a reader can do today needs a licence
+  or will ever start needing one, and that the stale-detail warning still being
+  built will be free.
+- **What went:** the paid-licence announcement, the invitation to ask about
+  prices, the opening line's *"and stays free"* — which read as a promise about
+  every future version — and the claim that reusing one set of details across forms is still
+  being built — that shipped on 2026-09-04.
+- **No promise in the other direction.** The page does not say "free forever" or
+  "no paid tier". A paid option may return one day, and the page commits to no
+  more than what free already covers.
+- **The effective date moves to 15 September 2026.**
+- [`docs/copy.md`](docs/copy.md) §1 is marked superseded: its tier wording may not
+  reach a page, and rows 6, 6c, 6d and 6e are dropped with the plan. The privacy
+  policy's §7 sentence about buying a licence is conditional and is unchanged.
 
 ### 2026-09-12 — The guide catches up with the strip's glyph chips
 

@@ -48,8 +48,8 @@ within three days. Do not create a second copy of any user-facing text anywhere 
 including in the extension repository, which deliberately keeps no mirror of
 `/guide/`.
 
-**Not everything in `copy.md` is publishable.** §1 (pricing) is settled wording
-that may not reach a page while nothing can be bought; §8 lists gates the
+**Not everything in `copy.md` is publishable.** §1 (pricing) is superseded — the
+paid plan was dropped on 2026-09-15, and none of it may reach a page; §8 lists gates the
 extension must clear before the copy can honestly go up. Read a section's own
 header note before lifting text from it.
 

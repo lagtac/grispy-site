@@ -44,6 +44,16 @@ markup, no layout, no decisions about what a page looks like.
 
 ## 1. Price, settled 2026-09-03 — **not publishable**
 
+> **Superseded 2026-09-15 — the paid plan is dropped.** Grispy has no paid tier
+> planned, so nothing in this section may reach a page: not the tier table and
+> not the trial sentence. A paid option may return one day; if it does, it starts
+> from how people use the free release, not from this section. Two rules in §1.2
+> survive on their own — never imply the free product is a trial, and never let a
+> price appear in this public repository. **One is replaced:** do not write "with
+> no paid tier" or "free forever" either. The site makes no promise about the
+> future beyond the one `/terms/` already makes — nothing free today will start
+> needing a licence. See roadmap row 6h.
+
 > **Bracketed 2026-09-03, the same day, and kept rather than deleted.** Every
 > tier sentence below is settled and will be needed. None of it may reach a page
 > yet: nothing in the extension can be bought, so a page describing what a
