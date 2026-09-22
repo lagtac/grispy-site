@@ -361,17 +361,31 @@ does, so each stays exactly as it was.
 ### Screenshot captions
 
 Each image carries a heading and one line under it, burnt into the image, so they
-are copy and are settled here like everything else. Both headings are lifted
-verbatim from [§3](#3-landing-page). **Only frame 2 exists** until extension
-roadmap row 43 ships new images: frames 1, 4 and 5 showed sets of details and are
-deleted with them (2026-09-22), and caption 3 is kept as copy for that row to use.
+are copy and are settled here like everything else. Four of the five headings are
+lifted verbatim from [§3](#3-landing-page); heading 4 is the one written for the
+set, and has its own row in [§6](#6-claims-check).
+
+**A new set of five, 2026-09-22** (extension roadmap row 43). The set before it
+showed sets of details, and four of its five frames were deleted with them on the
+same day. The numbers below are the new order; the old frame 2 is frame 1 here.
 
 | # | Heading | Line under it |
 |---|---|---|
-| 2 | **Many answers per form.** (§3) | As many named sets as you need against one form. Autofill has exactly one identity. |
-| 3 | **It checks each field afterwards and tells you which ones it could not confirm.** (§3) | Every field it wrote is marked on the page itself. |
+| 1 | **Many answers per form.** (§3) | As many named sets as you need against one form. Autofill has exactly one identity. |
+| 2 | **It checks each field afterwards and tells you which ones it could not confirm.** (§3) | Every field it wrote is marked on the page itself. |
+| 3 | **Multi-step forms.** (§3) | Grispy follows a form across the pages it spans and fills each step as you reach it. |
+| 4 | **Nothing is saved until you confirm it.** | Every field on the page and what it holds. You tick what Grispy keeps. |
+| 5 | **Your data stays yours.** (§3) | Everything it saves stays in your browser, where you can export it or delete it. No account, no server, no network requests. |
 
-**Caption 3 is the longest heading by some way and that is deliberate.** It is the
+**What the pictures do not show**, so nobody reads a caption as a promise the
+image makes. Frame 2 shows the count the fill really reported, *Filled 12 of 13
+fields.*, with a *Not filled* chip beside the preferred-contact radio group, which
+was saved with nothing chosen. It shows no *Unverified* field: that would have to be
+staged, and nothing in the frame is. Frame 3 shows a wizard with one address per
+step, not one that redraws itself in place; the copy's claim covers both, and §6
+verifies both.
+
+**Caption 2 is the longest heading by some way and that is deliberate.** It is the
 one claim in the set a reader cannot check from the picture, so it is stated in the
 words [§6](#6-claims-check) verified rather than compressed into something shorter
 that would need verifying again.
@@ -444,6 +458,7 @@ table before each submission; there is no CI enforcing any of it.
 | "tells you what it could not confirm" | fill reports an `unverified` outcome and the toast carries the count | 2026-09-01 | **Ungated 2026-09-01.** The framed-page miscount that held this back is fixed — extension roadmap row 5d, shipped 2026-08-29 |
 | "exports and imports everything" | export and import both shipped | 2026-08-28 | Whole-store file replaces; single-form file adds |
 | Cannot see contenteditable, shadow DOM, custom pickers | asserted deliberately as characterization tests in the extension's smoke suite | 2026-08-29 | These are tests that assert the *absence* of support, so they will fail loudly if it ever arrives |
+| "Nothing is saved until you confirm it." / "You tick what Grispy keeps." (screenshot caption 4) | Save opens the preview (`#state-preview` in `src/popup/popup.html`); only its confirm button calls `confirmSave` in `src/popup/popup.js`, and only ticked rows are written | 2026-09-22 | The guide rows below cover which rows start ticked. Pairs with them: a blank field starts unticked, so the picture's ticks are the defaults |
 | "Grispy never invents an answer" | `fillPlan` in `src/core/diff.js` returns only the nodes saved under this step (`preset?.steps?.[stepKey]?.nodes`), so a fill writes nothing the user did not save | 2026-09-22 | Re-pointed 2026-09-22, when extension roadmap row 42 removed `globalFillPlan`, which this row cited before. "It never guesses" went with the sentences that needed it |
 
 **Guide pages** (`/guide/`), added 2026-09-01. Each page ends with an "Every
@@ -601,7 +616,8 @@ Not copy. Things that must be true in the extension before this copy is honest.
   **Reopened 2026-09-22.** Extension roadmap row 42 removed sets of details, and
   four of the five frames showed them. `pnpm screenshots` now writes only frame 2.
   The gate stays open until extension roadmap row 43 ships new images and their
-  captions are settled in [§4](#4-chrome-web-store-listing).
+  captions are settled in [§4](#4-chrome-web-store-listing). The captions were
+  settled first, on 2026-09-22, so the images are drawn against copy that exists.
 - **Install a packaged build and read Chrome's permission dialog**, so the
   strongest claim on the page can be written from observation rather than from the
   manifest.
