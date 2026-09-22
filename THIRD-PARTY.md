@@ -10,7 +10,7 @@ so that a picture of a button in the guide is the same artwork the popup renders
 
 | Icon | Where |
 |---|---|
-| `ellipsis` | `guide/saved-details/` and `guide/saving-and-filling/` — the overflow chip and the menu beside the saved date |
+| `ellipsis` | `guide/saving-and-filling/` — the menu beside the saved date |
 | `plus` | `guide/saving-and-filling/` — the *This form* strip's create chip |
 
 Both are copied verbatim as path data from `lucide-static@1.34.0`, by way of the

@@ -51,7 +51,7 @@ any of it, back it up, or restore it.</p>
 
 <p class="lede"><strong>Open it from the gear in the top-right of the popup.</strong> It opens
 in its own tab. The line under the heading totals what is stored — something like
-<code>3 forms · 7 presets · 0 unreachable records</code> — and below it are five tabs.</p>
+<code>3 forms · 7 presets · 0 unreachable records</code> — and below it are four tabs.</p>
 
 <h2>Saved forms</h2>
 
@@ -88,52 +88,11 @@ field on its page may instead be <em>two</em> forms sharing one address — spli
 <a href="../multi-step-forms/">the step controls'</a> job, not this page's. Deleting it here
 throws away answers that a split would have recovered.</p>
 
-<h2>Details &amp; sets</h2>
-
-<p>Two views behind one tab. <strong>Details</strong> lists every detail Grispy can fill —
-its own, and the ones you added — and is where you add one. <strong>Sets</strong> holds your
-sets of details, the ones that belong to no form and can be offered on a form Grispy has never
-seen. <a href="../saved-details/">That page covers what they are and how to make one</a>; this
-tab is where both are edited and where a set is deleted.</p>
-
-<table>
-  <tr><th class="nw">New set</th>
-    <td>Starts an empty set. You get a name and two lists: every detail Grispy knows about on
-    the left, the set itself on the right. The set really is empty — nothing is in it until you
-    add it. No form needs to be open.</td></tr>
-  <tr><th class="nw">Delete set</th>
-    <td>Removes the selected set. <strong>The only place a set of details can be deleted</strong>
-    — the popup cannot do it, deliberately, because the popup is touched every day.</td></tr>
-  <tr><th class="nw">Add</th>
-    <td>Beside a detail on the left. Puts it in the set, where you fill in its value. The
-    filter above that list narrows it; type a name it does not have and the list offers to
-    create that detail for you, and it goes straight into the set — it appears under
-    <em>Your own</em> on the left only if you take it out again. A detail you made
-    will not match anything by itself until you point at a field on a form —
-    <a href="../saved-details/">how that works</a>.
-    A detail made from the <strong>Details</strong> view instead is in no set at all, so it is
-    under <em>Your own</em> from the moment you make it.</td></tr>
-  <tr><th class="nw">Remove</th>
-    <td>Beside a detail in the set. Takes it out and puts it back in the list on the left. If
-    it holds a value you are asked first, because that value goes with it. The detail itself is
-    not deleted.</td></tr>
-  <tr><th class="nw">Rename</th>
-    <td>Beside a detail you added — in the <strong>Details</strong> view, and beside it in a set
-    you have open. Grispy's own details cannot be renamed, and a detail you
-    added cannot be deleted — only renamed.</td></tr>
-  <tr><th class="nw">That is not a valid email.</th>
-    <td>Shown after you leave a field, and again whenever you open the set, so a value that was
-    already wrong when you saved it does not look right. Only for the details that declare a
-    shape: a detail you added declares none, so it is never told it is wrong.</td></tr>
-</table>
-
 <h2>Encryption</h2>
 
 <p>Setting, changing, or turning off the passphrase, and locking the store early. All of it is
-covered in <a href="../passphrase/">protecting your saved data</a>. It covers your sets of
-details as well as your saved forms: while locked, the Details &amp; sets tab says
-<code>Unlock to see your saved details.</code> and the Saved forms tab says
-<code>Unlock to see and export what is saved.</code></p>
+covered in <a href="../passphrase/">protecting your saved data</a>. While locked, the Saved
+forms tab says <code>Unlock to see and export what is saved.</code></p>
 
 <h2>Backup</h2>
 
@@ -212,9 +171,6 @@ back in if you forget your passphrase.</strong> Resetting works when unlocking c
   <li><strong>A form is listed under the path of whichever of its pages was saved first,</strong>
   so a multi-step form is named after one arbitrary step of itself. Readable form names are not
   built yet.</li>
-  <li><strong>A detail you added cannot be deleted.</strong> It can be renamed, which covers a
-  typo. Removing one would strand any value saved against it, and Grispy has no way yet to find
-  and report that.</li>
 </ul>
 
 <h2>The footer</h2>

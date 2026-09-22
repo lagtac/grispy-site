@@ -11,7 +11,7 @@ therefore means *live, but not yet pointed at* — everything below is already o
 the web, and the boundary it is measured against is the moment a Chrome Web
 Store or addons.mozilla.org listing starts sending people to these URLs.
 
-## [Unreleased] — 2026-09-15
+## [Unreleased] — 2026-09-22
 
 ### Publication Contract
 
@@ -35,6 +35,42 @@ themselves make.
   matching that date.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
+
+### 2026-09-22 — The site stops describing sets of details (Roadmap #10)
+
+**The extension no longer fills one form from another's details, so no page here
+says it does.** Extension roadmap row 42 removes cross-form filling before launch:
+the *Any form* row of chips, the learn-from-this-page list, *Promote to global
+preset* and the *Details & sets* Settings tab are gone. Grispy fills a form only
+from the presets saved on it. This site changed first, per the container rule.
+
+- **What went:** the privacy policy's passages on global presets, on working out
+  what kind of detail a field asks for, and on the detail types a user adds,
+  including the encryption limit about a global preset's name — so §2 now states
+  four limits, not five. The guide's *Details that fit any form* page, its entry
+  in the guide index, the *Details & sets* section of the Settings page, the line
+  above the buttons in *what a fill reports*, and the landing page's *One set of
+  details, any form* item and its matching limit. In
+  [`docs/copy.md`](docs/copy.md), the §6 rows that verified the removed claims,
+  three of the five screenshot captions, and the set-of-details sentences in the
+  Chrome listing.
+- **What stayed:** that a preset may hold someone else's details, and that whoever
+  stores them is the one holding them — §1 now says it of form presets, and §7 is
+  unchanged. "It never invents an answer" is re-verified against the extension's
+  `fillPlan`, which writes only what was saved for the page.
+- **The popup's *This form* help sentence now lives on
+  [saving and filling](guide/saving-and-filling/)**, in the paragraph that used to
+  describe the *Any form* row. The popup copies it from there.
+- **The effective date moves to 22 September 2026.**
+- **The §9 release-note gate does not fire.** It covers a change that narrows the
+  protections the policy states. This one removes categories of stored data and
+  narrows nothing — the same argument the 2026-09-02 entry made in the other
+  direction. The data-usage answers recorded in
+  [`docs/copy.md`](docs/copy.md) §4 still agree: they never named global presets
+  as a category of their own.
+- **`/guide/saved-details/` now returns GitHub's 404**, because the site has no
+  404 page yet (row 8). No link on this site points there any more; links from
+  outside it break.
 
 ### 2026-09-15 — The paid licence is no longer announced (Roadmap #6h)
 
