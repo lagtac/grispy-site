@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grispy — What a fill reports</title>
 <meta name="description"
-  content="What Grispy tells you about a fill: the line before it, the chips it marks each field with, and what the message afterwards counts.">
+  content="What Grispy tells you about a fill: the line before it, the mark it puts beside each field, and what the message afterwards counts.">
 <style>
   :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5; }
   @media (prefers-color-scheme: dark) {
@@ -55,28 +55,32 @@ the message <em>afterwards</em>. This page covers both.</p>
 
 <h2>During: the marks on the page</h2>
 
-<p>Grispy puts a chip beside every field it touched, on the page itself. The counts below
-cannot tell you <em>which</em> fields they mean; these can.</p>
+<p>Grispy puts a small square mark beside every field it touched, on the page itself. The
+counts below cannot tell you <em>which</em> fields they mean; these can.</p>
+
+<p>A mark shows only the Grispy paw. Its colour tells you what happened to the field, and
+holding the pointer on it shows the word for that colour. The message afterwards counts each
+kind in words.</p>
 
 <table>
-  <tr><th class="nw">FILLED</th><td>Written and read back successfully. The same fields the
-  first number counts.</td></tr>
-  <tr><th class="nw">UNVERIFIED</th><td>Written, or already correct, but Grispy could not prove
-  it afterwards. The second number.</td></tr>
-  <tr><th class="nw">NOT FILLED</th><td>Grispy found the field and could not write it — a
-  control that refused, or a value the page rewrote.</td></tr>
+  <tr><th class="nw">Green — <em>Filled</em></th><td>Written and read back successfully. The
+  same fields the first number counts.</td></tr>
+  <tr><th class="nw">Amber — <em>Unverified</em></th><td>Written, or already correct, but
+  Grispy could not prove it afterwards. The second number.</td></tr>
+  <tr><th class="nw">Red — <em>Not filled</em></th><td>Grispy found the field and could not
+  write it — a control that refused, or a value the page rewrote.</td></tr>
 </table>
 
 <p>Three things to know about them:</p>
 
 <ul>
-  <li><strong>A field Grispy could not find carries no chip at all.</strong> There is nothing on
+  <li><strong>A field Grispy could not find carries no mark at all.</strong> There is nothing on
   the page to put one beside. Those still count against the total in the message, which is why
-  a missing chip and a <em>Not filled</em> chip are different answers.</li>
+  a field with no mark and a field with a red mark are different answers.</li>
   <li><strong>They are drawn over the page, not into it.</strong> Nothing on the form is
   modified to show them, and nothing about them is submitted with it. They clear the moment you
   touch the page — your first real click or key press removes them all.</li>
-  <li><strong>A chip means <em>written</em>, never <em>overwritten</em>.</strong> It does not
+  <li><strong>A mark means <em>written</em>, never <em>overwritten</em>.</strong> It does not
   say whether there was something in the field before. That matters if you fill twice.</li>
 </ul>
 
@@ -146,9 +150,10 @@ message cannot distinguish "Grispy could not find this field" from "the page wou
 this value." What it will never do is count any of them as filled. <strong>A number in that
 first position has been read back from the control.</strong></p>
 
-<p>The chips on the page close part of that gap, if you look before you click anything: a field
-carrying <strong>NOT FILLED</strong> was found and refused, and a field with no chip was never
-found at all. What neither the chips nor the message separate is a control that refused the value from a
+<p>The marks on the page close part of that gap, if you look before you click anything: a field
+with a <strong>red</strong> mark (<em>Not filled</em> when you hold the pointer on it) was found
+and refused, and a field with no mark was never found at all. What neither the marks nor the
+message separate is a control that refused the value from a
 page that rewrote it.</p>
 
 <h4>What to do about it</h4>
@@ -213,9 +218,10 @@ value is worse than one that says it is not sure.</p>
     <a href="../repeating-rows/">More</a>.</td></tr>
   <tr><th class="nw"><code>Failed to fill form. Please try again.</code></th>
     <td>Grispy lost the page mid-fill. Nothing was written.</td></tr>
-  <tr><th class="nw"><code>FILLED</code> · <code>UNVERIFIED</code> · <code>NOT FILLED</code></th>
-    <td>The chips on the page itself, beside each field Grispy touched. Cleared by your first
-    click.</td></tr>
+  <tr><th class="nw">A green, amber or red paw</th>
+    <td>The marks on the page itself, beside each field Grispy touched: <em>Filled</em>,
+    <em>Unverified</em> or <em>Not filled</em> when you hold the pointer on one. Cleared by your
+    first click.</td></tr>
 </table>
 
 <footer>
