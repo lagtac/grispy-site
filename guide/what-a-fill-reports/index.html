@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grispy — What a fill reports</title>
 <meta name="description"
-  content="What Grispy tells you about a fill: the line before it, the mark it puts beside each field, and what the message afterwards counts.">
+  content="What Grispy tells you about a fill: the line before it, the mark it puts on each field, and what the message afterwards counts.">
 <style>
   :root { --bg:#fff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e2e2e2; --accent:#0b5fff; --code:#f4f4f5; }
   @media (prefers-color-scheme: dark) {
@@ -55,8 +55,9 @@ the message <em>afterwards</em>. This page covers both.</p>
 
 <h2>During: the marks on the page</h2>
 
-<p>Grispy puts a small square mark beside every field it touched, on the page itself. The
-counts below cannot tell you <em>which</em> fields they mean; these can.</p>
+<p>Grispy puts a small square mark on the page at every field it touched: beside the field,
+or over its right end when there is no room beside it. The counts below cannot tell you
+<em>which</em> fields they mean; these can.</p>
 
 <p>A mark shows only the Grispy paw. Its colour tells you what happened to the field, and
 holding the pointer on it shows the word for that colour. The message afterwards counts the
@@ -81,7 +82,8 @@ a red mark is the only thing that points at those.</p>
   <li><strong>They are drawn over the page, not into it.</strong> Nothing on the form is
   modified to show them, and nothing about them is submitted with it. They clear the moment you
   touch the page — your first real click or key press removes them all. A click on a mark itself
-  is passed on to the field, label or link underneath it.</li>
+  is passed on: to the field, for a mark over a field's end, or to the label, link or icon
+  underneath a mark beside it.</li>
   <li><strong>A mark means <em>written</em>, never <em>overwritten</em>.</strong> It does not
   say whether there was something in the field before. That matters if you fill twice.</li>
 </ul>
@@ -221,7 +223,7 @@ value is worse than one that says it is not sure.</p>
   <tr><th class="nw"><code>Failed to fill form. Please try again.</code></th>
     <td>Grispy lost the page mid-fill. Nothing was written.</td></tr>
   <tr><th class="nw">A green, amber or red paw</th>
-    <td>The marks on the page itself, beside each field Grispy touched: <em>Filled</em>,
+    <td>The marks on the page itself, at each field Grispy touched: <em>Filled</em>,
     <em>Unverified</em> or <em>Not filled</em> when you hold the pointer on one. Cleared by your
     first click.</td></tr>
 </table>
