@@ -106,15 +106,19 @@ third sentence, and it is not derived from the fields. It counts rows; the numbe
 count fields. <a href="../what-a-fill-reports/">More on the field counts.</a></p>
 
 <div class="warn">
-  <p style="margin:0"><strong>Grispy does not press "Add another" for you.</strong> If the page
-  is showing two rows and you saved five, three rows have nowhere to go — they are reported as
-  not filled, and you add the rows by hand and fill again. Adding rows for you needs Grispy to
-  find each form's own Add button, which has no reliable name to find it by; it is not built.</p>
+  <p style="margin:0"><strong>Grispy can press "Add another" for you.</strong> The first time
+  you save a form with rows, Grispy shows the buttons it found near the rows and marks the one it
+  picked on the page. Confirm it, pick another, or choose <em>None</em>. On a later fill, if the
+  page shows fewer rows than you saved, Grispy presses that button once per missing row, checks
+  that each press made exactly one new row, and then fills them all. If a press makes no row, it
+  stops and fills what is there.</p>
 </div>
 
 <h3>The routine that works</h3>
 
 <ol class="walk">
+  <li><strong>If you chose an Add button when you saved, just press Fill.</strong> The steps
+  below are for forms where you chose <em>None</em>.</li>
   <li><strong>Press "Add another" until the page shows as many rows as you saved.</strong> The
   popup tells you the number: <em>2 of 5 saved rows present</em>.</li>
   <li><strong>Then press Fill.</strong> With the rows in place, every one of them fills.</li>
@@ -143,7 +147,8 @@ loose fields, which on a multi-row form will not do what you want.</p>
 
 <h3>A row you cannot see is a row Grispy will not guess at</h3>
 <p>Everything above follows one rule: Grispy acts on what the page is showing. It does not
-invent rows, and it will not quietly drop the ones it cannot see.</p>
+invent rows: it makes one only by pressing the Add button you chose, and it will not quietly
+drop the ones it cannot see.</p>
 
 <h2>Every message, in one place</h2>
 
@@ -155,6 +160,10 @@ invent rows, and it will not quietly drop the ones it cannot see.</p>
   <tr><th class="nw"><code>Keep all 5</code></th><td>Preselected. Unrendered rows survive.</td></tr>
   <tr><th class="nw"><code>Save just these 2</code> / <code>Save without them</code></th><td>Replace the stored rows with what is on screen.</td></tr>
   <tr><th class="nw"><code>· 2 of 5 saved rows present</code></th><td>On the fill message. Rows, not fields.</td></tr>
+  <tr><th class="nw"><code>· added 9 rows</code></th><td>Grispy pressed your Add button once per missing row, and each press made one row.</td></tr>
+  <tr><th class="nw"><code>· added 4 of 9 rows. The last Add click made no new row.</code></th><td>A press changed nothing. Grispy stopped and filled the rows that exist. Press Fill again, or save again to choose another button.</td></tr>
+  <tr><th class="nw"><code>The last Add click made 2 rows, so Grispy stopped.</code></th><td>One press made more than one row. Grispy never presses again after that; the extra row stays empty.</td></tr>
+  <tr><th class="nw"><code>Add button not found — save again to choose it.</code></th><td>The button you chose is gone, or its text changed, or it would now submit the form. Grispy filled the rows on the page and pressed nothing.</td></tr>
 </table>
 
 <footer>
