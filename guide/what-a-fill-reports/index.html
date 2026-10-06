@@ -177,6 +177,12 @@ control. Grispy drives them the way you would, then reads what the widget is <em
 to confirm the value took. When a widget's display cannot be read at all, there is nothing to
 confirm against. The value is very probably in place; Grispy will not claim it is.</p>
 
+<p>It also happens with a field the page has switched off, often shown greyed out. Grispy
+still writes into it, because many forms switch a field on a moment after you answer an
+earlier question, and the value is then already there. But a browser does not send a
+switched-off field when the form is submitted, so Grispy cannot promise the page will
+receive it.</p>
+
 <p>The alternative would be to count it as filled and be wrong some of the time, which is the
 failure this whole check exists to prevent. A form that reports success and submits the old
 value is worse than one that says it is not sure.</p>
