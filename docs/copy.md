@@ -412,8 +412,9 @@ Must agree with the privacy policy exactly. The answers the policy supports:
 
 - **Data collected:** none. The extension makes no network requests, so nothing
   is transmitted to the developer or to any third party.
-- **Data stored locally:** whatever the user chooses to save from a form, which
-  may include personal and financial information. Held in the browser's own
+- **Data stored locally:** what the user saves from a form, with the form's
+  structure and the title of the page it was saved from, which may include
+  personal and financial information. Held in the browser's own
   local extension storage, optionally encrypted with a user passphrase.
 - **Sold to third parties:** no. **Used for purposes unrelated to core
   functionality:** no. **Used to determine creditworthiness or for lending:** no.
@@ -456,6 +457,8 @@ table before each submission; there is no CI enforcing any of it.
 | "drives search-as-you-type dropdowns and tag pickers" | widget drive with per-field deadline; verification reads the widget's own display | 2026-08-29 | |
 | "correctly fills the checkboxes and radios that frameworks manage" | framework write-path fidelity shipped | 2026-08-28 | |
 | "tells you what it could not confirm" | fill reports an `unverified` outcome and the toast carries the count | 2026-09-01 | **Ungated 2026-09-01.** The framed-page miscount that held this back is fixed — extension roadmap row 5d, shipped 2026-08-29 |
+| A form is named after the title of the first page it was saved from, and a page with no title gives its path (policy §1, guide *Saved forms*) | `formName` in `src/core/records.js`, called with the tab's title at the first save in `confirmSave`, `src/popup/popup.js`; `createForm` in `src/core/storage.js` stores it as the `form:` record's `label`, which is encrypted with the rest of that record | 2026-10-08 | Extension roadmap row 13. The title is stored as the page gives it, trimmed, with nothing cut. Chrome reports a page with no title by its address, and `formName` treats that as no title. Forms saved before row 13 keep their path as their name |
+| A form can be renamed in Settings, with **Rename this form** | `renameForm` in `src/core/storage.js`, called from `#dialog-rename-form` in `src/options/options.js`; it refuses a blank name | 2026-10-08 | Extension roadmap row 13. Rename lives only in Settings, not in the popup |
 | "exports and imports everything" | export and import both shipped | 2026-08-28 | Whole-store file replaces; single-form file adds |
 | Cannot see contenteditable, shadow DOM, custom pickers | asserted deliberately as characterization tests in the extension's smoke suite | 2026-08-29 | These are tests that assert the *absence* of support, so they will fail loudly if it ever arrives |
 | "Nothing is saved until you confirm it." / "You tick what Grispy keeps." (screenshot caption 4) | Save opens the preview (`#state-preview` in `src/popup/popup.html`); only its confirm button calls `confirmSave` in `src/popup/popup.js`, and only ticked rows are written | 2026-09-22 | The guide rows below cover which rows start ticked. Pairs with them: a blank field starts unticked, so the picture's ticks are the defaults |

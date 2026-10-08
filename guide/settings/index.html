@@ -55,9 +55,11 @@ in its own tab. The line under the heading totals what is stored — something l
 
 <h2>Saved forms</h2>
 
-<p>Every form Grispy holds anything for, each one expandable. A form's summary line reads
-<code>2 steps · 3 presets · last saved 14/08/2026</code>, and opening it shows the pages that
-form covers and the presets saved against it.</p>
+<p>Every form Grispy holds anything for, each one expandable. A form is named after the title
+of the page you first saved it from, as the browser tab shows it. A page with no title gives
+its path instead, such as <code>/apply/details</code>. A form's summary line starts with the
+site and reads <code>www.example.gov · 2 steps · 3 presets · last saved 14/08/2026</code>, and
+opening it shows the pages that form covers and the presets saved against it.</p>
 
 <table>
   <tr><th class="nw">Step 1 — /apply/details</th>
@@ -65,6 +67,9 @@ form covers and the presets saved against it.</p>
     <em>Part of a saved form</em> instead.</td></tr>
   <tr><th class="nw">Delete a preset</th>
     <td>Removes one set of answers from this form. The form and its other presets stay.</td></tr>
+  <tr><th class="nw">Rename this form</th>
+    <td>Gives the form a name of your own. The name is shown here and when you add a page to a
+    form.</td></tr>
   <tr><th class="nw">Export this form</th>
     <td>Writes a file holding just this form. Importing it elsewhere <em>adds</em> that form
     rather than replacing everything — see Backup below.</td></tr>
@@ -168,9 +173,6 @@ back in if you forget your passphrase.</strong> Resetting works when unlocking c
   <li><strong>Import replaces or adds; it never merges.</strong> A full backup takes the place
   of what you have.</li>
   <li><strong>Uninstalling the extension deletes its storage,</strong> the same as clearing it.</li>
-  <li><strong>A form is listed under the path of whichever of its pages was saved first,</strong>
-  so a multi-step form is named after one arbitrary step of itself. Readable form names are not
-  built yet.</li>
 </ul>
 
 <h2>The footer</h2>

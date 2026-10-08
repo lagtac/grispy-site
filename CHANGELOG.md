@@ -11,7 +11,7 @@ therefore means *live, but not yet pointed at* — everything below is already o
 the web, and the boundary it is measured against is the moment a Chrome Web
 Store or addons.mozilla.org listing starts sending people to these URLs.
 
-## [Unreleased] — 2026-09-22
+## [Unreleased] — 2026-10-08
 
 ### Publication Contract
 
@@ -35,6 +35,28 @@ themselves make.
   matching that date.
 - **`.nojekyll` stays.** It is what makes Pages serve these files as written
   instead of running a Jekyll build over them.
+
+### 2026-10-08 — A form is named after its page title (extension roadmap #13)
+
+**The policy now says Grispy stores the title of the page a form was first saved
+from, because the extension uses it as the form's name.** Until extension roadmap
+row 13, a form was named after the path of its first page. This site changed
+first, per the container rule.
+
+- **Policy §1** gains the title as a fourth item of what Grispy stores, and says
+  it can be renamed in Settings. **§2** says encryption covers "your forms'
+  names" instead of "the names you gave your forms", because a title is not a
+  name the user gave.
+- **The Settings guide** says how a form is named, shows the site at the start
+  of the summary line, adds *Rename this form*, and drops the known limit that
+  said readable form names were not built.
+- **[`docs/copy.md`](docs/copy.md)** gains two §6 rows for the two claims, and
+  the data-usage answer "Data stored locally" now names the page title, because
+  a title is stored without the user choosing it.
+- **The effective date moves to 8 October 2026.**
+- **The §9 release-note gate does not fire.** The title is stored exactly as the
+  values are — encrypted when the user chose encryption, readable when they
+  declined it — so no protection the policy states is narrowed.
 
 ### 2026-09-22 — The site stops describing sets of details (Roadmap #10)
 
